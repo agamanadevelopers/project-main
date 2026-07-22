@@ -53,8 +53,8 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-teal-deep/70 via-transparent to-transparent" />
       </div>
 
-      <Container className="flex min-h-[100svh] flex-col justify-between pb-12 pt-28 sm:pt-32 md:pb-16">
-        <div className="pt-12 md:pt-20">
+      <Container className="flex min-h-[100svh] flex-col justify-center pb-16 pt-28 sm:pt-32">
+        <div>
           <p className="hero-eyebrow text-sm font-medium tracking-eyebrow text-lime uppercase">
             {hero.eyebrow}
           </p>
@@ -63,8 +63,8 @@ export function Hero() {
           </h1>
         </div>
 
-        {/* Supporting text + CTA — left-aligned under the headline */}
-        <div className="hero-aside mt-12 flex w-full max-w-xl flex-col gap-6">
+        {/* Supporting text + CTA — left-aligned directly under the headline */}
+        <div className="hero-aside mt-8 flex w-full max-w-xl flex-col gap-6">
           <p className="text-lg leading-relaxed text-white/85">{hero.supporting}</p>
           <div className="flex flex-col gap-3 sm:flex-row">
             <ContactButton variant="primary" size="lg">
