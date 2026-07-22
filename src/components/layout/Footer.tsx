@@ -88,11 +88,24 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-2 border-t border-white/10 pt-6 text-sm text-white/45 sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            © {year} {site.legalName}. {t.footer.rights}
+        <div className="mt-14 border-t border-white/10 pt-6">
+          <div className="flex flex-col gap-2 text-sm text-white/45 sm:flex-row sm:items-center sm:justify-between">
+            <p>
+              © {year} {site.legalName}. {t.footer.rights}
+            </p>
+            <p>{t.footer.disclaimer}</p>
+          </div>
+          <p className="mt-4 text-sm text-white/45">
+            Developed by{" "}
+            <a
+              href="https://navodita.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-white/75 underline decoration-lime decoration-2 underline-offset-4 transition-colors hover:text-lime"
+            >
+              Navodita
+            </a>
           </p>
-          <p>{t.footer.disclaimer}</p>
         </div>
       </Container>
     </footer>
