@@ -63,10 +63,10 @@ export function Hero() {
           </h1>
         </div>
 
-        {/* Supporting text + CTA, right-aligned like the Farmio hero */}
-        <div className="hero-aside mt-12 flex w-full flex-col gap-6 md:ml-auto md:max-w-md md:text-right">
+        {/* Supporting text + CTA — left-aligned under the headline */}
+        <div className="hero-aside mt-12 flex w-full max-w-xl flex-col gap-6">
           <p className="text-lg leading-relaxed text-white/85">{hero.supporting}</p>
-          <div className="flex flex-col gap-3 sm:flex-row md:justify-end">
+          <div className="flex flex-col gap-3 sm:flex-row">
             <ContactButton variant="primary" size="lg">
               {common.letsTalk}
             </ContactButton>
