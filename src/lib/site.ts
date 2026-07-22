@@ -10,8 +10,8 @@ export const site = {
     "A trusted project partner for land owners and developers in Karnataka.",
   description:
     "Agamana Projects helps land owners and regional developers plan, build, brand, market and launch residential projects. One partner for every step.",
-  // Update to the real production domain before launch.
-  url: "https://www.agamanaprojects.com",
+  // Production domain. Update this if you attach a custom domain later.
+  url: "https://agamanaprojects.vercel.app",
   locale: "en_IN",
   email: "hello@agamanaprojects.com",
   phones: ["7090 644 644", "7090 226 226"],
