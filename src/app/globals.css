@@ -141,3 +141,22 @@ body {
     transform: translateY(0) scale(1);
   }
 }
+
+/* Gentle idle motion for the audience illustrations */
+@keyframes artFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+.art-float {
+  animation: artFloat 6s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .art-float {
+    animation: none;
+  }
+}

@@ -22,7 +22,8 @@ type Dict = {
   audience: {
     eyebrow: string;
     heading: string;
-    cards: { kicker: string; title: string; body: string; cta: string }[];
+    supporting: string;
+    cards: { kicker: string; title: string; lead: string; body: string; cta: string }[];
   };
   journey: {
     eyebrow: string;
@@ -114,20 +115,24 @@ const en: Dict = {
       "Whether you own land or already have a project, we help you plan, build, brand and bring it to market — one partner for every step.",
   },
   audience: {
-    eyebrow: "Choose your journey",
-    heading: "Wherever you are, we meet you there.",
+    eyebrow: "Who we work with",
+    heading: "Tell us where you're starting.",
+    supporting:
+      "Whether you own land or are already developing a residential project, Agamana Projects is built to support you.",
     cards: [
       {
-        kicker: "For Land Owners",
+        kicker: "Land Owner",
         title: "I Own Land",
-        body: "We'll help you turn your land into a residential project.",
-        cta: "Build My Project",
+        lead: "Own land and want to develop it?",
+        body: "We'll help you transform your land into a professionally planned residential layout.",
+        cta: "Learn More",
       },
       {
-        kicker: "For Developers",
-        title: "I Already Have a Project",
-        body: "We'll help you brand, market and launch it.",
-        cta: "Launch My Project",
+        kicker: "Developer",
+        title: "I'm Developing a Project",
+        lead: "Already working on a residential project?",
+        body: "We'll help you build a stronger brand, market your project and support a successful launch.",
+        cta: "Learn More",
       },
     ],
   },
@@ -368,20 +373,24 @@ const kn: Dict = {
       "ನಿಮ್ಮ ಬಳಿ ಭೂಮಿ ಇರಲಿ ಅಥವಾ ಈಗಾಗಲೇ ಯೋಜನೆ ಇರಲಿ — ಯೋಜನೆ, ನಿರ್ಮಾಣ, ಬ್ರಾಂಡಿಂಗ್ ಮತ್ತು ಮಾರುಕಟ್ಟೆಗೆ ತರುವವರೆಗೆ ಪ್ರತಿ ಹಂತದಲ್ಲೂ ಒಬ್ಬ ಪಾಲುದಾರ.",
   },
   audience: {
-    eyebrow: "ನಿಮ್ಮ ದಾರಿಯನ್ನು ಆರಿಸಿ",
-    heading: "ನೀವು ಎಲ್ಲೇ ಇರಲಿ, ನಾವು ನಿಮ್ಮೊಂದಿಗಿದ್ದೇವೆ.",
+    eyebrow: "ನಾವು ಯಾರೊಂದಿಗೆ ಕೆಲಸ ಮಾಡುತ್ತೇವೆ",
+    heading: "ನೀವು ಎಲ್ಲಿಂದ ಆರಂಭಿಸುತ್ತಿದ್ದೀರಿ ಎಂದು ತಿಳಿಸಿ.",
+    supporting:
+      "ನೀವು ಭೂಮಿ ಹೊಂದಿರಲಿ ಅಥವಾ ಈಗಾಗಲೇ ವಸತಿ ಯೋಜನೆ ಅಭಿವೃದ್ಧಿಪಡಿಸುತ್ತಿರಲಿ, ಆಗಮನ ಪ್ರಾಜೆಕ್ಟ್ಸ್ ನಿಮಗೆ ಬೆಂಬಲ ನೀಡಲು ರಚಿಸಲಾಗಿದೆ.",
     cards: [
       {
-        kicker: "ಭೂ ಮಾಲೀಕರಿಗೆ",
+        kicker: "ಭೂ ಮಾಲೀಕ",
         title: "ನನ್ನ ಬಳಿ ಭೂಮಿ ಇದೆ",
-        body: "ನಿಮ್ಮ ಭೂಮಿಯನ್ನು ವಸತಿ ಯೋಜನೆಯಾಗಿ ಪರಿವರ್ತಿಸಲು ನಾವು ಸಹಾಯ ಮಾಡುತ್ತೇವೆ.",
-        cta: "ನನ್ನ ಯೋಜನೆ ನಿರ್ಮಿಸಿ",
+        lead: "ಭೂಮಿ ಹೊಂದಿದ್ದೀರಾ ಮತ್ತು ಅದನ್ನು ಅಭಿವೃದ್ಧಿಪಡಿಸಲು ಬಯಸುತ್ತೀರಾ?",
+        body: "ನಿಮ್ಮ ಭೂಮಿಯನ್ನು ವೃತ್ತಿಪರವಾಗಿ ಯೋಜಿಸಿದ ವಸತಿ ಲೇಔಟ್ ಆಗಿ ಪರಿವರ್ತಿಸಲು ನಾವು ಸಹಾಯ ಮಾಡುತ್ತೇವೆ.",
+        cta: "ಇನ್ನಷ್ಟು ತಿಳಿಯಿರಿ",
       },
       {
-        kicker: "ಡೆವಲಪರ್‌ಗಳಿಗೆ",
-        title: "ನನ್ನ ಬಳಿ ಈಗಾಗಲೇ ಯೋಜನೆ ಇದೆ",
-        body: "ಅದನ್ನು ಬ್ರಾಂಡ್ ಮಾಡಲು, ಮಾರಾಟ ಮಾಡಲು ಮತ್ತು ಬಿಡುಗಡೆ ಮಾಡಲು ನಾವು ಸಹಾಯ ಮಾಡುತ್ತೇವೆ.",
-        cta: "ನನ್ನ ಯೋಜನೆ ಬಿಡುಗಡೆ ಮಾಡಿ",
+        kicker: "ಡೆವಲಪರ್",
+        title: "ನಾನು ಯೋಜನೆ ಅಭಿವೃದ್ಧಿಪಡಿಸುತ್ತಿದ್ದೇನೆ",
+        lead: "ಈಗಾಗಲೇ ವಸತಿ ಯೋಜನೆಯಲ್ಲಿ ಕೆಲಸ ಮಾಡುತ್ತಿದ್ದೀರಾ?",
+        body: "ಬಲವಾದ ಬ್ರಾಂಡ್ ರೂಪಿಸಲು, ನಿಮ್ಮ ಯೋಜನೆಯನ್ನು ಮಾರಾಟ ಮಾಡಲು ಮತ್ತು ಯಶಸ್ವಿ ಬಿಡುಗಡೆಗೆ ಬೆಂಬಲ ನೀಡಲು ನಾವು ಸಹಾಯ ಮಾಡುತ್ತೇವೆ.",
+        cta: "ಇನ್ನಷ್ಟು ತಿಳಿಯಿರಿ",
       },
     ],
   },
