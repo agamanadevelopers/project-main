@@ -1,26 +1,143 @@
 @import "tailwindcss";
 
+/* ------------------------------------------------------------------
+   Agamana Projects — Design Tokens
+   Farmio-inspired: warm khaki cream, deep teal, bright lime accent,
+   heavy grotesk type, big rounded cards.
+------------------------------------------------------------------- */
+@theme {
+  /* Surfaces */
+  --color-paper: #f2f3ee; /* page background (light warm) */
+  --color-cream: #e3e4d4; /* khaki section background */
+  --color-card: #ffffff; /* raised cards */
+
+  /* Dark */
+  --color-teal: #04303b; /* dark sections / cards / headings */
+  --color-teal-deep: #04262f; /* darkest */
+
+  /* Accent */
+  --color-lime: #e7f352; /* primary accent / CTA */
+  --color-lime-deep: #d3e02b; /* accent hover */
+
+  /* Text */
+  --color-ink: #062a33; /* primary text (deep teal-ink) */
+  --color-ink-soft: #4c5a55; /* secondary text */
+  --color-ink-faint: #7c877f; /* tertiary / captions */
+  --color-line: #d7d8c6; /* borders on cream */
+  --color-line-soft: #e6e7dc;
+
+  /* Fonts (wired via next/font in layout.tsx).
+     Archivo covers Latin; Noto Sans Kannada is the fallback for Kannada glyphs. */
+  --font-display: var(--font-archivo), var(--font-kannada), "Archivo", ui-sans-serif,
+    system-ui, sans-serif;
+  --font-sans: var(--font-archivo), var(--font-kannada), "Archivo", ui-sans-serif,
+    system-ui, sans-serif;
+
+  /* Radii — Farmio uses large rounded corners */
+  --radius-card: 1.5rem;
+  --radius-xl: 2rem;
+  --radius-2xl: 2.5rem;
+
+  /* Easings */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: var(--color-paper);
+  --foreground: var(--color-ink);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  border-color: var(--color-line);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-feature-settings: "kern", "liga", "calt";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Heavy grotesk display type */
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 1.02;
+}
+
+.tracking-eyebrow {
+  letter-spacing: 0.14em;
+}
+
+/* Word-by-word scroll reveal: inner word spans start muted */
+.word-reveal span span {
+  opacity: 0.26;
+}
+
+/* Accessible focus ring */
+:focus-visible {
+  outline: 2px solid var(--color-teal);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+::selection {
+  background: var(--color-lime);
+  color: var(--color-teal-deep);
+}
+
+/* Reveal utility — hidden until JS reveals; visible for no-JS / reduced-motion */
+.will-reveal,
+.reveal-stagger > * {
+  opacity: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .will-reveal,
+  .reveal-stagger > * {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .word-reveal span {
+    color: inherit !important;
+    opacity: 1 !important;
+  }
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Contact modal transitions */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
