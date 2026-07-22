@@ -19,9 +19,27 @@ export function Journey() {
 
   useGSAP(
     () => {
-      const mm = gsap.matchMedia();
       const steps = gsap.utils.toArray<HTMLElement>(".journey-step");
+      const mm = gsap.matchMedia();
 
+      // Active-step tracking via IntersectionObserver — rAF-independent, so it
+      // works reliably on every device (incl. reduced-motion). Whichever step is
+      // in the thin band at the viewport's vertical centre becomes active, and
+      // the `i <= active` classes + CSS transitions handle the highlight.
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const i = steps.indexOf(entry.target as HTMLElement);
+              if (i >= 0) setActive(i);
+            }
+          });
+        },
+        { rootMargin: "-45% 0px -45% 0px", threshold: 0 },
+      );
+      steps.forEach((step) => io.observe(step));
+
+      // Vertical rail fill — motion only.
       mm.add("(prefers-reduced-motion: no-preference)", () => {
         if (railFill.current) {
           gsap.fromTo(
@@ -39,24 +57,15 @@ export function Journey() {
             },
           );
         }
-        steps.forEach((step, i) => {
-          gsap.from(step, {
-            opacity: 0,
-            x: 24,
-            duration: 0.6,
-            ease: "power3.out",
-            scrollTrigger: { trigger: step, start: "top 82%", once: true },
-          });
-          ScrollTrigger.create({
-            trigger: step,
-            start: "top 60%",
-            end: "bottom 60%",
-            onToggle: (self) => self.isActive && setActive(i),
-          });
-        });
       });
 
-      return () => mm.revert();
+      // Recalculate rail-fill positions once content above has settled.
+      requestAnimationFrame(() => ScrollTrigger.refresh());
+
+      return () => {
+        io.disconnect();
+        mm.revert();
+      };
     },
     { scope: root },
   );
