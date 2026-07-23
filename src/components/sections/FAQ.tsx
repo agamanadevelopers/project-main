@@ -3,6 +3,7 @@
 import { useState, useId } from "react";
 import { Plus } from "lucide-react";
 import { Container } from "@/components/ui/Container";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { useT } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
@@ -75,10 +76,8 @@ export function FAQ() {
       <Container>
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
           <Reveal>
-            <span className="text-sm font-semibold tracking-eyebrow text-ink-soft uppercase">
-              {t.eyebrow}
-            </span>
-            <h2 className="mt-5 font-display text-3xl font-extrabold leading-[1.02] tracking-[-0.04em] text-ink sm:text-5xl">
+            <Eyebrow>{t.eyebrow}</Eyebrow>
+            <h2 className="mt-5 font-display text-3xl font-bold leading-[1.02] tracking-[-0.02em] text-ink sm:text-5xl">
               {t.heading}
             </h2>
             <p className="mt-5 max-w-sm text-lg leading-relaxed text-ink-soft">{t.intro}</p>

@@ -46,3 +46,12 @@ export const navItems = [
 ] as const;
 
 export type NavKey = (typeof navItems)[number]["key"];
+
+/** Legal / policy pages, linked from the footer (Konstra-style). */
+export const legalLinks = [
+  { label: "Privacy Policy", href: "/privacy-policy", slug: "privacy-policy" },
+  { label: "Terms & Conditions", href: "/terms", slug: "terms" },
+  { label: "Risk Disclaimer", href: "/risk-disclaimer", slug: "risk-disclaimer" },
+] as const;
+
+export type LegalSlug = (typeof legalLinks)[number]["slug"];

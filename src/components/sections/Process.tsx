@@ -1,6 +1,7 @@
 "use client";
 
 import { Container } from "@/components/ui/Container";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { useT } from "@/lib/i18n";
 
@@ -10,10 +11,8 @@ export function Process() {
     <section id="process" className="bg-paper py-20 md:py-28">
       <Container>
         <Reveal className="max-w-2xl">
-          <span className="text-sm font-semibold tracking-eyebrow text-ink-soft uppercase">
-            {t.eyebrow}
-          </span>
-          <h2 className="mt-5 font-display text-3xl font-extrabold leading-[1.02] tracking-[-0.04em] text-ink sm:text-5xl">
+          <Eyebrow>{t.eyebrow}</Eyebrow>
+          <h2 className="mt-5 font-display text-3xl font-bold leading-[1.02] tracking-[-0.02em] text-ink sm:text-5xl">
             {t.heading}
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-ink-soft">{t.body}</p>
@@ -24,16 +23,20 @@ export function Process() {
             <div
               key={step.n}
               className={
-                "flex flex-col rounded-[var(--radius-card)] p-7 transition-all duration-300 hover:-translate-y-1 " +
+                "group relative flex flex-col overflow-hidden rounded-[var(--radius-card)] p-7 transition-all duration-300 ease-[var(--ease-out-expo)] hover:-translate-y-1.5 " +
                 (i === 0
                   ? "bg-teal text-white"
-                  : "bg-cream text-ink ring-1 ring-line hover:shadow-[0_24px_50px_-30px_rgba(4,48,59,0.4)]")
+                  : "bg-cream text-ink ring-1 ring-line hover:shadow-[0_28px_56px_-30px_rgba(4,48,59,0.45)]")
               }
             >
               <span
+                aria-hidden
+                className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-lime transition-transform duration-500 ease-[var(--ease-out-expo)] group-hover:scale-x-100"
+              />
+              <span
                 className={
-                  "font-display text-5xl font-extrabold leading-none " +
-                  (i === 0 ? "text-lime" : "text-ink/25")
+                  "font-display text-5xl font-bold leading-none transition-colors duration-300 " +
+                  (i === 0 ? "text-lime" : "text-ink/20 group-hover:text-lime-deep")
                 }
               >
                 {step.n}

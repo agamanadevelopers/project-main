@@ -27,11 +27,11 @@
   --color-line-soft: #e6e7dc;
 
   /* Fonts (wired via next/font in layout.tsx).
-     Archivo covers Latin; Noto Sans Kannada is the fallback for Kannada glyphs. */
-  --font-display: var(--font-archivo), var(--font-kannada), "Archivo", ui-sans-serif,
-    system-ui, sans-serif;
-  --font-sans: var(--font-archivo), var(--font-kannada), "Archivo", ui-sans-serif,
-    system-ui, sans-serif;
+     Display = Bricolage Grotesque, Body = Inter; Noto Sans Kannada covers Kannada. */
+  --font-display: var(--font-bricolage), var(--font-kannada), "Bricolage Grotesque",
+    ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), var(--font-kannada), "Inter", ui-sans-serif, system-ui,
+    sans-serif;
 
   /* Radii — Farmio uses large rounded corners */
   --radius-card: 1.5rem;
@@ -40,6 +40,8 @@
 
   /* Easings */
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 :root {
@@ -65,12 +67,13 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Heavy grotesk display type */
+/* Editorial display type — bold (not extra-bold) with open tracking for
+   readability. */
 .font-display {
   font-family: var(--font-display);
-  font-weight: 800;
-  letter-spacing: -0.045em;
-  line-height: 1.02;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
 }
 
 .tracking-eyebrow {
@@ -158,5 +161,149 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .art-float {
     animation: none;
+  }
+}
+
+/* Premium gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-lime) 0%, #b8e635 50%, var(--color-lime) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Soft glow behind premium elements */
+.glow-lime {
+  box-shadow:
+    0 0 40px -12px rgba(231, 243, 82, 0.35),
+    0 0 80px -24px rgba(231, 243, 82, 0.2);
+}
+
+/* Decorative grain overlay for depth */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Active nav dot */
+.nav-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--color-lime);
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  transition: transform 0.3s var(--ease-out-expo);
+}
+.nav-active .nav-dot {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* Stats counter animation */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Section divider */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-line) 20%,
+    var(--color-line) 80%,
+    transparent 100%
+  );
+}
+
+/* Premium button shine sweep on hover */
+.btn-shine::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.45) 50%,
+    transparent 70%
+  );
+  transform: translateX(-130%);
+  transition: transform 0.7s var(--ease-out-expo);
+  pointer-events: none;
+}
+.btn-shine:hover::before {
+  transform: translateX(130%);
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-shine::before {
+    display: none;
+  }
+}
+
+/* Hero scroll cue */
+@keyframes scrollCue {
+  0% { transform: translateY(0); opacity: 0; }
+  35% { opacity: 1; }
+  70% { opacity: 1; }
+  100% { transform: translateY(10px); opacity: 0; }
+}
+.scroll-cue span {
+  animation: scrollCue 1.8s var(--ease-out-soft) infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue span {
+    animation: none;
+  }
+}
+
+/* Reveal — image clip variant starts hidden (no flash pre-hydration) */
+.will-clip {
+  clip-path: inset(0 0 100% 0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .will-clip {
+    clip-path: none !important;
+  }
+}
+
+/* Hero carousel — staggered content entrance (replays on each slide change) */
+@keyframes heroContentIn {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.hero-in > * {
+  opacity: 0;
+  animation: heroContentIn 0.75s var(--ease-out-expo) forwards;
+}
+.hero-in > *:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.hero-in > *:nth-child(2) {
+  animation-delay: 0.16s;
+}
+.hero-in > *:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.hero-in > *:nth-child(4) {
+  animation-delay: 0.42s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-in > * {
+    animation: none;
+    opacity: 1;
   }
 }

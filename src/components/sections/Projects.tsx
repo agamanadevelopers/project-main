@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { useT } from "@/lib/i18n";
 import { images } from "@/lib/images";
@@ -14,10 +15,8 @@ export function Projects() {
       <Container>
         <Reveal className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div className="max-w-2xl">
-            <span className="text-sm font-semibold tracking-eyebrow text-ink-soft uppercase">
-              {t.eyebrow}
-            </span>
-            <h2 className="mt-5 font-display text-3xl font-extrabold leading-[1.02] tracking-[-0.04em] text-ink sm:text-5xl">
+            <Eyebrow>{t.eyebrow}</Eyebrow>
+            <h2 className="mt-5 font-display text-3xl font-bold leading-[1.02] tracking-[-0.02em] text-ink sm:text-5xl">
               {t.heading}
             </h2>
           </div>
@@ -28,7 +27,7 @@ export function Projects() {
           {t.items.map((p, i) => (
             <article
               key={p.name}
-              className="group relative flex flex-col overflow-hidden rounded-[var(--radius-2xl)] bg-teal text-white"
+              className="group relative flex flex-col overflow-hidden rounded-[var(--radius-2xl)] bg-teal text-white ring-1 ring-transparent transition-all duration-500 ease-[var(--ease-out-expo)] hover:-translate-y-2 hover:shadow-[0_40px_80px_-42px_rgba(4,48,59,0.65)]"
             >
               <div className="relative aspect-[4/5] overflow-hidden">
                 <Image
@@ -45,7 +44,7 @@ export function Projects() {
                 <div className="absolute inset-x-0 bottom-0 p-6">
                   <div className="flex items-end justify-between gap-3">
                     <div>
-                      <h3 className="font-display text-2xl font-extrabold tracking-tight md:text-[1.8rem]">
+                      <h3 className="font-display text-2xl font-bold tracking-tight md:text-[1.8rem]">
                         {p.name}
                       </h3>
                       <p className="mt-1 text-sm text-white/70">{p.place}</p>

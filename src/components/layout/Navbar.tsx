@@ -18,7 +18,7 @@ function Logo() {
       >
         A
       </span>
-      <span className="font-display text-xl font-extrabold tracking-tight text-ink">Agamana</span>
+      <span className="font-display text-xl font-bold tracking-tight text-ink">Agamana</span>
     </a>
   );
 }
@@ -27,12 +27,38 @@ export function Navbar() {
   const t = useT();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState<string>("");
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 24);
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      setProgress(max > 0 ? Math.min(1, y / max) : 0);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Scroll-spy: highlight the nav item for the section in view.
+  useEffect(() => {
+    const ids = navItems.map((n) => n.href.slice(1));
+    const els = ids
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => el !== null);
+    if (!els.length) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) setActive(e.target.id);
+        });
+      },
+      { rootMargin: "-45% 0px -50% 0px", threshold: 0 },
+    );
+    els.forEach((el) => io.observe(el));
+    return () => io.disconnect();
   }, []);
 
   useEffect(() => {
@@ -44,6 +70,12 @@ export function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 pt-3 sm:pt-4">
+      {/* Scroll progress bar */}
+      <div
+        aria-hidden
+        className="absolute inset-x-0 top-0 h-0.5 origin-left bg-lime transition-transform duration-150 ease-out"
+        style={{ transform: `scaleX(${progress})` }}
+      />
       <Container>
         <div
           className={cn(
@@ -56,15 +88,23 @@ export function Navbar() {
           <Logo />
 
           <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="text-[0.95rem] font-medium text-ink-soft transition-colors hover:text-ink"
-              >
-                {t.nav[item.key]}
-              </a>
-            ))}
+            {navItems.map((item) => {
+              const isActive = active === item.href.slice(1);
+              return (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  aria-current={isActive ? "true" : undefined}
+                  className={cn(
+                    "relative text-[0.95rem] font-medium transition-colors hover:text-ink",
+                    isActive ? "nav-active text-ink" : "text-ink-soft",
+                  )}
+                >
+                  {t.nav[item.key]}
+                  <span aria-hidden className="nav-dot" />
+                </a>
+              );
+            })}
           </nav>
 
           <div className="hidden items-center gap-3 lg:flex">

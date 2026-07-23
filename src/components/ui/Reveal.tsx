@@ -57,8 +57,8 @@ export function Reveal({
           y: 0,
           duration,
           delay,
-          ease: "power3.out",
-          stagger: stagger ? 0.09 : 0,
+          ease: "power4.out",
+          stagger: stagger ? 0.1 : 0,
           scrollTrigger: {
             trigger: el,
             start: "top 88%",

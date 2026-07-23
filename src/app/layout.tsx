@@ -1,12 +1,21 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo, Noto_Sans_Kannada } from "next/font/google";
+import { Bricolage_Grotesque, Inter, Noto_Sans_Kannada } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/site";
 import { buildJsonLd } from "@/lib/jsonld";
 import { Providers } from "@/components/Providers";
 
-const archivo = Archivo({
-  variable: "--font-archivo",
+// Display: an editorial grotesque with character but far more open/readable
+// than a tight extra-bold. Body: Inter for maximum legibility.
+const bricolage = Bricolage_Grotesque({
+  variable: "--font-bricolage",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "600", "700", "800"],
+});
+
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
 });
@@ -89,7 +98,7 @@ export default function RootLayout({
 }>) {
   const jsonLd = buildJsonLd();
   return (
-    <html lang="en-IN" className={`${archivo.variable} ${notoKannada.variable}`}>
+    <html lang="en-IN" className={`${bricolage.variable} ${inter.variable} ${notoKannada.variable}`}>
       <head>
         {/* No-JS fallback: ensure reveal content is visible without hydration */}
         <noscript>

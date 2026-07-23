@@ -2,16 +2,18 @@
 
 import { MapPin, Phone } from "lucide-react";
 import { Container } from "@/components/ui/Container";
-import { navItems, site } from "@/lib/site";
+import { CraftedBadge } from "@/components/ui/CraftedBadge";
+import { navItems, legalLinks, site } from "@/lib/site";
 import { useT } from "@/lib/i18n";
 
 const year = new Date().getFullYear();
+const WORDMARK = "AGAMANA".split("");
 
 export function Footer() {
   const t = useT();
   return (
-    <footer className="bg-teal-deep text-white">
-      <Container className="py-16 md:py-20">
+    <footer className="overflow-hidden bg-teal-deep text-white">
+      <Container className="pt-16 md:pt-20">
         <div className="grid gap-12 md:grid-cols-[1.4fr_0.8fr_1.2fr]">
           <div className="max-w-sm">
             <div className="flex items-center gap-2.5">
@@ -21,7 +23,7 @@ export function Footer() {
               >
                 A
               </span>
-              <span className="font-display text-xl font-extrabold tracking-tight">
+              <span className="font-display text-xl font-bold tracking-tight">
                 Agamana Projects
               </span>
             </div>
@@ -35,7 +37,7 @@ export function Footer() {
               {navItems.map((item) => (
                 <li key={item.href}>
                   <a
-                    href={item.href}
+                    href={`/${item.href}`}
                     className="text-[0.98rem] text-white/80 transition-colors hover:text-lime"
                   >
                     {t.nav[item.key]}
@@ -87,25 +89,52 @@ export function Footer() {
             </div>
           </div>
         </div>
+      </Container>
 
-        <div className="mt-14 border-t border-white/10 pt-6">
-          <div className="flex flex-col gap-2 text-sm text-white/45 sm:flex-row sm:items-center sm:justify-between">
+      {/* Oversized brand wordmark with per-letter hover ripple */}
+      <div
+        className="group relative mt-14 cursor-default select-none px-4 md:mt-16"
+        aria-hidden
+      >
+        <div className="flex justify-center leading-[0.8]">
+          {WORDMARK.map((ch, i) => (
+            <span
+              key={i}
+              style={{ transitionDelay: `${i * 45}ms` }}
+              className="inline-block font-display text-[21vw] font-bold tracking-[-0.02em] text-white/[0.1] transition-[transform,color] duration-500 ease-[var(--ease-spring)] group-hover:-translate-y-[0.08em] group-hover:text-lime motion-reduce:transition-colors motion-reduce:group-hover:translate-y-0"
+            >
+              {ch}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <Container className="pb-10 pt-8 md:pb-12">
+        <div className="border-t border-white/10 pt-6">
+          <div className="flex flex-col gap-4 text-sm text-white/45 md:flex-row md:items-center md:justify-between">
             <p>
               © {year} {site.legalName}. {t.footer.rights}
             </p>
-            <p>{t.footer.disclaimer}</p>
-          </div>
-          <p className="mt-4 text-sm text-white/45">
-            Developed by{" "}
-            <a
-              href="https://navodita.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-white/75 underline decoration-lime decoration-2 underline-offset-4 transition-colors hover:text-lime"
+            <nav
+              aria-label="Legal"
+              className="flex flex-wrap gap-x-6 gap-y-2"
             >
-              Navodita
-            </a>
-          </p>
+              {legalLinks.map((l) => (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  className="transition-colors hover:text-lime"
+                >
+                  {l.label}
+                </a>
+              ))}
+            </nav>
+          </div>
+
+          {/* Crafted-by badge */}
+          <div className="mt-8 flex justify-center">
+            <CraftedBadge />
+          </div>
         </div>
       </Container>
     </footer>

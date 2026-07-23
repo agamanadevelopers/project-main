@@ -15,20 +15,25 @@ type Dict = {
     seeProjects: string;
   };
   hero: {
-    eyebrow: string;
-    headline: string;
-    supporting: string;
+    slides: {
+      eyebrow: string;
+      headline: string;
+      supporting: string;
+      primary: string;
+      secondary: string;
+    }[];
   };
   audience: {
     eyebrow: string;
     heading: string;
     supporting: string;
-    cards: { kicker: string; title: string; lead: string; body: string; cta: string }[];
+    cards: { title: string; body: string; cta: string }[];
   };
   journey: {
     eyebrow: string;
     caption: string;
     intro: string;
+    footnote: string;
     steps: { n: string; label: string; note: string }[];
   };
   services: {
@@ -48,10 +53,8 @@ type Dict = {
     heading: string;
     lead: string;
     body: string;
-    quote: string;
-    quoteBy: string;
+    tagline: string;
     pillars: { title: string; body: string }[];
-    stats: { value: string; label: string }[];
   };
   process: {
     eyebrow: string;
@@ -107,46 +110,64 @@ const en: Dict = {
     process: "Process",
     faq: "FAQ",
   },
-  common: { letsTalk: "Let's Talk", seeProjects: "See Our Projects" },
+  common: { letsTalk: "Let's Talk", seeProjects: "View Our Projects" },
   hero: {
-    eyebrow: "Land development partner",
-    headline: "You Have the Land. We'll Help You Build the Project.",
-    supporting:
-      "Whether you own land or already have a project, we help you plan, build, brand and bring it to market — one partner for every step.",
-  },
-  audience: {
-    eyebrow: "Who we work with",
-    heading: "Tell us where you're starting.",
-    supporting:
-      "Whether you own land or are already developing a residential project, Agamana Projects is built to support you.",
-    cards: [
+    slides: [
       {
-        kicker: "Land Owner",
-        title: "I Own Land",
-        lead: "Own land and want to develop it?",
-        body: "We'll help you transform your land into a professionally planned residential layout.",
-        cta: "Learn More",
+        eyebrow: "For Land Owners",
+        headline: "Own Land?\nLet's Build Something Valuable Together.",
+        supporting:
+          "Whether it's 2 acres or 50 acres, we help you plan, develop and launch your residential layout with the right strategy and support.",
+        primary: "Discuss Your Land",
+        secondary: "See How We Work",
       },
       {
-        kicker: "Developer",
-        title: "I'm Developing a Project",
-        lead: "Already working on a residential project?",
-        body: "We'll help you build a stronger brand, market your project and support a successful launch.",
-        cta: "Learn More",
+        eyebrow: "For Developers",
+        headline: "Building a Project?\nFocus on Development. We'll Handle the Rest.",
+        supporting:
+          "From project branding and marketing to launch support, we help you present your project professionally and reach the right buyers.",
+        primary: "Discuss Your Project",
+        secondary: "View Our Projects",
+      },
+      {
+        eyebrow: "Agamana Projects",
+        headline: "One Partner.\nEvery Step of Your Project.",
+        supporting:
+          "Planning. Approvals. Infrastructure. Branding. Marketing. Everything you need to take your project from land to launch.",
+        primary: "Explore Our Services",
+        secondary: "Let's Talk",
+      },
+    ],
+  },
+  audience: {
+    eyebrow: "Who it's for",
+    heading: "Who We Work With",
+    supporting:
+      "We work with people at different stages of their project journey. Choose the one that best describes you.",
+    cards: [
+      {
+        title: "Land Owners",
+        body: "You own land and want to develop it into a residential layout or plotted project.",
+        cta: "Explore Solutions",
+      },
+      {
+        title: "Developers",
+        body: "You already have a project and need help with branding, marketing or launching it successfully.",
+        cta: "Explore Solutions",
       },
     ],
   },
   journey: {
-    eyebrow: "Project journey",
-    caption: "One Partner. Every Step.",
-    intro:
-      "From raw land to a confident launch — we stay with you through every stage, so nothing falls through the cracks.",
+    eyebrow: "The Journey",
+    caption: "From Land to Launch.",
+    intro: "We stay with your project at every stage.",
+    footnote: "One team. One process. One point of contact.",
     steps: [
       { n: "01", label: "Land", note: "It starts with your ground." },
       { n: "02", label: "Planning", note: "The right decisions, early." },
       { n: "03", label: "Layout Design", note: "Plots that sell themselves." },
       { n: "04", label: "Approvals", note: "Clean, compliant, on record." },
-      { n: "05", label: "Roads & Amenities", note: "Real infrastructure on site." },
+      { n: "05", label: "Roads & Infrastructure", note: "Real infrastructure on site." },
       { n: "06", label: "Branding", note: "A name people trust." },
       { n: "07", label: "Marketing", note: "The right buyers, reached." },
       { n: "08", label: "Launch", note: "Ready for the market." },
@@ -154,8 +175,8 @@ const en: Dict = {
   },
   services: {
     eyebrow: "How we help",
-    heading: "Everything around your project, handled.",
-    body: "You focus on your land or your idea. We take care of the rest — from the first plan to launch day.",
+    heading: "Everything Your Project Needs.",
+    body: "No matter where you are in your journey, we're here to help.",
     items: [
       {
         title: "Layout Planning",
@@ -205,9 +226,9 @@ const en: Dict = {
     ],
   },
   projects: {
-    eyebrow: "Featured projects",
-    heading: "Land, shaped into places to live.",
-    intro: "A few of the projects we're proud to partner on across Karnataka.",
+    eyebrow: "Our work",
+    heading: "Projects We've Worked On",
+    intro: "Every project is different. Here's a look at some of our work.",
     items: [
       {
         name: "Tapovana",
@@ -231,65 +252,59 @@ const en: Dict = {
   },
   why: {
     eyebrow: "Why Agamana",
-    heading: "Professional project planning, brought to your land.",
-    lead: "Many people own good land. Many developers have good ideas. But turning them into successful projects takes the right planning — done properly, from the very start.",
-    body: "We started Agamana Projects to bring professional planning, branding and marketing to regional developers and land owners — the kind of care usually reserved for big-city projects, delivered close to home across Karnataka.",
-    quote: "You focus on your project. We'll help you with everything around it.",
-    quoteBy: "The Agamana promise",
+    heading: "Why Choose Agamana Projects?",
+    lead: "Developing a successful project takes planning, coordination and the right team.",
+    body: "We're here to help you through every stage.",
+    tagline: "Trusted Partner for Every Stage",
     pillars: [
       {
-        title: "One point of contact",
-        body: "From the first plan to launch day, you work with a single, accountable partner.",
+        title: "We Understand Land Development",
+        body: "From planning your layout to launching your project, we know what it takes.",
       },
       {
-        title: "Planning-first",
-        body: "The right decisions early save time, money and costly mistakes later.",
+        title: "We Keep Things Simple",
+        body: "One team to guide you through every stage.",
       },
       {
-        title: "Local, on the ground",
-        body: "We know Karnataka's Tier 2 and Tier 3 towns and work close to your site.",
+        title: "We Focus on Quality",
+        body: "Every project deserves proper planning and attention to detail.",
       },
       {
-        title: "End to end",
-        body: "Layouts, approvals, roads, branding and marketing — all under one roof.",
+        title: "We Work Like Partners",
+        body: "Your project's success is our success.",
       },
-    ],
-    stats: [
-      { value: "8", label: "Steps, one partner" },
-      { value: "3", label: "Projects underway" },
-      { value: "1", label: "Point of contact" },
     ],
   },
   process: {
-    eyebrow: "The process",
-    heading: "Simple, clear and honest.",
-    body: "Four steps from your first message to a project ready for the market.",
+    eyebrow: "How we work",
+    heading: "Our Process",
+    body: "Simple. Clear. Transparent.",
     steps: [
       {
         n: "01",
-        title: "Tell us about your land or project.",
-        body: "Share where you are today — a plot, an idea, or a project already in motion.",
+        title: "Understand Your Land",
+        body: "We begin by understanding your land, location and goals.",
       },
       {
         n: "02",
-        title: "We understand your requirements.",
-        body: "We listen, study the ground and understand what you want to build.",
+        title: "Plan the Project",
+        body: "We prepare the layout and development plan.",
       },
       {
         n: "03",
-        title: "We prepare a clear plan.",
-        body: "A simple, honest roadmap covering planning, approvals, branding and launch.",
+        title: "Develop & Build",
+        body: "We coordinate the required development work.",
       },
       {
         n: "04",
-        title: "We help you build and launch.",
-        body: "We stay with you through execution, marketing and a confident launch.",
+        title: "Brand & Launch",
+        body: "Once everything is ready, we help bring your project to the market.",
       },
     ],
   },
   faq: {
-    eyebrow: "Questions",
-    heading: "We've got answers.",
+    eyebrow: "FAQ",
+    heading: "Frequently Asked Questions",
     intro:
       "Still unsure where you fit? Tell us about your land or project and we'll point you in the right direction.",
     items: [
@@ -320,9 +335,9 @@ const en: Dict = {
     ],
   },
   cta: {
-    eyebrow: "Let's build",
-    headline: "Ready to build your project?",
-    body: "Tell us about your land or your project. We'll help you plan it, build it, brand it and bring it to market.",
+    eyebrow: "Get in touch",
+    headline: "Let's Build Something Great Together.",
+    body: "Whether you're planning your first project or your next one, we'd love to hear from you.",
   },
   footer: {
     tagline: "You focus on your project. We'll help you with everything around it.",
@@ -367,44 +382,62 @@ const kn: Dict = {
   },
   common: { letsTalk: "ಮಾತನಾಡೋಣ", seeProjects: "ನಮ್ಮ ಯೋಜನೆಗಳನ್ನು ನೋಡಿ" },
   hero: {
-    eyebrow: "ಭೂ ಅಭಿವೃದ್ಧಿ ಪಾಲುದಾರ",
-    headline: "ನಿಮ್ಮ ಬಳಿ ಭೂಮಿ ಇದೆ. ಯೋಜನೆ ರೂಪಿಸಲು ನಾವು ಸಹಾಯ ಮಾಡುತ್ತೇವೆ.",
-    supporting:
-      "ನಿಮ್ಮ ಬಳಿ ಭೂಮಿ ಇರಲಿ ಅಥವಾ ಈಗಾಗಲೇ ಯೋಜನೆ ಇರಲಿ — ಯೋಜನೆ, ನಿರ್ಮಾಣ, ಬ್ರಾಂಡಿಂಗ್ ಮತ್ತು ಮಾರುಕಟ್ಟೆಗೆ ತರುವವರೆಗೆ ಪ್ರತಿ ಹಂತದಲ್ಲೂ ಒಬ್ಬ ಪಾಲುದಾರ.",
-  },
-  audience: {
-    eyebrow: "ನಾವು ಯಾರೊಂದಿಗೆ ಕೆಲಸ ಮಾಡುತ್ತೇವೆ",
-    heading: "ನೀವು ಎಲ್ಲಿಂದ ಆರಂಭಿಸುತ್ತಿದ್ದೀರಿ ಎಂದು ತಿಳಿಸಿ.",
-    supporting:
-      "ನೀವು ಭೂಮಿ ಹೊಂದಿರಲಿ ಅಥವಾ ಈಗಾಗಲೇ ವಸತಿ ಯೋಜನೆ ಅಭಿವೃದ್ಧಿಪಡಿಸುತ್ತಿರಲಿ, ಆಗಮನ ಪ್ರಾಜೆಕ್ಟ್ಸ್ ನಿಮಗೆ ಬೆಂಬಲ ನೀಡಲು ರಚಿಸಲಾಗಿದೆ.",
-    cards: [
+    slides: [
       {
-        kicker: "ಭೂ ಮಾಲೀಕ",
-        title: "ನನ್ನ ಬಳಿ ಭೂಮಿ ಇದೆ",
-        lead: "ಭೂಮಿ ಹೊಂದಿದ್ದೀರಾ ಮತ್ತು ಅದನ್ನು ಅಭಿವೃದ್ಧಿಪಡಿಸಲು ಬಯಸುತ್ತೀರಾ?",
-        body: "ನಿಮ್ಮ ಭೂಮಿಯನ್ನು ವೃತ್ತಿಪರವಾಗಿ ಯೋಜಿಸಿದ ವಸತಿ ಲೇಔಟ್ ಆಗಿ ಪರಿವರ್ತಿಸಲು ನಾವು ಸಹಾಯ ಮಾಡುತ್ತೇವೆ.",
-        cta: "ಇನ್ನಷ್ಟು ತಿಳಿಯಿರಿ",
+        eyebrow: "ಭೂ ಮಾಲೀಕರಿಗಾಗಿ",
+        headline: "ಭೂಮಿ ಇದೆಯೇ?\nಒಟ್ಟಿಗೆ ಮೌಲ್ಯಯುತವಾದದ್ದನ್ನು ನಿರ್ಮಿಸೋಣ.",
+        supporting:
+          "2 ಎಕರೆ ಇರಲಿ ಅಥವಾ 50 ಎಕರೆ ಇರಲಿ, ಸರಿಯಾದ ಕಾರ್ಯತಂತ್ರ ಮತ್ತು ಬೆಂಬಲದೊಂದಿಗೆ ನಿಮ್ಮ ವಸತಿ ಲೇಔಟ್ ಅನ್ನು ಯೋಜಿಸಲು, ಅಭಿವೃದ್ಧಿಪಡಿಸಲು ಮತ್ತು ಬಿಡುಗಡೆ ಮಾಡಲು ನಾವು ಸಹಾಯ ಮಾಡುತ್ತೇವೆ.",
+        primary: "ನಿಮ್ಮ ಭೂಮಿ ಬಗ್ಗೆ ಮಾತನಾಡಿ",
+        secondary: "ನಾವು ಹೇಗೆ ಕೆಲಸ ಮಾಡುತ್ತೇವೆ ನೋಡಿ",
       },
       {
-        kicker: "ಡೆವಲಪರ್",
-        title: "ನಾನು ಯೋಜನೆ ಅಭಿವೃದ್ಧಿಪಡಿಸುತ್ತಿದ್ದೇನೆ",
-        lead: "ಈಗಾಗಲೇ ವಸತಿ ಯೋಜನೆಯಲ್ಲಿ ಕೆಲಸ ಮಾಡುತ್ತಿದ್ದೀರಾ?",
-        body: "ಬಲವಾದ ಬ್ರಾಂಡ್ ರೂಪಿಸಲು, ನಿಮ್ಮ ಯೋಜನೆಯನ್ನು ಮಾರಾಟ ಮಾಡಲು ಮತ್ತು ಯಶಸ್ವಿ ಬಿಡುಗಡೆಗೆ ಬೆಂಬಲ ನೀಡಲು ನಾವು ಸಹಾಯ ಮಾಡುತ್ತೇವೆ.",
-        cta: "ಇನ್ನಷ್ಟು ತಿಳಿಯಿರಿ",
+        eyebrow: "ಡೆವಲಪರ್‌ಗಳಿಗಾಗಿ",
+        headline: "ಯೋಜನೆ ನಿರ್ಮಿಸುತ್ತಿದ್ದೀರಾ?\nಅಭಿವೃದ್ಧಿಯ ಮೇಲೆ ಗಮನ ಕೊಡಿ. ಉಳಿದದ್ದನ್ನು ನಾವು ನೋಡಿಕೊಳ್ಳುತ್ತೇವೆ.",
+        supporting:
+          "ಯೋಜನೆ ಬ್ರಾಂಡಿಂಗ್ ಮತ್ತು ಮಾರ್ಕೆಟಿಂಗ್‌ನಿಂದ ಬಿಡುಗಡೆ ಬೆಂಬಲದವರೆಗೆ, ನಿಮ್ಮ ಯೋಜನೆಯನ್ನು ವೃತ್ತಿಪರವಾಗಿ ಪ್ರಸ್ತುತಪಡಿಸಲು ಮತ್ತು ಸರಿಯಾದ ಖರೀದಿದಾರರನ್ನು ತಲುಪಲು ನಾವು ಸಹಾಯ ಮಾಡುತ್ತೇವೆ.",
+        primary: "ನಿಮ್ಮ ಯೋಜನೆ ಬಗ್ಗೆ ಮಾತನಾಡಿ",
+        secondary: "ನಮ್ಮ ಯೋಜನೆಗಳನ್ನು ನೋಡಿ",
+      },
+      {
+        eyebrow: "ಆಗಮನ ಪ್ರಾಜೆಕ್ಟ್ಸ್",
+        headline: "ಒಬ್ಬ ಪಾಲುದಾರ.\nನಿಮ್ಮ ಯೋಜನೆಯ ಪ್ರತಿ ಹಂತದಲ್ಲೂ.",
+        supporting:
+          "ಯೋಜನೆ. ಅನುಮೋದನೆ. ಮೂಲಸೌಕರ್ಯ. ಬ್ರಾಂಡಿಂಗ್. ಮಾರ್ಕೆಟಿಂಗ್. ನಿಮ್ಮ ಯೋಜನೆಯನ್ನು ಭೂಮಿಯಿಂದ ಬಿಡುಗಡೆಯವರೆಗೆ ಕೊಂಡೊಯ್ಯಲು ಬೇಕಾದ ಎಲ್ಲವೂ.",
+        primary: "ನಮ್ಮ ಸೇವೆಗಳನ್ನು ಅನ್ವೇಷಿಸಿ",
+        secondary: "ಮಾತನಾಡೋಣ",
+      },
+    ],
+  },
+  audience: {
+    eyebrow: "ಯಾರಿಗಾಗಿ",
+    heading: "ನಾವು ಯಾರೊಂದಿಗೆ ಕೆಲಸ ಮಾಡುತ್ತೇವೆ",
+    supporting:
+      "ನಾವು ತಮ್ಮ ಯೋಜನೆಯ ವಿವಿಧ ಹಂತಗಳಲ್ಲಿರುವ ಜನರೊಂದಿಗೆ ಕೆಲಸ ಮಾಡುತ್ತೇವೆ. ನಿಮಗೆ ಸೂಕ್ತವಾದದ್ದನ್ನು ಆರಿಸಿ.",
+    cards: [
+      {
+        title: "ಭೂ ಮಾಲೀಕರು",
+        body: "ನಿಮ್ಮ ಬಳಿ ಭೂಮಿ ಇದೆ ಮತ್ತು ಅದನ್ನು ವಸತಿ ಲೇಔಟ್ ಅಥವಾ ಪ್ಲಾಟ್ ಯೋಜನೆಯಾಗಿ ಅಭಿವೃದ್ಧಿಪಡಿಸಲು ಬಯಸುತ್ತೀರಿ.",
+        cta: "ಪರಿಹಾರಗಳನ್ನು ಅನ್ವೇಷಿಸಿ",
+      },
+      {
+        title: "ಡೆವಲಪರ್‌ಗಳು",
+        body: "ನಿಮ್ಮ ಬಳಿ ಈಗಾಗಲೇ ಯೋಜನೆ ಇದೆ ಮತ್ತು ಬ್ರಾಂಡಿಂಗ್, ಮಾರ್ಕೆಟಿಂಗ್ ಅಥವಾ ಯಶಸ್ವಿ ಬಿಡುಗಡೆಗೆ ಸಹಾಯ ಬೇಕಿದೆ.",
+        cta: "ಪರಿಹಾರಗಳನ್ನು ಅನ್ವೇಷಿಸಿ",
       },
     ],
   },
   journey: {
-    eyebrow: "ಯೋಜನೆಯ ಹಂತಗಳು",
-    caption: "ಒಬ್ಬ ಪಾಲುದಾರ. ಪ್ರತಿ ಹಂತ.",
-    intro:
-      "ಭೂಮಿಯಿಂದ ಆತ್ಮವಿಶ್ವಾಸದ ಬಿಡುಗಡೆಯವರೆಗೆ — ಪ್ರತಿ ಹಂತದಲ್ಲೂ ನಾವು ನಿಮ್ಮೊಂದಿಗಿರುತ್ತೇವೆ, ಯಾವುದೂ ಬಿಟ್ಟುಹೋಗದಂತೆ.",
+    eyebrow: "ಪ್ರಯಾಣ",
+    caption: "ಭೂಮಿಯಿಂದ ಬಿಡುಗಡೆಯವರೆಗೆ.",
+    intro: "ಪ್ರತಿ ಹಂತದಲ್ಲೂ ನಾವು ನಿಮ್ಮ ಯೋಜನೆಯೊಂದಿಗಿರುತ್ತೇವೆ.",
+    footnote: "ಒಂದೇ ತಂಡ. ಒಂದೇ ಪ್ರಕ್ರಿಯೆ. ಒಂದೇ ಸಂಪರ್ಕ ಕೇಂದ್ರ.",
     steps: [
       { n: "01", label: "ಭೂಮಿ", note: "ಇದು ನಿಮ್ಮ ನೆಲದಿಂದ ಆರಂಭ." },
       { n: "02", label: "ಯೋಜನೆ", note: "ಸರಿಯಾದ ನಿರ್ಧಾರಗಳು, ಮೊದಲೇ." },
       { n: "03", label: "ಲೇಔಟ್ ವಿನ್ಯಾಸ", note: "ತಾವಾಗಿಯೇ ಮಾರಾಟವಾಗುವ ಪ್ಲಾಟ್‌ಗಳು." },
       { n: "04", label: "ಅನುಮೋದನೆಗಳು", note: "ಸ್ವಚ್ಛ, ನಿಯಮಬದ್ಧ, ದಾಖಲೆಯಲ್ಲಿ." },
-      { n: "05", label: "ರಸ್ತೆ ಮತ್ತು ಸೌಕರ್ಯ", note: "ಸ್ಥಳದಲ್ಲಿ ನಿಜವಾದ ಮೂಲಸೌಕರ್ಯ." },
+      { n: "05", label: "ರಸ್ತೆ ಮತ್ತು ಮೂಲಸೌಕರ್ಯ", note: "ಸ್ಥಳದಲ್ಲಿ ನಿಜವಾದ ಮೂಲಸೌಕರ್ಯ." },
       { n: "06", label: "ಬ್ರಾಂಡಿಂಗ್", note: "ಜನರು ನಂಬುವ ಹೆಸರು." },
       { n: "07", label: "ಮಾರ್ಕೆಟಿಂಗ್", note: "ಸರಿಯಾದ ಖರೀದಿದಾರರನ್ನು ತಲುಪುವುದು." },
       { n: "08", label: "ಬಿಡುಗಡೆ", note: "ಮಾರುಕಟ್ಟೆಗೆ ಸಿದ್ಧ." },
@@ -412,8 +445,8 @@ const kn: Dict = {
   },
   services: {
     eyebrow: "ನಾವು ಹೇಗೆ ಸಹಾಯ ಮಾಡುತ್ತೇವೆ",
-    heading: "ನಿಮ್ಮ ಯೋಜನೆಯ ಸುತ್ತಲಿನ ಎಲ್ಲವನ್ನೂ ನಿರ್ವಹಿಸುತ್ತೇವೆ.",
-    body: "ನಿಮ್ಮ ಭೂಮಿ ಅಥವಾ ಕಲ್ಪನೆಯ ಮೇಲೆ ಗಮನ ಕೊಡಿ. ಉಳಿದದ್ದನ್ನು ನಾವು ನೋಡಿಕೊಳ್ಳುತ್ತೇವೆ — ಮೊದಲ ಯೋಜನೆಯಿಂದ ಬಿಡುಗಡೆಯ ದಿನದವರೆಗೆ.",
+    heading: "ನಿಮ್ಮ ಯೋಜನೆಗೆ ಬೇಕಾದ ಎಲ್ಲವೂ.",
+    body: "ನಿಮ್ಮ ಪ್ರಯಾಣದ ಯಾವುದೇ ಹಂತದಲ್ಲಿ ಇರಲಿ, ಸಹಾಯ ಮಾಡಲು ನಾವು ಇದ್ದೇವೆ.",
     items: [
       {
         title: "ಲೇಔಟ್ ಯೋಜನೆ",
@@ -463,9 +496,9 @@ const kn: Dict = {
     ],
   },
   projects: {
-    eyebrow: "ವಿಶೇಷ ಯೋಜನೆಗಳು",
-    heading: "ಭೂಮಿ, ವಾಸಿಸುವ ತಾಣವಾಗಿ ರೂಪುಗೊಂಡಿದೆ.",
-    intro: "ಕರ್ನಾಟಕದಾದ್ಯಂತ ನಾವು ಹೆಮ್ಮೆಯಿಂದ ಪಾಲುದಾರರಾಗಿರುವ ಕೆಲವು ಯೋಜನೆಗಳು.",
+    eyebrow: "ನಮ್ಮ ಕೆಲಸ",
+    heading: "ನಾವು ಕೆಲಸ ಮಾಡಿದ ಯೋಜನೆಗಳು",
+    intro: "ಪ್ರತಿ ಯೋಜನೆಯೂ ಭಿನ್ನ. ನಮ್ಮ ಕೆಲವು ಕೆಲಸಗಳ ನೋಟ ಇಲ್ಲಿದೆ.",
     items: [
       {
         name: "ತಪೋವನ",
@@ -489,65 +522,59 @@ const kn: Dict = {
   },
   why: {
     eyebrow: "ಏಕೆ ಆಗಮನ",
-    heading: "ವೃತ್ತಿಪರ ಯೋಜನಾ ಯೋಜನೆ, ನಿಮ್ಮ ಭೂಮಿಗೆ.",
-    lead: "ಅನೇಕರ ಬಳಿ ಒಳ್ಳೆಯ ಭೂಮಿ ಇದೆ. ಅನೇಕ ಡೆವಲಪರ್‌ಗಳ ಬಳಿ ಒಳ್ಳೆಯ ಕಲ್ಪನೆಗಳಿವೆ. ಆದರೆ ಅವುಗಳನ್ನು ಯಶಸ್ವಿ ಯೋಜನೆಗಳಾಗಿ ಪರಿವರ್ತಿಸಲು ಆರಂಭದಿಂದಲೇ ಸರಿಯಾದ ಯೋಜನೆ ಬೇಕು.",
-    body: "ದೊಡ್ಡ ನಗರಗಳ ಯೋಜನೆಗಳಿಗೆ ಸಿಗುವ ವೃತ್ತಿಪರ ಯೋಜನೆ, ಬ್ರಾಂಡಿಂಗ್ ಮತ್ತು ಮಾರ್ಕೆಟಿಂಗ್ ಅನ್ನು ಕರ್ನಾಟಕದ ಪ್ರಾದೇಶಿಕ ಡೆವಲಪರ್‌ಗಳಿಗೆ ಮತ್ತು ಭೂ ಮಾಲೀಕರಿಗೆ ತರಲು ನಾವು ಆಗಮನ ಪ್ರಾಜೆಕ್ಟ್ಸ್ ಆರಂಭಿಸಿದೆವು.",
-    quote: "ನೀವು ನಿಮ್ಮ ಯೋಜನೆಯ ಮೇಲೆ ಗಮನ ಕೊಡಿ. ಸುತ್ತಲಿನ ಎಲ್ಲದರಲ್ಲೂ ನಾವು ಸಹಾಯ ಮಾಡುತ್ತೇವೆ.",
-    quoteBy: "ಆಗಮನ ಭರವಸೆ",
+    heading: "ಆಗಮನ ಪ್ರಾಜೆಕ್ಟ್ಸ್ ಅನ್ನು ಏಕೆ ಆರಿಸಬೇಕು?",
+    lead: "ಯಶಸ್ವಿ ಯೋಜನೆ ಅಭಿವೃದ್ಧಿಗೆ ಯೋಜನೆ, ಸಮನ್ವಯ ಮತ್ತು ಸರಿಯಾದ ತಂಡ ಬೇಕು.",
+    body: "ಪ್ರತಿ ಹಂತದಲ್ಲೂ ನಿಮಗೆ ಸಹಾಯ ಮಾಡಲು ನಾವು ಇದ್ದೇವೆ.",
+    tagline: "ಪ್ರತಿ ಹಂತಕ್ಕೂ ವಿಶ್ವಾಸಾರ್ಹ ಪಾಲುದಾರ",
     pillars: [
       {
-        title: "ಒಂದೇ ಸಂಪರ್ಕ ಕೇಂದ್ರ",
-        body: "ಮೊದಲ ಯೋಜನೆಯಿಂದ ಬಿಡುಗಡೆಯ ದಿನದವರೆಗೆ, ನೀವು ಒಬ್ಬ ಜವಾಬ್ದಾರ ಪಾಲುದಾರರೊಂದಿಗೆ ಕೆಲಸ ಮಾಡುತ್ತೀರಿ.",
+        title: "ನಮಗೆ ಭೂ ಅಭಿವೃದ್ಧಿ ಗೊತ್ತು",
+        body: "ನಿಮ್ಮ ಲೇಔಟ್ ಯೋಜಿಸುವುದರಿಂದ ಯೋಜನೆ ಬಿಡುಗಡೆಯವರೆಗೆ, ಏನು ಬೇಕೆಂದು ನಮಗೆ ಗೊತ್ತು.",
       },
       {
-        title: "ಯೋಜನೆಗೆ ಮೊದಲ ಆದ್ಯತೆ",
-        body: "ಆರಂಭದಲ್ಲೇ ಸರಿಯಾದ ನಿರ್ಧಾರಗಳು ನಂತರ ಸಮಯ, ಹಣ ಮತ್ತು ತಪ್ಪುಗಳನ್ನು ಉಳಿಸುತ್ತವೆ.",
+        title: "ನಾವು ವಿಷಯಗಳನ್ನು ಸರಳವಾಗಿಡುತ್ತೇವೆ",
+        body: "ಪ್ರತಿ ಹಂತದಲ್ಲೂ ಮಾರ್ಗದರ್ಶನ ನೀಡಲು ಒಂದೇ ತಂಡ.",
       },
       {
-        title: "ಸ್ಥಳೀಯ, ನೆಲದ ಮೇಲೆ",
-        body: "ಕರ್ನಾಟಕದ ಟಯರ್ 2 ಮತ್ತು ಟಯರ್ 3 ಪಟ್ಟಣಗಳು ನಮಗೆ ಗೊತ್ತು, ನಿಮ್ಮ ಸ್ಥಳದ ಹತ್ತಿರವೇ ಕೆಲಸ ಮಾಡುತ್ತೇವೆ.",
+        title: "ನಾವು ಗುಣಮಟ್ಟದ ಮೇಲೆ ಗಮನ ಕೊಡುತ್ತೇವೆ",
+        body: "ಪ್ರತಿ ಯೋಜನೆಗೂ ಸರಿಯಾದ ಯೋಜನೆ ಮತ್ತು ವಿವರಗಳ ಗಮನ ಬೇಕು.",
       },
       {
-        title: "ಆರಂಭದಿಂದ ಕೊನೆಯವರೆಗೆ",
-        body: "ಲೇಔಟ್, ಅನುಮೋದನೆ, ರಸ್ತೆ, ಬ್ರಾಂಡಿಂಗ್ ಮತ್ತು ಮಾರ್ಕೆಟಿಂಗ್ — ಎಲ್ಲವೂ ಒಂದೇ ಸೂರಿನಡಿ.",
+        title: "ನಾವು ಪಾಲುದಾರರಂತೆ ಕೆಲಸ ಮಾಡುತ್ತೇವೆ",
+        body: "ನಿಮ್ಮ ಯೋಜನೆಯ ಯಶಸ್ಸು ನಮ್ಮ ಯಶಸ್ಸು.",
       },
-    ],
-    stats: [
-      { value: "8", label: "ಹಂತಗಳು, ಒಬ್ಬ ಪಾಲುದಾರ" },
-      { value: "3", label: "ನಡೆಯುತ್ತಿರುವ ಯೋಜನೆಗಳು" },
-      { value: "1", label: "ಸಂಪರ್ಕ ಕೇಂದ್ರ" },
     ],
   },
   process: {
-    eyebrow: "ಪ್ರಕ್ರಿಯೆ",
-    heading: "ಸರಳ, ಸ್ಪಷ್ಟ ಮತ್ತು ಪ್ರಾಮಾಣಿಕ.",
-    body: "ನಿಮ್ಮ ಮೊದಲ ಸಂದೇಶದಿಂದ ಮಾರುಕಟ್ಟೆಗೆ ಸಿದ್ಧವಾದ ಯೋಜನೆಯವರೆಗೆ ನಾಲ್ಕು ಹಂತಗಳು.",
+    eyebrow: "ನಾವು ಹೇಗೆ ಕೆಲಸ ಮಾಡುತ್ತೇವೆ",
+    heading: "ನಮ್ಮ ಪ್ರಕ್ರಿಯೆ",
+    body: "ಸರಳ. ಸ್ಪಷ್ಟ. ಪಾರದರ್ಶಕ.",
     steps: [
       {
         n: "01",
-        title: "ನಿಮ್ಮ ಭೂಮಿ ಅಥವಾ ಯೋಜನೆಯ ಬಗ್ಗೆ ತಿಳಿಸಿ.",
-        body: "ನೀವು ಈಗ ಎಲ್ಲಿದ್ದೀರೋ ಹಂಚಿಕೊಳ್ಳಿ — ಒಂದು ಪ್ಲಾಟ್, ಕಲ್ಪನೆ, ಅಥವಾ ಈಗಾಗಲೇ ನಡೆಯುತ್ತಿರುವ ಯೋಜನೆ.",
+        title: "ನಿಮ್ಮ ಭೂಮಿಯನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವುದು",
+        body: "ನಿಮ್ಮ ಭೂಮಿ, ಸ್ಥಳ ಮತ್ತು ಗುರಿಗಳನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವುದರಿಂದ ನಾವು ಆರಂಭಿಸುತ್ತೇವೆ.",
       },
       {
         n: "02",
-        title: "ನಿಮ್ಮ ಅಗತ್ಯಗಳನ್ನು ನಾವು ಅರ್ಥಮಾಡಿಕೊಳ್ಳುತ್ತೇವೆ.",
-        body: "ನಾವು ಆಲಿಸುತ್ತೇವೆ, ನೆಲವನ್ನು ಅಧ್ಯಯನ ಮಾಡುತ್ತೇವೆ ಮತ್ತು ನೀವು ಏನನ್ನು ನಿರ್ಮಿಸಬೇಕೆಂದಿದ್ದೀರೋ ಅರ್ಥಮಾಡಿಕೊಳ್ಳುತ್ತೇವೆ.",
+        title: "ಯೋಜನೆಯನ್ನು ರೂಪಿಸುವುದು",
+        body: "ನಾವು ಲೇಔಟ್ ಮತ್ತು ಅಭಿವೃದ್ಧಿ ಯೋಜನೆ ಸಿದ್ಧಪಡಿಸುತ್ತೇವೆ.",
       },
       {
         n: "03",
-        title: "ನಾವು ಸ್ಪಷ್ಟ ಯೋಜನೆ ಸಿದ್ಧಪಡಿಸುತ್ತೇವೆ.",
-        body: "ಯೋಜನೆ, ಅನುಮೋದನೆ, ಬ್ರಾಂಡಿಂಗ್ ಮತ್ತು ಬಿಡುಗಡೆಯನ್ನು ಒಳಗೊಂಡ ಸರಳ, ಪ್ರಾಮಾಣಿಕ ದಾರಿ.",
+        title: "ಅಭಿವೃದ್ಧಿ ಮತ್ತು ನಿರ್ಮಾಣ",
+        body: "ಅಗತ್ಯವಿರುವ ಅಭಿವೃದ್ಧಿ ಕೆಲಸವನ್ನು ನಾವು ಸಮನ್ವಯಗೊಳಿಸುತ್ತೇವೆ.",
       },
       {
         n: "04",
-        title: "ನಿರ್ಮಿಸಲು ಮತ್ತು ಬಿಡುಗಡೆ ಮಾಡಲು ನಾವು ಸಹಾಯ ಮಾಡುತ್ತೇವೆ.",
-        body: "ಕಾರ್ಯಗತ, ಮಾರ್ಕೆಟಿಂಗ್ ಮತ್ತು ಆತ್ಮವಿಶ್ವಾಸದ ಬಿಡುಗಡೆಯವರೆಗೂ ನಾವು ನಿಮ್ಮೊಂದಿಗಿರುತ್ತೇವೆ.",
+        title: "ಬ್ರಾಂಡ್ ಮತ್ತು ಬಿಡುಗಡೆ",
+        body: "ಎಲ್ಲವೂ ಸಿದ್ಧವಾದ ಮೇಲೆ, ನಿಮ್ಮ ಯೋಜನೆಯನ್ನು ಮಾರುಕಟ್ಟೆಗೆ ತರಲು ನಾವು ಸಹಾಯ ಮಾಡುತ್ತೇವೆ.",
       },
     ],
   },
   faq: {
     eyebrow: "ಪ್ರಶ್ನೆಗಳು",
-    heading: "ನಮ್ಮ ಬಳಿ ಉತ್ತರಗಳಿವೆ.",
+    heading: "ಪದೇ ಪದೇ ಕೇಳುವ ಪ್ರಶ್ನೆಗಳು",
     intro:
       "ನೀವು ಎಲ್ಲಿ ಹೊಂದಿಕೊಳ್ಳುತ್ತೀರಿ ಎಂದು ಖಚಿತವಿಲ್ಲವೇ? ನಿಮ್ಮ ಭೂಮಿ ಅಥವಾ ಯೋಜನೆಯ ಬಗ್ಗೆ ತಿಳಿಸಿ, ನಾವು ದಾರಿ ತೋರಿಸುತ್ತೇವೆ.",
     items: [
@@ -578,9 +605,9 @@ const kn: Dict = {
     ],
   },
   cta: {
-    eyebrow: "ನಿರ್ಮಿಸೋಣ",
-    headline: "ನಿಮ್ಮ ಯೋಜನೆ ನಿರ್ಮಿಸಲು ಸಿದ್ಧರೇ?",
-    body: "ನಿಮ್ಮ ಭೂಮಿ ಅಥವಾ ಯೋಜನೆಯ ಬಗ್ಗೆ ತಿಳಿಸಿ. ಯೋಜನೆ, ನಿರ್ಮಾಣ, ಬ್ರಾಂಡಿಂಗ್ ಮತ್ತು ಮಾರುಕಟ್ಟೆಗೆ ತರಲು ನಾವು ಸಹಾಯ ಮಾಡುತ್ತೇವೆ.",
+    eyebrow: "ಸಂಪರ್ಕಿಸಿ",
+    headline: "ಒಟ್ಟಿಗೆ ಅದ್ಭುತವಾದದ್ದನ್ನು ನಿರ್ಮಿಸೋಣ.",
+    body: "ನಿಮ್ಮ ಮೊದಲ ಯೋಜನೆಯಾಗಲಿ ಅಥವಾ ಮುಂದಿನದ್ದಾಗಲಿ, ನಿಮ್ಮಿಂದ ಕೇಳಲು ನಾವು ಇಷ್ಟಪಡುತ್ತೇವೆ.",
   },
   footer: {
     tagline: "ನೀವು ನಿಮ್ಮ ಯೋಜನೆಯ ಮೇಲೆ ಗಮನ ಕೊಡಿ. ಸುತ್ತಲಿನ ಎಲ್ಲದರಲ್ಲೂ ನಾವು ಸಹಾಯ ಮಾಡುತ್ತೇವೆ.",

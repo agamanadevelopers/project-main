@@ -21,16 +21,17 @@ export type Variant = "primary" | "dark" | "ghost" | "white";
 export type Size = "md" | "lg";
 
 const base =
-  "group inline-flex items-center justify-center gap-2.5 rounded-full font-semibold tracking-tight transition-all duration-200 ease-[var(--ease-out-soft)] focus-visible:outline-2 focus-visible:outline-offset-3 disabled:opacity-50 cursor-pointer";
+  "group relative overflow-hidden isolate inline-flex items-center justify-center gap-2.5 rounded-full font-semibold tracking-tight transition-all duration-300 ease-[var(--ease-out-expo)] focus-visible:outline-2 focus-visible:outline-offset-3 disabled:opacity-50 cursor-pointer";
 
 const variants: Record<Variant, string> = {
   // Lime pill, dark text — the signature Farmio CTA
   primary:
-    "bg-lime text-teal-deep hover:bg-lime-deep hover:-translate-y-0.5 hover:shadow-[0_12px_30px_-12px_rgba(4,48,59,0.5)] active:translate-y-0",
-  dark: "bg-teal text-paper hover:bg-teal-deep hover:-translate-y-0.5",
+    "btn-shine bg-lime text-teal-deep hover:bg-lime-deep hover:-translate-y-0.5 hover:shadow-[0_16px_36px_-14px_rgba(231,243,82,0.7)] active:translate-y-0",
+  dark: "btn-shine bg-teal text-paper hover:bg-teal-deep hover:-translate-y-0.5 hover:shadow-[0_16px_36px_-16px_rgba(4,48,59,0.6)]",
   ghost:
-    "bg-transparent text-ink ring-1 ring-inset ring-ink/20 hover:bg-ink hover:text-paper",
-  white: "bg-card text-ink ring-1 ring-inset ring-line hover:-translate-y-0.5 hover:shadow-lg",
+    "bg-transparent text-ink ring-1 ring-inset ring-ink/20 hover:bg-ink hover:text-paper hover:-translate-y-0.5",
+  white:
+    "btn-shine bg-card text-ink ring-1 ring-inset ring-line hover:-translate-y-0.5 hover:shadow-[0_16px_36px_-18px_rgba(4,48,59,0.4)]",
 };
 
 const sizes: Record<Size, string> = {

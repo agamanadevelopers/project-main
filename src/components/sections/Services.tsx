@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { WordReveal } from "@/components/ui/WordReveal";
 import { ContactButton } from "@/components/ui/ContactButton";
@@ -47,14 +48,12 @@ export function Services() {
         {/* Header */}
         <Reveal className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">
-            <span className="text-sm font-semibold tracking-eyebrow text-ink-soft uppercase">
-              {t.eyebrow}
-            </span>
+            <Eyebrow>{t.eyebrow}</Eyebrow>
             <div className="mt-4">
               <WordReveal
                 key={t.heading}
                 text={t.heading}
-                className="text-4xl font-extrabold leading-[1.02] tracking-[-0.04em] text-ink sm:text-5xl"
+                className="text-4xl font-bold leading-[1.02] tracking-[-0.02em] text-ink sm:text-5xl"
               />
             </div>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink-soft">{t.body}</p>
@@ -87,7 +86,7 @@ export function Services() {
                     <span className="block text-xs font-semibold uppercase tracking-eyebrow text-teal-deep/70">
                       {cta.eyebrow}
                     </span>
-                    <span className="mt-2 block font-display text-2xl font-extrabold leading-tight tracking-tight md:text-3xl">
+                    <span className="mt-2 block font-display text-2xl font-bold leading-tight tracking-tight md:text-3xl">
                       {cta.headline}
                     </span>
                   </span>
@@ -129,7 +128,7 @@ export function Services() {
                 <div className="relative flex h-full flex-col justify-end p-6 md:p-7">
                   <h3
                     className={cn(
-                      "font-display font-extrabold tracking-tight text-white",
+                      "font-display font-bold tracking-tight text-white",
                       feature ? "text-2xl md:text-[2.25rem] md:leading-[1.05]" : "text-xl md:text-2xl",
                     )}
                   >

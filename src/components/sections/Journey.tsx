@@ -5,6 +5,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { Container } from "@/components/ui/Container";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 import { useT } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
@@ -82,19 +83,17 @@ export function Journey() {
       <Container className="grid gap-10 py-20 md:grid-cols-2 md:gap-16 md:py-28">
         {/* Sticky panel */}
         <div className="md:sticky md:top-0 md:flex md:h-screen md:flex-col md:justify-center md:py-24">
-          <span className="text-sm font-semibold tracking-eyebrow text-lime uppercase">
-            {t.eyebrow}
-          </span>
+          <Eyebrow tone="dark">{t.eyebrow}</Eyebrow>
           <h2
             id="journey-heading"
-            className="mt-5 font-display text-4xl font-extrabold leading-[1.0] tracking-[-0.04em] sm:text-6xl"
+            className="mt-5 font-display text-4xl font-bold leading-[1.0] tracking-[-0.02em] sm:text-6xl"
           >
             {t.caption}
           </h2>
           <p className="mt-5 max-w-sm text-lg leading-relaxed text-white/65">{t.intro}</p>
 
           <div className="mt-10 hidden items-baseline gap-4 md:flex">
-            <span className="font-display text-6xl font-extrabold leading-none text-lime">
+            <span className="font-display text-6xl font-bold leading-none text-lime">
               {activeStep.n}
             </span>
             <div>
@@ -113,6 +112,8 @@ export function Journey() {
               />
             ))}
           </div>
+
+          <p className="mt-8 text-sm font-semibold text-lime md:mt-10">{t.footnote}</p>
         </div>
 
         {/* Steps list with vertical rail */}
@@ -146,7 +147,7 @@ export function Journey() {
               <div className="flex items-baseline gap-4">
                 <span className="font-display text-sm font-bold text-lime/80">{step.n}</span>
                 <div>
-                  <h3 className="font-display text-2xl font-extrabold tracking-tight md:text-[2rem]">
+                  <h3 className="font-display text-2xl font-bold tracking-tight md:text-[2rem]">
                     {step.label}
                   </h3>
                   <p className="mt-1.5 text-[0.98rem] text-white/60">{step.note}</p>

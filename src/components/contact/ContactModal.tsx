@@ -108,7 +108,7 @@ function ContactDialog({ onClose }: { onClose: () => void }) {
         {/* Info pane */}
         <div className="relative hidden flex-col justify-between gap-8 bg-teal p-8 text-white md:flex">
           <div>
-            <h2 id={`${uid}-title`} className="font-display text-3xl font-extrabold tracking-tight">
+            <h2 id={`${uid}-title`} className="font-display text-3xl font-bold tracking-tight">
               {t.title}
             </h2>
             <p className="mt-3 text-[0.98rem] leading-relaxed text-white/70">{t.subtitle}</p>
@@ -157,7 +157,7 @@ function ContactDialog({ onClose }: { onClose: () => void }) {
 
           {/* Mobile-only heading */}
           <div className="md:hidden">
-            <h2 className="font-display text-2xl font-extrabold tracking-tight text-ink">{t.title}</h2>
+            <h2 className="font-display text-2xl font-bold tracking-tight text-ink">{t.title}</h2>
             <p className="mt-2 text-[0.95rem] text-ink-soft">{t.subtitle}</p>
           </div>
 
@@ -166,7 +166,7 @@ function ContactDialog({ onClose }: { onClose: () => void }) {
               <span className="grid h-16 w-16 place-items-center rounded-full bg-lime text-teal-deep">
                 <Check size={30} strokeWidth={2.6} />
               </span>
-              <h3 className="mt-6 font-display text-2xl font-extrabold tracking-tight text-ink">
+              <h3 className="mt-6 font-display text-2xl font-bold tracking-tight text-ink">
                 {t.successTitle}
               </h3>
               <p className="mt-3 max-w-sm text-[0.98rem] leading-relaxed text-ink-soft">{t.successBody}</p>
