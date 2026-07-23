@@ -4,10 +4,9 @@ import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
-import { LandOwnerArt, DeveloperArt } from "@/components/sections/audience-art";
 import { useT } from "@/lib/i18n";
 
-const art = [LandOwnerArt, DeveloperArt];
+const numbers = ["01", "02"];
 
 export function AudienceCards() {
   const t = useT().audience;
@@ -25,48 +24,56 @@ export function AudienceCards() {
           </p>
         </Reveal>
 
-        <Reveal stagger className="mt-16 grid gap-6 md:grid-cols-2 lg:gap-8">
-          {t.cards.map((card, i) => {
-            const Art = art[i];
-            return (
-              <a
-                key={i}
-                href="#services"
-                className="group relative flex flex-col overflow-hidden rounded-[var(--radius-2xl)] bg-card p-3 ring-1 ring-line transition-all duration-300 ease-[var(--ease-out-soft)] hover:-translate-y-1.5 hover:shadow-[0_34px_70px_-38px_rgba(4,48,59,0.5)] hover:ring-2 hover:ring-teal/30"
+        <Reveal stagger className="mt-14 grid gap-5 md:grid-cols-2 lg:gap-6">
+          {t.cards.map((card, i) => (
+            <a
+              key={i}
+              href="#services"
+              className="group relative flex min-h-[23rem] flex-col overflow-hidden rounded-[var(--radius-2xl)] bg-card p-8 ring-1 ring-line transition-all duration-500 ease-[var(--ease-out-expo)] hover:-translate-y-2 hover:ring-teal/25 hover:shadow-[0_44px_90px_-46px_rgba(4,48,59,0.5)] md:p-12"
+            >
+              {/* Ghost index — editorial watermark */}
+              <span
+                aria-hidden
+                className="pointer-events-none absolute -bottom-14 -right-3 z-0 select-none font-display text-[11rem] font-bold leading-none text-ink/[0.05] transition-all duration-700 ease-[var(--ease-out-expo)] group-hover:-translate-y-3 group-hover:text-lime/30 md:text-[15rem]"
               >
-                {/* Illustration */}
-                <div className="relative flex items-center justify-center overflow-hidden rounded-[calc(var(--radius-2xl)-0.5rem)] bg-gradient-to-b from-cream to-paper">
-                  {/* hover glow */}
-                  <span
-                    aria-hidden
-                    className="pointer-events-none absolute -bottom-10 left-1/2 h-56 w-72 -translate-x-1/2 rounded-full bg-lime/25 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100"
-                  />
-                  <Art className="relative h-56 w-full max-w-sm sm:h-64" />
-                </div>
+                {numbers[i]}
+              </span>
 
-                {/* Content */}
-                <div className="flex flex-1 flex-col px-5 pb-6 pt-7 md:px-6">
-                  <h3 className="font-display text-3xl font-bold tracking-tight text-ink md:text-[2.25rem]">
-                    {card.title}
-                  </h3>
-
-                  <p className="mt-4 max-w-sm text-[1.05rem] leading-relaxed text-ink-soft">
-                    {card.body}
-                  </p>
-
-                  <span className="mt-auto inline-flex items-center gap-2 pt-8 text-[0.98rem] font-semibold text-ink">
-                    {card.cta}
-                    <span className="grid h-8 w-8 place-items-center rounded-full bg-cream text-ink ring-1 ring-line transition-all duration-300 ease-[var(--ease-out-soft)] group-hover:bg-lime group-hover:ring-lime">
-                      <ArrowRight
-                        size={16}
-                        className="transition-transform duration-300 ease-[var(--ease-out-soft)] group-hover:translate-x-0.5"
-                      />
+              <div className="relative z-10 flex h-full flex-col">
+                {/* Big title — hover roll-swaps into an on-brand lime highlight.
+                    `w-fit self-start` stops the flex column from stretching it,
+                    so the highlight hugs the text; `-ml-3` offsets the padding so
+                    the text still lines up with the body below. */}
+                <h3 className="-ml-3 w-fit self-start font-display text-4xl font-bold leading-[0.98] tracking-[-0.03em] text-ink sm:text-5xl lg:text-[4rem]">
+                  <span className="relative block overflow-hidden">
+                    <span className="block px-3 pb-[0.2em] pt-[0.06em] transition-transform duration-[560ms] ease-[var(--ease-out-expo)] group-hover:-translate-y-full">
+                      {card.title}
+                    </span>
+                    <span
+                      aria-hidden
+                      className="absolute inset-0 block translate-y-full rounded-lg bg-lime px-3 pb-[0.2em] pt-[0.06em] text-teal-deep transition-transform duration-[560ms] ease-[var(--ease-out-expo)] group-hover:translate-y-0"
+                    >
+                      {card.title}
                     </span>
                   </span>
-                </div>
-              </a>
-            );
-          })}
+                </h3>
+
+                {/* Body */}
+                <p className="mt-6 max-w-md text-lg leading-relaxed text-ink-soft">{card.body}</p>
+
+                {/* CTA */}
+                <span className="mt-auto inline-flex items-center gap-3 pt-10 text-base font-semibold text-ink">
+                  {card.cta}
+                  <span className="grid h-10 w-10 place-items-center rounded-full bg-cream text-ink ring-1 ring-line transition-all duration-300 ease-[var(--ease-out-expo)] group-hover:bg-lime group-hover:ring-lime">
+                    <ArrowRight
+                      size={18}
+                      className="transition-transform duration-300 ease-[var(--ease-out-expo)] group-hover:translate-x-0.5"
+                    />
+                  </span>
+                </span>
+              </div>
+            </a>
+          ))}
         </Reveal>
       </Container>
     </section>

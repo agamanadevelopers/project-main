@@ -3,6 +3,7 @@
 import { MapPin, Phone } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { CraftedBadge } from "@/components/ui/CraftedBadge";
+import { Logo } from "@/components/ui/Logo";
 import { navItems, legalLinks, site } from "@/lib/site";
 import { useT } from "@/lib/i18n";
 
@@ -16,18 +17,8 @@ export function Footer() {
       <Container className="pt-16 md:pt-20">
         <div className="grid gap-12 md:grid-cols-[1.4fr_0.8fr_1.2fr]">
           <div className="max-w-sm">
-            <div className="flex items-center gap-2.5">
-              <span
-                aria-hidden
-                className="grid h-9 w-9 place-items-center rounded-full bg-lime font-display text-lg leading-none text-teal-deep"
-              >
-                A
-              </span>
-              <span className="font-display text-xl font-bold tracking-tight">
-                Agamana Projects
-              </span>
-            </div>
-            <p className="mt-5 text-[0.98rem] leading-relaxed text-white/65">{t.footer.tagline}</p>
+            <Logo variant="light" className="h-10" />
+            <p className="mt-6 text-[0.98rem] leading-relaxed text-white/65">{t.footer.tagline}</p>
             <p className="mt-4 text-sm text-white/45">{t.footer.serving}</p>
           </div>
 

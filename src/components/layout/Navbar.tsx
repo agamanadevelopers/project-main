@@ -5,20 +5,15 @@ import { Menu, X } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { ContactButton } from "@/components/ui/ContactButton";
 import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
+import { Logo } from "@/components/ui/Logo";
 import { navItems, site } from "@/lib/site";
 import { useT } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
-function Logo() {
+function BrandLink() {
   return (
-    <a href="#top" className="flex items-center gap-2.5" aria-label={`${site.name} — home`}>
-      <span
-        aria-hidden
-        className="grid h-9 w-9 place-items-center rounded-full bg-lime font-display text-lg leading-none text-teal-deep"
-      >
-        A
-      </span>
-      <span className="font-display text-xl font-bold tracking-tight text-ink">Agamana</span>
+    <a href="#top" className="flex items-center" aria-label={`${site.name} — home`}>
+      <Logo variant="dark" priority className="h-8 sm:h-9" />
     </a>
   );
 }
@@ -85,7 +80,7 @@ export function Navbar() {
               : "bg-card/80 ring-1 ring-line/50 backdrop-blur-sm",
           )}
         >
-          <Logo />
+          <BrandLink />
 
           <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
             {navItems.map((item) => {

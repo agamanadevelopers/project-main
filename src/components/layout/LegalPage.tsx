@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Footer } from "@/components/layout/Footer";
+import { Logo } from "@/components/ui/Logo";
 import { site } from "@/lib/site";
 
 /**
@@ -22,18 +23,8 @@ export function LegalPage({
     <>
       <header className="sticky top-0 z-50 border-b border-line/70 bg-paper/85 backdrop-blur-md">
         <Container className="flex h-16 items-center justify-between">
-          <Link
-            href="/"
-            className="flex items-center gap-2.5"
-            aria-label={`${site.name} — home`}
-          >
-            <span
-              aria-hidden
-              className="grid h-9 w-9 place-items-center rounded-full bg-lime font-display text-lg leading-none text-teal-deep"
-            >
-              A
-            </span>
-            <span className="font-display text-xl font-bold tracking-tight text-ink">Agamana</span>
+          <Link href="/" className="flex items-center" aria-label={`${site.name} — home`}>
+            <Logo variant="dark" className="h-9" />
           </Link>
           <Link
             href="/"
