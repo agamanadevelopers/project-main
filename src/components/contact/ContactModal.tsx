@@ -4,7 +4,7 @@ import { useEffect, useId, useRef, useState } from "react";
 import { X, MapPin, Phone, Mail, Check, ArrowUpRight } from "lucide-react";
 import { useContact } from "@/lib/contact";
 import { useT } from "@/lib/i18n";
-import { site } from "@/lib/site";
+import { useSettings } from "@/lib/settings";
 import { cn } from "@/lib/utils";
 
 type Errors = { name?: string; phone?: string; email?: string };
@@ -18,6 +18,7 @@ export function ContactModal() {
 
 function ContactDialog({ onClose }: { onClose: () => void }) {
   const t = useT().contact;
+  const settings = useSettings();
   const firstFieldRef = useRef<HTMLInputElement>(null);
   const uid = useId();
 
@@ -75,7 +76,7 @@ function ContactDialog({ onClose }: { onClose: () => void }) {
         `Interest: ${form.interest === "own-land" ? "I own land" : "I have a project"}\n\n${form.message}`,
     );
     try {
-      window.open(`mailto:${site.email}?subject=${subject}&body=${body}`, "_blank");
+      window.open(`mailto:${settings.email}?subject=${subject}&body=${body}`, "_blank");
     } catch {
       /* ignore */
     }
@@ -118,27 +119,27 @@ function ContactDialog({ onClose }: { onClose: () => void }) {
             <li className="flex gap-3">
               <MapPin size={20} className="mt-0.5 shrink-0 text-lime" />
               <span className="not-italic leading-relaxed text-white/80">
-                {site.address.line1}
+                {settings.address.line1}
                 <br />
-                {site.address.line2}
+                {settings.address.line2}
                 <br />
-                {site.address.line3}
+                {settings.address.line3}
               </span>
             </li>
             <li className="flex gap-3">
               <Phone size={20} className="mt-0.5 shrink-0 text-lime" />
               <span className="flex flex-col gap-1">
-                {site.phones.map((p, i) => (
-                  <a key={p} href={`tel:${site.phoneLinks[i]}`} className="text-white/80 hover:text-lime">
-                    {p}
+                {settings.phones.map((p) => (
+                  <a key={p.tel} href={`tel:${p.tel}`} className="text-white/80 hover:text-lime">
+                    {p.display}
                   </a>
                 ))}
               </span>
             </li>
             <li className="flex gap-3">
               <Mail size={20} className="mt-0.5 shrink-0 text-lime" />
-              <a href={`mailto:${site.email}`} className="text-white/80 hover:text-lime">
-                {site.email}
+              <a href={`mailto:${settings.email}`} className="text-white/80 hover:text-lime">
+                {settings.email}
               </a>
             </li>
           </ul>
@@ -172,13 +173,13 @@ function ContactDialog({ onClose }: { onClose: () => void }) {
               <p className="mt-3 max-w-sm text-[0.98rem] leading-relaxed text-ink-soft">{t.successBody}</p>
               <div className="mt-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm text-ink-soft">
                 <span>{t.orCall}:</span>
-                {site.phones.map((p, i) => (
+                {settings.phones.map((p) => (
                   <a
-                    key={p}
-                    href={`tel:${site.phoneLinks[i]}`}
+                    key={p.tel}
+                    href={`tel:${p.tel}`}
                     className="font-semibold text-ink underline decoration-lime decoration-2 underline-offset-4"
                   >
-                    {p}
+                    {p.display}
                   </a>
                 ))}
               </div>
@@ -301,9 +302,9 @@ function ContactDialog({ onClose }: { onClose: () => void }) {
               {/* Call option (also on mobile where info pane is hidden) */}
               <div className="flex flex-wrap items-center gap-x-3 gap-y-1 pt-1 text-sm text-ink-soft md:hidden">
                 <span>{t.orCall}:</span>
-                {site.phones.map((p, i) => (
-                  <a key={p} href={`tel:${site.phoneLinks[i]}`} className="font-semibold text-ink">
-                    {p}
+                {settings.phones.map((p) => (
+                  <a key={p.tel} href={`tel:${p.tel}`} className="font-semibold text-ink">
+                    {p.display}
                   </a>
                 ))}
               </div>

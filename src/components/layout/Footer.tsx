@@ -6,12 +6,14 @@ import { CraftedBadge } from "@/components/ui/CraftedBadge";
 import { Logo } from "@/components/ui/Logo";
 import { navItems, legalLinks, site } from "@/lib/site";
 import { useT } from "@/lib/i18n";
+import { useSettings } from "@/lib/settings";
 
 const year = new Date().getFullYear();
 const WORDMARK = "AGAMANA".split("");
 
 export function Footer() {
   const t = useT();
+  const settings = useSettings();
   return (
     <footer className="overflow-hidden bg-teal-deep text-white">
       <Container className="pt-16 md:pt-20">
@@ -45,11 +47,11 @@ export function Footer() {
               <address className="mt-4 flex gap-3 not-italic">
                 <MapPin size={18} className="mt-0.5 shrink-0 text-lime" aria-hidden />
                 <span className="text-[0.98rem] leading-relaxed text-white/80">
-                  {site.address.line1}
+                  {settings.address.line1}
                   <br />
-                  {site.address.line2}
+                  {settings.address.line2}
                   <br />
-                  {site.address.line3}
+                  {settings.address.line3}
                 </span>
               </address>
             </div>
@@ -60,20 +62,20 @@ export function Footer() {
               <div className="mt-4 flex gap-3">
                 <Phone size={18} className="mt-0.5 shrink-0 text-lime" aria-hidden />
                 <div className="flex flex-col gap-1.5">
-                  {site.phones.map((p, i) => (
+                  {settings.phones.map((p) => (
                     <a
-                      key={p}
-                      href={`tel:${site.phoneLinks[i]}`}
+                      key={p.tel}
+                      href={`tel:${p.tel}`}
                       className="text-[0.98rem] text-white/80 transition-colors hover:text-lime"
                     >
-                      {p}
+                      {p.display}
                     </a>
                   ))}
                   <a
-                    href={`mailto:${site.email}`}
+                    href={`mailto:${settings.email}`}
                     className="mt-1 text-[0.98rem] text-white/80 transition-colors hover:text-lime"
                   >
-                    {site.email}
+                    {settings.email}
                   </a>
                 </div>
               </div>

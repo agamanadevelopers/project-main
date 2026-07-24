@@ -31,8 +31,8 @@ export function Projects() {
             >
               <div className="relative aspect-[4/5] overflow-hidden">
                 <Image
-                  src={images.projects[i].src}
-                  alt={images.projects[i].alt}
+                  src={p.image ?? images.projects[i].src}
+                  alt={p.name}
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover transition-transform duration-[900ms] ease-[var(--ease-out-soft)] group-hover:scale-[1.06]"

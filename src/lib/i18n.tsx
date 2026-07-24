@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState, useCallback } from "react";
-import { content } from "./content";
+import { content as staticContent, type ContentDict } from "./content";
 
 export type Locale = "en" | "kn";
 export const LOCALES: Locale[] = ["en", "kn"];
@@ -13,11 +13,18 @@ type Ctx = {
   locale: Locale;
   setLocale: (l: Locale) => void;
   toggle: () => void;
+  content: Record<Locale, ContentDict>;
 };
 
 const LanguageContext = createContext<Ctx | null>(null);
 
-export function LanguageProvider({ children }: { children: React.ReactNode }) {
+export function LanguageProvider({
+  content = staticContent,
+  children,
+}: {
+  content?: Record<Locale, ContentDict>;
+  children: React.ReactNode;
+}) {
   // Always render 'en' first so SSR/hydration match; hydrate the stored choice
   // after mount.
   const [locale, setLocaleState] = useState<Locale>("en");
@@ -59,7 +66,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   return (
-    <LanguageContext.Provider value={{ locale, setLocale, toggle }}>
+    <LanguageContext.Provider value={{ locale, setLocale, toggle, content }}>
       {children}
     </LanguageContext.Provider>
   );
@@ -73,6 +80,6 @@ export function useLocale(): Ctx {
 
 /** Convenience hook: returns the active language's content dictionary. */
 export function useT() {
-  const { locale } = useLocale();
+  const { locale, content } = useLocale();
   return content[locale];
 }

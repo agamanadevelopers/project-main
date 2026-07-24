@@ -1,14 +1,11 @@
-import Image from "next/image";
+"use client";
+
+import { useSettings } from "@/lib/settings";
 import { cn } from "@/lib/utils";
 
-const SRC = {
-  dark: "/agamana-logo-color.webp", // teal + lime wordmark — for LIGHT surfaces (navbar, legal header)
-  light: "/agamana-logo-white.webp", // white wordmark — for DARK surfaces (footer)
-} as const;
-
 /**
- * Agamana Projects wordmark. Pass `variant="light"` on dark backgrounds.
- * Control the size with a height class (e.g. `className="h-8"`); width is auto.
+ * Agamana Projects wordmark, from the CMS (falls back to the bundled files).
+ * `variant="light"` on dark backgrounds. Size with a height class (e.g. `h-9`).
  */
 export function Logo({
   variant = "dark",
@@ -19,15 +16,17 @@ export function Logo({
   className?: string;
   priority?: boolean;
 }) {
+  const settings = useSettings();
+  const src = variant === "dark" ? settings.logoColor : settings.logoWhite;
   return (
-    <Image
-      src={SRC[variant]}
+    // Plain img so the logo keeps its natural aspect ratio whatever is uploaded.
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={src}
       alt="Agamana Projects"
-      width={2442}
-      height={700}
-      priority={priority}
-      sizes="180px"
       className={cn("w-auto", className)}
+      loading={priority ? "eager" : "lazy"}
+      decoding="async"
     />
   );
 }

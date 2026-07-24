@@ -20,7 +20,7 @@ export function WhyAgamana() {
             <div className="relative">
               <div className="relative aspect-[4/5] overflow-hidden rounded-[var(--radius-2xl)] ring-1 ring-line">
                 <Image
-                  src={images.why.src}
+                  src={t.image ?? images.why.src}
                   alt={images.why.alt}
                   fill
                   sizes="(max-width: 1024px) 100vw, 42vw"

@@ -21,6 +21,7 @@ type Dict = {
       supporting: string;
       primary: string;
       secondary: string;
+      image?: string;
     }[];
   };
   audience: {
@@ -40,13 +41,13 @@ type Dict = {
     eyebrow: string;
     heading: string;
     body: string;
-    items: { title: string; blurb: string; chips: string[] }[];
+    items: { title: string; blurb: string; chips: string[]; image?: string }[];
   };
   projects: {
     eyebrow: string;
     heading: string;
     intro: string;
-    items: { name: string; tag: string; place: string; blurb: string }[];
+    items: { name: string; tag: string; place: string; blurb: string; image?: string }[];
   };
   why: {
     eyebrow: string;
@@ -54,6 +55,7 @@ type Dict = {
     lead: string;
     body: string;
     tagline: string;
+    image?: string;
     pillars: { title: string; body: string }[];
   };
   process: {

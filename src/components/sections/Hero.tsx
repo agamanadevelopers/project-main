@@ -53,7 +53,7 @@ export function Hero() {
     >
       {/* Cross-fading background layers */}
       <div className="grain absolute inset-0 -z-10">
-        {backgrounds.map((bg, i) => (
+        {slides.map((s, i) => (
           <div
             key={i}
             aria-hidden
@@ -63,7 +63,7 @@ export function Hero() {
             )}
           >
             <Image
-              src={bg.src}
+              src={s.image ?? backgrounds[i]?.src ?? images.hero.src}
               alt=""
               fill
               priority={i === 0}

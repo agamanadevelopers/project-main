@@ -112,7 +112,7 @@ export function Services() {
                 )}
               >
                 <Image
-                  src={c.img.src}
+                  src={s.image ?? c.img.src}
                   alt=""
                   fill
                   sizes={feature ? "(max-width: 1024px) 100vw, 50vw" : "(max-width: 1024px) 100vw, 33vw"}
