@@ -26,6 +26,13 @@ export const siteSettings = defineType({
       group: "brand",
       options: { hotspot: true },
     }),
+    defineField({
+      name: "favicon",
+      title: "Favicon (browser tab icon — square, e.g. 512×512 PNG)",
+      type: "image",
+      group: "brand",
+      options: { hotspot: true },
+    }),
     // SEO
     defineField({
       name: "seoTitle",

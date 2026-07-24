@@ -16,6 +16,7 @@ export type SeoData = {
   title: { en: string; kn: string };
   description: { en: string; kn: string };
   ogImage: string;
+  favicon: string;
 };
 
 export const DEFAULT_SETTINGS: SiteSettings = {
@@ -33,4 +34,5 @@ export const DEFAULT_SEO: SeoData = {
   },
   description: { en: site.description, kn: site.description },
   ogImage: "/opengraph-image",
+  favicon: "/favicon.ico",
 };

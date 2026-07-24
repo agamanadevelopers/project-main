@@ -34,6 +34,7 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase: new URL(site.url),
     title: { default: seo.title.en, template: "%s | Agamana Projects" },
     description: seo.description.en,
+    icons: { icon: seo.favicon, shortcut: seo.favicon, apple: seo.favicon },
     applicationName: site.name,
     keywords: [
       "land development Karnataka",

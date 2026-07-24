@@ -193,6 +193,7 @@ function buildSeo(s: any): SeoData {
       kn: s.seoDescription?.kn || DEFAULT_SEO.description.kn,
     },
     ogImage: img(s.ogImage, 1200, 630) ?? DEFAULT_SEO.ogImage,
+    favicon: img(s.favicon, 180, 180) ?? DEFAULT_SEO.favicon,
   };
 }
 
