@@ -342,7 +342,8 @@ const en: Dict = {
     body: "Whether you're planning your first project or your next one, we'd love to hear from you.",
   },
   footer: {
-    tagline: "You focus on your project. We'll help you with everything around it.",
+    tagline:
+      "Agamana Projects is your trusted partner in land development. Helping land owners and developers across Central & Coastal Karnataka, from Tumakuru and Chitradurga to Shivamogga, Sirsi and the Uttara Kannada coast.",
     serving: "Serving Karnataka.",
     explore: "Explore",
     getInTouch: "Get in touch",
@@ -612,7 +613,8 @@ const kn: Dict = {
     body: "ನಿಮ್ಮ ಮೊದಲ ಯೋಜನೆಯಾಗಲಿ ಅಥವಾ ಮುಂದಿನದ್ದಾಗಲಿ, ನಿಮ್ಮಿಂದ ಕೇಳಲು ನಾವು ಇಷ್ಟಪಡುತ್ತೇವೆ.",
   },
   footer: {
-    tagline: "ನೀವು ನಿಮ್ಮ ಯೋಜನೆಯ ಮೇಲೆ ಗಮನ ಕೊಡಿ. ಸುತ್ತಲಿನ ಎಲ್ಲದರಲ್ಲೂ ನಾವು ಸಹಾಯ ಮಾಡುತ್ತೇವೆ.",
+    tagline:
+      "ಆಗಮನ ಪ್ರಾಜೆಕ್ಟ್ಸ್ ಭೂ ಅಭಿವೃದ್ಧಿಯಲ್ಲಿ ನಿಮ್ಮ ವಿಶ್ವಾಸಾರ್ಹ ಪಾಲುದಾರ. ಮಧ್ಯ ಮತ್ತು ಕರಾವಳಿ ಕರ್ನಾಟಕದಾದ್ಯಂತ — ತುಮಕೂರು ಮತ್ತು ಚಿತ್ರದುರ್ಗದಿಂದ ಶಿವಮೊಗ್ಗ, ಸಿರ್ಸಿ ಮತ್ತು ಉತ್ತರ ಕನ್ನಡ ಕರಾವಳಿಯವರೆಗೆ — ಭೂ ಮಾಲೀಕರಿಗೆ ಮತ್ತು ಡೆವಲಪರ್‌ಗಳಿಗೆ ಸಹಾಯ.",
     serving: "ಕರ್ನಾಟಕದಲ್ಲಿ ಸೇವೆ.",
     explore: "ಅನ್ವೇಷಿಸಿ",
     getInTouch: "ಸಂಪರ್ಕಿಸಿ",
