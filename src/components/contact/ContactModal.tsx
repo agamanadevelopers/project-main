@@ -69,29 +69,51 @@ function ContactDialog({ onClose }: { onClose: () => void }) {
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
+    // Honeypot: bots fill the hidden field — pretend success, send nothing.
+    if (form.company) {
+      setSuccess(true);
+      return;
+    }
     setSubmitting(true);
     setSubmitError(null);
+
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+
+    // Not configured yet — fall back to opening the visitor's mail client.
+    if (!accessKey) {
+      const subject = encodeURIComponent(`New enquiry from ${form.name}`);
+      const body = encodeURIComponent(
+        `Name: ${form.name}\nPhone: ${form.phone}\nEmail: ${form.email || "-"}\n` +
+          `Interest: ${form.interest === "own-land" ? "I own land" : "I have a project"}\n\n${form.message}`,
+      );
+      try {
+        window.open(`mailto:${settings.email}?subject=${subject}&body=${body}`, "_blank");
+      } catch {
+        /* ignore */
+      }
+      setSuccess(true);
+      setSubmitting(false);
+      return;
+    }
+
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: accessKey,
+          subject: `New enquiry from ${form.name} — Agamana Projects`,
+          from_name: "Agamana Projects Website",
+          Name: form.name,
+          Phone: form.phone,
+          Email: form.email || "Not provided",
+          "I am a": form.interest === "own-land" ? "Land owner" : "Developer",
+          Message: form.message || "-",
+        }),
       });
       const data = await res.json();
-      if (data.ok) {
-        setSuccess(true);
-      } else if (data.notConfigured) {
-        // Email service not set up yet — fall back to the visitor's mail client.
-        const subject = encodeURIComponent(`New enquiry from ${form.name}`);
-        const body = encodeURIComponent(
-          `Name: ${form.name}\nPhone: ${form.phone}\nEmail: ${form.email || "-"}\n` +
-            `Interest: ${form.interest === "own-land" ? "I own land" : "I have a project"}\n\n${form.message}`,
-        );
-        window.open(`mailto:${settings.email}?subject=${subject}&body=${body}`, "_blank");
-        setSuccess(true);
-      } else {
-        setSubmitError(data.error || t.error);
-      }
+      if (data.success) setSuccess(true);
+      else setSubmitError(t.error);
     } catch {
       setSubmitError(t.error);
     } finally {
