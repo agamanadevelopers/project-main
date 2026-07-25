@@ -118,7 +118,7 @@ export function Services() {
                   sizes={feature ? "(max-width: 1024px) 100vw, 50vw" : "(max-width: 1024px) 100vw, 33vw"}
                   className="object-cover transition-transform duration-700 ease-[var(--ease-out-soft)] group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-teal-deep via-teal-deep/85 to-teal-deep/20" />
+                <div className="absolute inset-0 bg-gradient-to-t from-teal-deep via-teal-deep/50 to-transparent" />
 
                 {/* Step number */}
                 <span className="absolute right-5 top-5 rounded-full bg-white/10 px-3 py-1 font-display text-xs font-bold text-white ring-1 ring-white/20 backdrop-blur-sm">
