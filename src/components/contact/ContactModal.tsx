@@ -77,7 +77,7 @@ function ContactDialog({ onClose }: { onClose: () => void }) {
     setSubmitting(true);
     setSubmitError(null);
 
-    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+    const accessKey = settings.formAccessKey;
 
     // Not configured yet — fall back to opening the visitor's mail client.
     if (!accessKey) {

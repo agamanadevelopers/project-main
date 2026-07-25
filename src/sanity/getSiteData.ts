@@ -178,6 +178,7 @@ function buildSettings(s: any): SiteSettings {
       line2: s.addressLine2 || DEFAULT_SETTINGS.address.line2,
       line3: s.addressLine3 || DEFAULT_SETTINGS.address.line3,
     },
+    formAccessKey: s.formAccessKey || "",
   };
 }
 

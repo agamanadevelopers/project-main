@@ -74,6 +74,14 @@ export const siteSettings = defineType({
     defineField({ name: "addressLine1", title: "Address line 1", type: "string", group: "contact" }),
     defineField({ name: "addressLine2", title: "Address line 2", type: "string", group: "contact" }),
     defineField({ name: "addressLine3", title: "Address line 3", type: "string", group: "contact" }),
+    defineField({
+      name: "formAccessKey",
+      title: "Contact-form key (Web3Forms access key)",
+      type: "string",
+      group: "contact",
+      description:
+        "Paste your Web3Forms access key (from web3forms.com). Enquiries submitted on the site will be emailed to you.",
+    }),
   ],
   preview: { prepare: () => ({ title: "Site Settings" }) },
 });

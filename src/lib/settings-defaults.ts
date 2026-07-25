@@ -9,6 +9,7 @@ export type SiteSettings = {
   email: string;
   phones: SitePhone[];
   address: { line1: string; line2: string; line3: string };
+  formAccessKey: string;
 };
 
 /** SEO used server-side for metadata (per locale). */
@@ -25,6 +26,7 @@ export const DEFAULT_SETTINGS: SiteSettings = {
   email: site.email,
   phones: site.phones.map((display, i) => ({ display, tel: site.phoneLinks[i] })),
   address: { line1: site.address.line1, line2: site.address.line2, line3: site.address.line3 },
+  formAccessKey: "",
 };
 
 export const DEFAULT_SEO: SeoData = {
