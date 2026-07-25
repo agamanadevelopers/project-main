@@ -45,7 +45,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative isolate min-h-[100svh] overflow-hidden"
+      className="relative isolate min-h-[100svh] overflow-hidden bg-teal-deep"
       aria-roledescription="carousel"
       aria-label="Intro"
       onMouseEnter={() => setPaused(true)}
@@ -72,8 +72,6 @@ export function Hero() {
             />
           </div>
         ))}
-        <div className="absolute inset-0 bg-gradient-to-b from-teal-deep/80 via-teal-deep/35 to-teal-deep/90" />
-        <div className="absolute inset-0 bg-gradient-to-r from-teal-deep/75 via-transparent to-transparent" />
         <div
           aria-hidden
           className="absolute -right-20 top-1/4 h-96 w-96 rounded-full bg-lime/10 blur-[120px]"
