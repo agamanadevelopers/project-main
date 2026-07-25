@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
  * Set `BLOCK_INDEXING = false` once it's live on the custom production domain to
  * allow crawling again (and advertise the sitemap).
  */
-const BLOCK_INDEXING = true;
+const BLOCK_INDEXING = false;
 
 export default function robots(): MetadataRoute.Robots {
   if (BLOCK_INDEXING) {
