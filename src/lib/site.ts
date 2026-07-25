@@ -28,7 +28,7 @@ export const site = {
   },
   region: "Karnataka, India",
   areaServed: "Karnataka",
-  ogImage: "/opengraph-image",
+  ogImage: "/og",
   social: {
     instagram: "https://instagram.com/agamanaprojects",
     linkedin: "https://linkedin.com/company/agamanaprojects",

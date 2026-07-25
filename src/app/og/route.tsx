@@ -1,11 +1,11 @@
 import { ImageResponse } from "next/og";
 
-export const alt =
-  "Agamana Projects — You have the land. We'll help you build the project.";
-export const size = { width: 1200, height: 630 };
-export const contentType = "image/png";
-
-export default function OpengraphImage() {
+/**
+ * Fallback social-share image (used when no OG image is set in the CMS).
+ * Served as a normal route (/og) — NOT the `opengraph-image` file convention —
+ * so the CMS-provided image in metadata can take precedence.
+ */
+export function GET() {
   return new ImageResponse(
     (
       <div
@@ -58,17 +58,11 @@ export default function OpengraphImage() {
           </div>
         </div>
 
-        <div
-          style={{
-            fontSize: 26,
-            color: "#b8c4bf",
-            fontFamily: "sans-serif",
-          }}
-        >
+        <div style={{ fontSize: 26, color: "#b8c4bf", fontFamily: "sans-serif" }}>
           One partner for every step — Karnataka
         </div>
       </div>
     ),
-    { ...size },
+    { width: 1200, height: 630 },
   );
 }
