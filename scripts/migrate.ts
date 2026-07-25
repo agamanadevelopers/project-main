@@ -65,8 +65,8 @@ async function run() {
     proj1,
     proj2,
   ] = await Promise.all([
-    uploadFile("logo-color", path.join(pub, "agamana-logo-color.webp")),
-    uploadFile("logo-white", path.join(pub, "agamana-logo-white.webp")),
+    uploadFile("logo-color", path.join(pub, "agamana-logo-color.svg")),
+    uploadFile("logo-white", path.join(pub, "agamana-logo-white.svg")),
     uploadUrl("hero", images.hero.src),
     uploadUrl("statement", images.statement.src),
     uploadUrl("why", images.why.src),

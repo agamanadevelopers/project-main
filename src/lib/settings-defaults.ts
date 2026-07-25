@@ -21,8 +21,8 @@ export type SeoData = {
 };
 
 export const DEFAULT_SETTINGS: SiteSettings = {
-  logoColor: "/agamana-logo-color.webp",
-  logoWhite: "/agamana-logo-white.webp",
+  logoColor: "/agamana-logo-color.svg",
+  logoWhite: "/agamana-logo-white.svg",
   email: site.email,
   phones: site.phones.map((display, i) => ({ display, tel: site.phoneLinks[i] })),
   address: { line1: site.address.line1, line2: site.address.line2, line3: site.address.line3 },
