@@ -25,12 +25,14 @@ function ContactDialog({ onClose }: { onClose: () => void }) {
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
   const [errors, setErrors] = useState<Errors>({});
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [form, setForm] = useState({
     name: "",
     phone: "",
     email: "",
     interest: "own-land",
     message: "",
+    company: "", // honeypot (hidden)
   });
 
   // Lock scroll + focus the first field on mount.
@@ -64,26 +66,37 @@ function ContactDialog({ onClose }: { onClose: () => void }) {
     return Object.keys(next).length === 0;
   };
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
     setSubmitting(true);
-    // No backend yet: compose an email to the office and show a success state.
-    // Replace this block with a POST to your CRM / form endpoint when ready.
-    const subject = encodeURIComponent(`New enquiry from ${form.name}`);
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nPhone: ${form.phone}\nEmail: ${form.email || "-"}\n` +
-        `Interest: ${form.interest === "own-land" ? "I own land" : "I have a project"}\n\n${form.message}`,
-    );
+    setSubmitError(null);
     try {
-      window.open(`mailto:${settings.email}?subject=${subject}&body=${body}`, "_blank");
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json();
+      if (data.ok) {
+        setSuccess(true);
+      } else if (data.notConfigured) {
+        // Email service not set up yet — fall back to the visitor's mail client.
+        const subject = encodeURIComponent(`New enquiry from ${form.name}`);
+        const body = encodeURIComponent(
+          `Name: ${form.name}\nPhone: ${form.phone}\nEmail: ${form.email || "-"}\n` +
+            `Interest: ${form.interest === "own-land" ? "I own land" : "I have a project"}\n\n${form.message}`,
+        );
+        window.open(`mailto:${settings.email}?subject=${subject}&body=${body}`, "_blank");
+        setSuccess(true);
+      } else {
+        setSubmitError(data.error || t.error);
+      }
     } catch {
-      /* ignore */
-    }
-    window.setTimeout(() => {
+      setSubmitError(t.error);
+    } finally {
       setSubmitting(false);
-      setSuccess(true);
-    }, 500);
+    }
   };
 
   const inputCls =
@@ -193,6 +206,17 @@ function ContactDialog({ onClose }: { onClose: () => void }) {
             </div>
           ) : (
             <form onSubmit={onSubmit} noValidate className="mt-6 flex flex-col gap-4 md:mt-0">
+              {/* Honeypot — hidden from users, catches bots */}
+              <input
+                type="text"
+                name="company"
+                value={form.company}
+                onChange={update("company")}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden
+                className="hidden"
+              />
               <div>
                 <label htmlFor={`${uid}-name`} className="mb-1.5 block text-sm font-medium text-ink">
                   {t.name}
@@ -285,6 +309,15 @@ function ContactDialog({ onClose }: { onClose: () => void }) {
                   className={cn(inputCls, "resize-none")}
                 />
               </div>
+
+              {submitError && (
+                <p
+                  role="alert"
+                  className="rounded-2xl bg-red-50 px-4 py-3 text-sm font-medium text-red-700 ring-1 ring-red-200"
+                >
+                  {submitError}
+                </p>
+              )}
 
               <button
                 type="submit"

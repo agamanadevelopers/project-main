@@ -100,6 +100,7 @@ type Dict = {
     close: string;
     required: string;
     invalidEmail: string;
+    error: string;
   };
 };
 
@@ -371,6 +372,7 @@ const en: Dict = {
     close: "Close",
     required: "This field is required",
     invalidEmail: "Please enter a valid email",
+    error: "Something went wrong. Please try again, or call us directly.",
   },
 };
 
@@ -642,6 +644,7 @@ const kn: Dict = {
     close: "ಮುಚ್ಚಿ",
     required: "ಈ ಕ್ಷೇತ್ರ ಅಗತ್ಯವಿದೆ",
     invalidEmail: "ದಯವಿಟ್ಟು ಸರಿಯಾದ ಇಮೇಲ್ ನಮೂದಿಸಿ",
+    error: "ಏನೋ ತಪ್ಪಾಗಿದೆ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ ಅಥವಾ ನೇರವಾಗಿ ಕರೆ ಮಾಡಿ.",
   },
 };
 
