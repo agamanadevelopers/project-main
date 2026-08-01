@@ -47,7 +47,7 @@ type Dict = {
     eyebrow: string;
     heading: string;
     intro: string;
-    items: { name: string; tag: string; place: string; blurb: string; image?: string }[];
+    items: { name: string; tag: string; place: string; blurb: string; image?: string; link?: string }[];
   };
   why: {
     eyebrow: string;

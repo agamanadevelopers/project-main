@@ -82,6 +82,7 @@ function buildDict(hp: any, loc: Locale): ContentDict {
           place: L(p.place, bp.place),
           blurb: L(p.blurb, bp.blurb),
           image: img(p.image, 1200, 1500),
+          link: p.link || bp.link || undefined,
         };
       })
     : base.projects.items;

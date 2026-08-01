@@ -24,11 +24,11 @@ export function Projects() {
         </Reveal>
 
         <Reveal stagger className="mt-14 grid gap-6 md:grid-cols-3 lg:gap-7">
-          {t.items.map((p, i) => (
-            <article
-              key={p.name}
-              className="group relative flex flex-col overflow-hidden rounded-[var(--radius-2xl)] bg-teal text-white ring-1 ring-transparent transition-all duration-500 ease-[var(--ease-out-expo)] hover:-translate-y-2 hover:shadow-[0_40px_80px_-42px_rgba(4,48,59,0.65)]"
-            >
+          {t.items.map((p, i) => {
+            const cardClass =
+              "group relative flex flex-col overflow-hidden rounded-[var(--radius-2xl)] bg-teal text-white ring-1 ring-transparent transition-all duration-500 ease-[var(--ease-out-expo)] hover:-translate-y-2 hover:shadow-[0_40px_80px_-42px_rgba(4,48,59,0.65)]";
+            const isExternal = !!p.link && /^https?:\/\//i.test(p.link);
+            const cardInner = (
               <div className="relative aspect-[4/5] overflow-hidden">
                 <Image
                   src={p.image ?? images.projects[i].src}
@@ -56,8 +56,27 @@ export function Projects() {
                   <p className="mt-3 max-w-xs text-[0.95rem] leading-relaxed text-white/75">{p.blurb}</p>
                 </div>
               </div>
-            </article>
-          ))}
+            );
+
+            if (!p.link) {
+              return (
+                <article key={p.name} className={cardClass}>
+                  {cardInner}
+                </article>
+              );
+            }
+            return (
+              <a
+                key={p.name}
+                href={p.link}
+                aria-label={p.name}
+                className={cardClass}
+                {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+              >
+                {cardInner}
+              </a>
+            );
+          })}
         </Reveal>
       </Container>
     </section>

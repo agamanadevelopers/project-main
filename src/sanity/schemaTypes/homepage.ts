@@ -150,6 +150,15 @@ export const homepage = defineType({
               type: "image",
               options: { hotspot: true },
             }),
+            defineField({
+              name: "link",
+              title: "Link (makes the card clickable)",
+              type: "url",
+              description:
+                "Optional. Where this project card links to when clicked — e.g. https://tapovana.com. Leave blank and the card stays non-clickable.",
+              validation: (Rule) =>
+                Rule.uri({ allowRelative: true, scheme: ["http", "https"] }),
+            }),
           ],
           preview: { select: { title: "name.en", media: "image" } },
         }),
