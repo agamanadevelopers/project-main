@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { ContactButton } from "@/components/ui/ContactButton";
@@ -12,11 +13,17 @@ import { cn } from "@/lib/utils";
 
 function BrandLink() {
   return (
-    <a href="#top" className="flex items-center" aria-label={`${site.name} — home`}>
+    <Link href="/" className="flex items-center" aria-label={`${site.name} — home`}>
       <Logo variant="dark" priority className="h-8 sm:h-9" />
-    </a>
+    </Link>
   );
 }
+
+// New standalone page routes (not homepage sections).
+const pageLinks = [
+  { href: "/services", label: "Services" },
+  { href: "/locations", label: "Where We Work" },
+] as const;
 
 export function Navbar() {
   const t = useT();
@@ -88,7 +95,7 @@ export function Navbar() {
               return (
                 <a
                   key={item.href}
-                  href={item.href}
+                  href={`/${item.href}`}
                   aria-current={isActive ? "true" : undefined}
                   className={cn(
                     "relative text-[0.95rem] font-medium transition-colors hover:text-ink",
@@ -134,12 +141,22 @@ export function Navbar() {
             {navItems.map((item) => (
               <a
                 key={item.href}
-                href={item.href}
+                href={`/${item.href}`}
                 onClick={() => setOpen(false)}
                 className="rounded-2xl px-4 py-3 text-base font-medium text-ink-soft transition-colors hover:bg-cream hover:text-ink"
               >
                 {t.nav[item.key]}
               </a>
+            ))}
+            {pageLinks.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className="rounded-2xl px-4 py-3 text-base font-medium text-ink-soft transition-colors hover:bg-cream hover:text-ink"
+              >
+                {item.label}
+              </Link>
             ))}
             <ContactButton variant="primary" className="mt-2 w-full">
               {t.common.letsTalk}

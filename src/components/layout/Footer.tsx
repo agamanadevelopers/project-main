@@ -36,6 +36,22 @@ export function Footer() {
                   </a>
                 </li>
               ))}
+              <li>
+                <a
+                  href="/services"
+                  className="text-[0.98rem] text-white/80 transition-colors hover:text-lime"
+                >
+                  Services
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/locations"
+                  className="text-[0.98rem] text-white/80 transition-colors hover:text-lime"
+                >
+                  Where We Work
+                </a>
+              </li>
             </ul>
           </nav>
 
