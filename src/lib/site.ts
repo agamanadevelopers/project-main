@@ -30,7 +30,7 @@ export const site = {
   areaServed: "Karnataka",
   ogImage: "/og",
   social: {
-    instagram: "https://instagram.com/agamanaprojects",
+    instagram: "https://www.instagram.com/agamana.projects",
     linkedin: "https://linkedin.com/company/agamanaprojects",
     youtube: "https://youtube.com/@agamanaprojects",
   },
