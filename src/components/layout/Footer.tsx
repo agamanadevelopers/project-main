@@ -21,7 +21,6 @@ export function Footer() {
           <div className="max-w-sm">
             <Logo variant="light" className="h-10" />
             <p className="mt-6 text-[0.98rem] leading-relaxed text-white/65">{t.footer.tagline}</p>
-            <p className="mt-4 text-sm text-white/45">{t.footer.serving}</p>
           </div>
 
           <nav aria-label="Footer">
