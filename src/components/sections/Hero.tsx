@@ -73,7 +73,7 @@ export function Hero() {
             {(i === 0 || i === active || loadRest) && (
               <Image
                 src={s.image ?? backgrounds[i]?.src ?? images.hero.src}
-                alt=""
+                alt="Aerial view of a planned residential layout and developed land by Agamana Projects in Karnataka"
                 fill
                 priority={i === 0}
                 sizes="100vw"

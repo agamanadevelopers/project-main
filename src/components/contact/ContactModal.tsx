@@ -5,6 +5,7 @@ import { X, MapPin, Phone, Mail, Check, ArrowUpRight } from "lucide-react";
 import { useContact } from "@/lib/contact";
 import { useT } from "@/lib/i18n";
 import { useSettings } from "@/lib/settings";
+import { trackEvent } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 
 type Errors = { name?: string; phone?: string; email?: string };
@@ -91,6 +92,7 @@ function ContactDialog({ onClose }: { onClose: () => void }) {
       } catch {
         /* ignore */
       }
+      trackEvent("generate_lead", { method: "mailto", interest: form.interest });
       setSuccess(true);
       setSubmitting(false);
       return;
@@ -112,8 +114,10 @@ function ContactDialog({ onClose }: { onClose: () => void }) {
         }),
       });
       const data = await res.json();
-      if (data.success) setSuccess(true);
-      else setSubmitError(t.error);
+      if (data.success) {
+        trackEvent("generate_lead", { method: "web3forms", interest: form.interest });
+        setSuccess(true);
+      } else setSubmitError(t.error);
     } catch {
       setSubmitError(t.error);
     } finally {

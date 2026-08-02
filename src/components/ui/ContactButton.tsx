@@ -2,6 +2,7 @@
 
 import { buttonClasses, ArrowCircle, type Variant, type Size } from "@/components/ui/Button";
 import { useContact } from "@/lib/contact";
+import { trackEvent } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 
 /** Pill button that opens the contact popup. Matches <Button> styling. */
@@ -21,10 +22,16 @@ export function ContactButton({
   "aria-label"?: string;
 }) {
   const { openContact } = useContact();
+  const handleClick = () => {
+    trackEvent("cta_click", {
+      cta_text: typeof children === "string" ? children : "Contact",
+    });
+    openContact();
+  };
   return (
     <button
       type="button"
-      onClick={openContact}
+      onClick={handleClick}
       aria-label={ariaLabel}
       className={cn(buttonClasses(variant, size, className))}
     >

@@ -7,6 +7,8 @@ import "./globals.css";
 const GA_ID = "G-QDV4V425JG";
 import { site } from "@/lib/site";
 import { buildJsonLd } from "@/lib/jsonld";
+import { organizationSchema } from "@/lib/business";
+import { JsonLd } from "@/lib/json-ld";
 import { Providers } from "@/components/Providers";
 import { getSiteData } from "@/sanity/getSiteData";
 
@@ -119,6 +121,8 @@ gtag('config', '${GA_ID}');`}
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {/* RealEstateAgent (#business) — referenced by service & location pages */}
+        <JsonLd data={organizationSchema()} />
       </head>
       <body className="flex min-h-screen flex-col bg-paper antialiased">
         <a

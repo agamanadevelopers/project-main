@@ -32,7 +32,7 @@ export function Projects() {
               <div className="relative aspect-[4/5] overflow-hidden">
                 <Image
                   src={p.image ?? images.projects[i].src}
-                  alt={p.name}
+                  alt={`${p.name} — ${p.tag} in ${p.place} by Agamana Projects`}
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover transition-transform duration-[900ms] ease-[var(--ease-out-soft)] group-hover:scale-[1.06]"
