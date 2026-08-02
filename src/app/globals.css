@@ -80,10 +80,8 @@ body {
   letter-spacing: 0.14em;
 }
 
-/* Word-by-word scroll reveal: inner word spans start muted */
-.word-reveal span span {
-  opacity: 0.26;
-}
+/* Word-by-word scroll-reveal muted state lives in the min-width guard below,
+   so phones show the finished heading immediately. */
 
 /* Accessible focus ring */
 :focus-visible {
@@ -97,10 +95,17 @@ body {
   color: var(--color-teal-deep);
 }
 
-/* Reveal utility — hidden until JS reveals; visible for no-JS / reduced-motion */
-.will-reveal,
-.reveal-stagger > * {
-  opacity: 0;
+/* Scroll-reveal initial (hidden) states apply only at >=768px, where the JS
+   reveal runs. On phones the reveal is skipped entirely so every section paints
+   instantly with no wait on JavaScript. No-JS / reduced-motion always show. */
+@media (min-width: 768px) {
+  .will-reveal,
+  .reveal-stagger > * {
+    opacity: 0;
+  }
+  .word-reveal span span {
+    opacity: 0.26;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -261,16 +266,6 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .scroll-cue span {
     animation: none;
-  }
-}
-
-/* Reveal — image clip variant starts hidden (no flash pre-hydration) */
-.will-clip {
-  clip-path: inset(0 0 100% 0);
-}
-@media (prefers-reduced-motion: reduce) {
-  .will-clip {
-    clip-path: none !important;
   }
 }
 

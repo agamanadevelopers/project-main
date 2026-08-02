@@ -29,7 +29,8 @@ export function WordReveal({ text, className, as: Tag = "h2" }: Props) {
       const el = ref.current;
       if (!el) return;
       const mm = gsap.matchMedia();
-      mm.add("(prefers-reduced-motion: no-preference)", () => {
+      // Desktop/tablet only — phones show the finished heading immediately.
+      mm.add("(min-width: 768px) and (prefers-reduced-motion: no-preference)", () => {
         const items = gsap.utils.toArray<HTMLElement>(el.querySelectorAll("span > span"));
         gsap.set(items, { opacity: 0.24 });
         gsap.to(items, {

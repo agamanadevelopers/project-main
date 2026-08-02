@@ -46,7 +46,9 @@ export function Reveal({
       if (!el) return;
       const mm = gsap.matchMedia();
 
-      mm.add("(prefers-reduced-motion: no-preference)", () => {
+      // Desktop/tablet only: on phones the reveal is skipped so content paints
+      // instantly (the matching CSS guard keeps mobile content visible too).
+      mm.add("(min-width: 768px) and (prefers-reduced-motion: no-preference)", () => {
         const targets = stagger
           ? (gsap.utils.toArray<HTMLElement>(el.children) as HTMLElement[])
           : [el];
