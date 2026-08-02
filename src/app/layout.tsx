@@ -1,6 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, Inter, Noto_Sans_Kannada } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
+
+// Google Analytics (GA4) measurement ID.
+const GA_ID = "G-QDV4V425JG";
 import { site } from "@/lib/site";
 import { buildJsonLd } from "@/lib/jsonld";
 import { Providers } from "@/components/Providers";
@@ -96,6 +100,17 @@ export default async function RootLayout({
   return (
     <html lang="en-IN" className={`${bricolage.variable} ${inter.variable} ${notoKannada.variable}`}>
       <head>
+        {/* Google tag (gtag.js) */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga-gtag" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${GA_ID}');`}
+        </Script>
         {/* No-JS fallback: ensure reveal content is visible without hydration */}
         <noscript>
           <style>{`.will-reveal,.reveal-stagger>*,.word-reveal span span{opacity:1!important;transform:none!important}`}</style>
