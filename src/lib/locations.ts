@@ -54,23 +54,23 @@ export const locations: Location[] = [
         type: "Farmland Plots",
         blurb:
           "Premium gated farmland for investment, nature and weekend living, in Lingadahalli, Sagara.",
-        href: "/projects/tapovana-farmland",
+        href: "/#projects",
       },
       {
         name: "Tribhuvana",
         type: "Farm Plots",
         blurb: "Private one-acre farmland estates in the heart of Ulavi, Sagara.",
-        href: "/projects/tribhuvana-farms",
+        href: "/#projects",
       },
       {
         name: "Nandanavana",
         type: "Farm Plots",
         blurb:
           "Well-planned farmplots surrounded by nature, greenery and tranquility.",
-        href: "/projects/nandavana",
+        href: "/#projects",
       },
     ],
-    nearbyAreas: ["Lingadahalli", "Ulavi", "Talaguppa", "Anandapuram", "Jog"], // VERIFY
+    nearbyAreas: ["Lingadahalli", "Ulavi", "Talaguppa", "Anandapuram", "Jog"], // confirmed
     faqs: [
       {
         q: "Do you develop farmland plots in Sagara?",
@@ -104,7 +104,7 @@ export const locations: Location[] = [
       "A partner model, not a broker — we stay with your project from land to launch.",
     ],
     projects: [], // VERIFY — add real Shivamogga-district projects when available
-    nearbyAreas: ["Bhadravati", "Thirthahalli", "Shikaripura", "Soraba", "Hosanagara"], // VERIFY
+    nearbyAreas: ["Bhadravati", "Thirthahalli", "Shikaripura", "Soraba", "Hosanagara"], // confirmed
     faqs: [
       {
         q: "Do you work on projects in Shivamogga city and district?",
@@ -134,7 +134,7 @@ export const locations: Location[] = [
       "One team, one process, one point of contact throughout.",
     ],
     projects: [], // VERIFY — add real Sirsi / Uttara Kannada projects when available
-    nearbyAreas: ["Siddapur", "Yellapur", "Kumta", "Honnavar", "Ankola"], // VERIFY
+    nearbyAreas: ["Siddapur", "Yellapur", "Kumta", "Honnavar", "Ankola"], // confirmed
     faqs: [
       {
         q: "Do you develop land in Sirsi and Uttara Kannada?",

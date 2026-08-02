@@ -19,13 +19,13 @@ export const BUSINESS = {
     postalCode: "577401",
     addressCountry: "IN",
   },
-  // VERIFY: replace with the exact office pin from Google Maps
-  geo: { latitude: 14.1667, longitude: 75.0333 },
-  // VERIFY: confirm actual opening hours
+  // Exact office pin (confirmed from Google Maps)
+  geo: { latitude: 14.1668472200862, longitude: 75.02253337653568 },
+  // Confirmed opening hours
   openingHours: {
     days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-    opens: "10:00",
-    closes: "18:30",
+    opens: "09:00",
+    closes: "19:30",
   },
   areaServed: [
     "Sagara",
@@ -36,8 +36,8 @@ export const BUSINESS = {
     "Chitradurga",
     "Karnataka",
   ],
-  // Add social profile URLs here when available; leave empty if none.
-  sameAs: [] as string[],
+  // Social profiles (used for schema sameAs)
+  sameAs: ["https://instagram.com/agamana.projects"] as string[],
 };
 
 export function organizationSchema() {
