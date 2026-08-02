@@ -9,10 +9,15 @@ import { WhyAgamana } from "@/components/sections/WhyAgamana";
 import { Process } from "@/components/sections/Process";
 import { FAQ } from "@/components/sections/FAQ";
 import { CTA } from "@/components/sections/CTA";
+import { JsonLd } from "@/lib/json-ld";
+import { faqSchema } from "@/lib/business";
+import { content } from "@/lib/content";
 
 export default function Home() {
   return (
     <>
+      {/* FAQPage schema — built from the same data the visible FAQ renders */}
+      <JsonLd data={faqSchema(content.en.faq.items)} />
       <Navbar />
       <main className="flex-1">
         <Hero />
