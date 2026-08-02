@@ -30,6 +30,9 @@ export function Hero() {
   const count = slides.length;
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
+  // Only the first slide's image loads on initial paint; the rest mount shortly
+  // after so mobile isn't downloading three hero images during the critical load.
+  const [loadRest, setLoadRest] = useState(false);
 
   const go = useCallback((dir: number) => setActive((a) => (a + dir + count) % count), [count]);
 
@@ -38,6 +41,11 @@ export function Hero() {
     const id = window.setInterval(() => setActive((a) => (a + 1) % count), AUTOPLAY);
     return () => window.clearInterval(id);
   }, [paused, count, active]);
+
+  useEffect(() => {
+    const id = window.setTimeout(() => setLoadRest(true), 1200);
+    return () => window.clearTimeout(id);
+  }, []);
 
   const slide = slides[active];
   const act = actions[active];
@@ -62,14 +70,16 @@ export function Hero() {
               i === active ? "opacity-100" : "opacity-0",
             )}
           >
-            <Image
-              src={s.image ?? backgrounds[i]?.src ?? images.hero.src}
-              alt=""
-              fill
-              priority={i === 0}
-              sizes="100vw"
-              className="object-cover"
-            />
+            {(i === 0 || i === active || loadRest) && (
+              <Image
+                src={s.image ?? backgrounds[i]?.src ?? images.hero.src}
+                alt=""
+                fill
+                priority={i === 0}
+                sizes="100vw"
+                className="object-cover"
+              />
+            )}
           </div>
         ))}
         <div
