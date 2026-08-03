@@ -13,6 +13,11 @@ import { cn } from "@/lib/utils";
 
 // Background image per slide (structure; text comes from content).
 const backgrounds = [images.hero, images.statement, images.why];
+const bgAlts = [
+  "Aerial view of a planned residential layout by Agamana Projects in Karnataka",
+  "Sunlit green landscape ready for land development in Karnataka",
+  "Terraced land shaped into plots for a new residential project",
+];
 
 // Per-slide button targets — "contact" opens the popup, otherwise a section link.
 const actions = [
@@ -73,7 +78,7 @@ export function Hero() {
             {(i === 0 || i === active || loadRest) && (
               <Image
                 src={s.image ?? backgrounds[i]?.src ?? images.hero.src}
-                alt="Aerial view of a planned residential layout and developed land by Agamana Projects in Karnataka"
+                alt={bgAlts[i] ?? backgrounds[i]?.alt ?? "Agamana Projects land development"}
                 fill
                 priority={i === 0}
                 sizes="100vw"

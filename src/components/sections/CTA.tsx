@@ -18,7 +18,7 @@ export function CTA() {
         <Reveal>
           <div className="grain relative overflow-hidden rounded-[var(--radius-2xl)] bg-teal px-8 py-16 text-center text-white md:px-16 md:py-24">
             <div aria-hidden className="absolute inset-0 -z-10 opacity-20">
-              <Image src={images.statement.src} alt="" fill sizes="100vw" className="object-cover" />
+              <Image src={images.statement.src} alt="Agamana Projects team planning a residential layout in Karnataka" fill sizes="100vw" className="object-cover" />
             </div>
             <div
               aria-hidden
