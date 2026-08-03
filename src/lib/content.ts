@@ -78,6 +78,7 @@ type Dict = {
     getInTouch: string;
     visitUs: string;
     callUs: string;
+    followUs: string;
     rights: string;
     disclaimer: string;
   };
@@ -362,6 +363,7 @@ const en: Dict = {
     getInTouch: "Get in touch",
     visitUs: "Visit us",
     callUs: "Call us",
+    followUs: "Follow us",
     rights: "All rights reserved.",
     disclaimer: "A trusted project partner, not a builder, broker or agency.",
   },
@@ -646,6 +648,7 @@ const kn: Dict = {
     getInTouch: "ಸಂಪರ್ಕಿಸಿ",
     visitUs: "ನಮ್ಮ ಕಚೇರಿ",
     callUs: "ಕರೆ ಮಾಡಿ",
+    followUs: "ನಮ್ಮನ್ನು ಅನುಸರಿಸಿ",
     rights: "ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.",
     disclaimer: "ವಿಶ್ವಾಸಾರ್ಹ ಯೋಜನೆ ಪಾಲುದಾರ, ಬಿಲ್ಡರ್, ಬ್ರೋಕರ್ ಅಥವಾ ಏಜೆನ್ಸಿ ಅಲ್ಲ.",
   },

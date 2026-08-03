@@ -37,7 +37,12 @@ export const BUSINESS = {
     "Karnataka",
   ],
   // Social profiles (used for schema sameAs)
-  sameAs: ["https://www.instagram.com/agamana.projects"] as string[],
+  sameAs: [
+    "https://facebook.com/agamana.projects",
+    "https://instagram.com/agamana.projects",
+    "https://linkedin.com/company/agamanaprojects",
+    "https://youtube.com/@agamanaprojects",
+  ] as string[],
 };
 
 export function organizationSchema() {
