@@ -1,12 +1,16 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { cn } from "@/lib/utils";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
+
+if (typeof window !== "undefined") {
+  document.documentElement.setAttribute("data-gsap", "");
+}
 
 type Props = {
   children: React.ReactNode;

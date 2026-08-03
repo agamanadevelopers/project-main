@@ -95,15 +95,15 @@ body {
   color: var(--color-teal-deep);
 }
 
-/* Scroll-reveal initial (hidden) states apply only at >=768px, where the JS
-   reveal runs. On phones the reveal is skipped entirely so every section paints
-   instantly with no wait on JavaScript. No-JS / reduced-motion always show. */
+/* Scroll-reveal initial (hidden) states. Gated behind [data-gsap] on <html>
+   so server-rendered HTML is fully visible to crawlers before GSAP hydrates.
+   Only at >=768px where the JS reveal runs. Phones paint instantly. */
 @media (min-width: 768px) {
-  .will-reveal,
-  .reveal-stagger > * {
+  [data-gsap] .will-reveal,
+  [data-gsap] .reveal-stagger > * {
     opacity: 0;
   }
-  .word-reveal span span {
+  [data-gsap] .word-reveal span span {
     opacity: 0.26;
   }
 }
