@@ -2,9 +2,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { locations } from "@/lib/locations";
-import { BUSINESS, breadcrumbSchema } from "@/lib/business";
+import { BUSINESS, breadcrumbSchema, webPageSchema, LAST_REVIEWED } from "@/lib/business";
 import { JsonLd } from "@/lib/json-ld";
-import { Breadcrumbs, PageHero } from "@/app/_components/PageBlocks";
+import { Breadcrumbs, PageHero, LastReviewed } from "@/app/_components/PageBlocks";
 
 export const metadata: Metadata = {
   title: { absolute: "Where We Work — Land Development Across Karnataka | Agamana Projects" },
@@ -22,6 +22,13 @@ export default function LocationsIndex() {
   return (
     <>
       <JsonLd data={breadcrumbSchema(crumbs.map((c) => ({ name: c.name, url: c.url })))} />
+      <JsonLd
+        data={webPageSchema({
+          url: `${BUSINESS.url}/locations`,
+          name: "Where We Work — Land Development Across Karnataka | Agamana Projects",
+          speakable: ["h1"],
+        })}
+      />
       <Breadcrumbs items={crumbs.map((c) => ({ name: c.name, href: c.href }))} />
 
       <PageHero
@@ -48,6 +55,8 @@ export default function LocationsIndex() {
           </Link>
         ))}
       </div>
+
+      <LastReviewed date={LAST_REVIEWED} />
     </>
   );
 }

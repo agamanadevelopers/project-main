@@ -4,9 +4,9 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { services, getService } from "@/lib/services";
 import { locations } from "@/lib/locations";
-import { BUSINESS, faqSchema, breadcrumbSchema, serviceSchema } from "@/lib/business";
+import { BUSINESS, faqSchema, breadcrumbSchema, serviceSchema, webPageSchema, LAST_REVIEWED } from "@/lib/business";
 import { JsonLd } from "@/lib/json-ld";
-import { Breadcrumbs, PageHero, CtaRow, FaqList, SectionHeading } from "@/app/_components/PageBlocks";
+import { Breadcrumbs, PageHero, CtaRow, FaqList, SectionHeading, KeyTakeaways, ComparisonTable, LastReviewed } from "@/app/_components/PageBlocks";
 
 export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
@@ -53,10 +53,27 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       <JsonLd data={serviceSchema({ name: svc.name, description: svc.metaDescription, url: canonical })} />
       {svc.faqs.length > 0 && <JsonLd data={faqSchema(svc.faqs)} />}
 
+      <JsonLd
+        data={webPageSchema({
+          url: canonical,
+          name: svc.title,
+          description: svc.metaDescription,
+          speakable: ["h1", "#includes-heading", "#faq-heading"],
+        })}
+      />
+
       <Breadcrumbs items={crumbs.map((c) => ({ name: c.name, href: c.href }))} />
 
       <PageHero eyebrow="How we help" h1={svc.h1} intro={svc.intro} />
       <p className="mt-4 text-ink-soft">{svc.forWhom}</p>
+
+      <KeyTakeaways
+        items={[
+          `${svc.name} is one of the core services Agamana provides to land owners and developers.`,
+          `Includes: ${svc.includes.slice(0, 4).join(", ")} and more.`,
+          "Available across Karnataka — Sagara, Shivamogga, Sirsi and surrounding areas.",
+        ]}
+      />
 
       <CtaRow />
 
@@ -94,6 +111,35 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </p>
       </section>
 
+      <section aria-labelledby="process-heading" className="mt-14">
+        <SectionHeading id="process-heading">How it works</SectionHeading>
+        <div className="mt-6 space-y-4 leading-relaxed text-ink-soft">
+          <p>
+            We start by understanding your land and your goals. Whether you are a first-time land owner
+            or a developer with multiple projects, {svc.name.toLowerCase()} follows the same proven
+            process: an initial consultation, a detailed scope, execution with regular updates, and a
+            clean handover of deliverables you can use immediately.
+          </p>
+          <p>
+            Every engagement is tailored to the project. A farmland layout in Sagara requires different
+            considerations than a residential layout near Shivamogga — and we adapt our approach to the
+            land, the market, and the approvals process specific to each location.
+          </p>
+        </div>
+      </section>
+
+      <ComparisonTable
+        title="Land Owners vs Developers"
+        headers={["Aspect", "Land Owner", "Developer"]}
+        rows={[
+          { aspect: "Typical goal", col1: "Monetise idle or ancestral land", col2: "Launch a plotted project for buyers" },
+          { aspect: "Knowledge of approvals", col1: "Often navigating for the first time", col2: "Familiar but wants it handled" },
+          { aspect: "Need for branding", col1: "Rarely considered", col2: "Integral from day one" },
+          { aspect: "Marketing expectation", col1: "Word-of-mouth or local agents", col2: "Digital presence and lead generation" },
+          { aspect: "How Agamana helps", col1: "Full journey support: plan → approve → brand → sell", col2: "Fills specific gaps with dedicated expertise" },
+        ]}
+      />
+
       <FaqList faqs={svc.faqs} />
 
       <section
@@ -108,6 +154,8 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </p>
         <CtaRow />
       </section>
+
+      <LastReviewed date={LAST_REVIEWED} />
     </>
   );
 }

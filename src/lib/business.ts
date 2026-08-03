@@ -109,3 +109,61 @@ export function serviceSchema(opts: {
     serviceType: "Real estate development",
   };
 }
+
+// Refreshed on every build/deploy — a genuine "last updated" signal for
+// freshness (dateModified) and voice/AI extraction.
+export const LAST_REVIEWED = new Date().toISOString().slice(0, 10);
+
+/**
+ * WebPage node carrying a freshness date (dateModified) and a Speakable spec so
+ * voice assistants and AI engines know which parts of the page to read aloud.
+ * `speakable` should list CSS selectors of concise, self-contained content.
+ */
+export function webPageSchema(opts: {
+  url: string;
+  name: string;
+  description?: string;
+  speakable?: string[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${opts.url}#webpage`,
+    url: opts.url,
+    name: opts.name,
+    ...(opts.description ? { description: opts.description } : {}),
+    isPartOf: { "@id": `${BUSINESS.url}/#website` },
+    inLanguage: "en-IN",
+    dateModified: LAST_REVIEWED,
+    ...(opts.speakable?.length
+      ? {
+          speakable: {
+            "@type": "SpeakableSpecification",
+            cssSelector: opts.speakable,
+          },
+        }
+      : {}),
+  };
+}
+
+/** HowTo schema for genuine step-by-step content (e.g. the "how we work" process). */
+export function howToSchema(opts: {
+  name: string;
+  description: string;
+  url: string;
+  steps: { name: string; text: string }[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: opts.name,
+    description: opts.description,
+    url: opts.url,
+    step: opts.steps.map((s, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: s.name,
+      text: s.text,
+    })),
+  };
+}

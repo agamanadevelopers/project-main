@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { locations, getLocation } from "@/lib/locations";
-import { BUSINESS, faqSchema, breadcrumbSchema } from "@/lib/business";
+import { BUSINESS, faqSchema, breadcrumbSchema, webPageSchema, LAST_REVIEWED } from "@/lib/business";
 import { JsonLd } from "@/lib/json-ld";
-import { Breadcrumbs, PageHero, CtaRow, FaqList, SectionHeading } from "@/app/_components/PageBlocks";
+import { Breadcrumbs, PageHero, CtaRow, FaqList, SectionHeading, KeyTakeaways, ComparisonTable, LastReviewed } from "@/app/_components/PageBlocks";
 
 // Pre-render every location at build time (static, fast, crawlable).
 export function generateStaticParams() {
@@ -68,11 +68,59 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
       <JsonLd data={localAreaSchema} />
       {loc.faqs.length > 0 && <JsonLd data={faqSchema(loc.faqs)} />}
 
+      <JsonLd
+        data={webPageSchema({
+          url: canonical,
+          name: loc.title,
+          description: loc.metaDescription,
+          speakable: ["h1", "#why-heading", "#faq-heading"],
+        })}
+      />
+
       <Breadcrumbs items={crumbs.map((c) => ({ name: c.name, href: c.href }))} />
 
       <PageHero eyebrow={`${loc.region} · ${loc.district} District`} h1={loc.h1} intro={loc.intro} />
 
+      <KeyTakeaways
+        items={[
+          `Agamana Projects works with land owners in ${loc.city} and across ${loc.district} district.`,
+          "One partner handles planning, approvals, branding, marketing and launch.",
+          `We serve ${loc.nearbyAreas.slice(0, 3).join(", ")} and surrounding areas.`,
+        ]}
+      />
+
       <CtaRow />
+
+      <section aria-labelledby="how-heading" className="mt-14">
+        <SectionHeading id="how-heading">How we work in {loc.city}</SectionHeading>
+        <div className="mt-6 space-y-4 leading-relaxed text-ink-soft">
+          <p>
+            Every project in {loc.city} begins with a site visit. We assess the land — its shape, access,
+            terrain, water sources and proximity to roads and amenities — and prepare a development plan
+            that fits the location. If the land is suited to farmland plots, we plan accordingly; if it is better
+            for residential layouts, the design reflects that.
+          </p>
+          <p>
+            Approvals follow a clear process: we handle documentation, liaise with local authorities in{" "}
+            {loc.district} district, and prepare the technical drawings required. Once approved, we move to
+            infrastructure — internal roads, fencing, water, electricity and any amenities the layout
+            promises. Branding, marketing and launch support run in parallel so the project reaches
+            buyers the moment plots are ready.
+          </p>
+        </div>
+      </section>
+
+      <ComparisonTable
+        title={`Land Owners vs Developers in ${loc.city}`}
+        headers={["Aspect", "Land Owner", "Developer"]}
+        rows={[
+          { aspect: "Starting point", col1: "Raw land, often ancestral or agricultural", col2: "Acquired land earmarked for a project" },
+          { aspect: "Primary need", col1: "Guidance on what the land can become", col2: "Execution partner to plan and launch" },
+          { aspect: "Approval knowledge", col1: "Usually limited — first-time process", col2: "Familiar with steps but wants it handled" },
+          { aspect: "Marketing", col1: "Rarely considered early on", col2: "Planned from the start to attract buyers" },
+          { aspect: "How Agamana helps", col1: "End-to-end from first site visit to launch", col2: "Fills gaps — branding, approvals, marketing" },
+        ]}
+      />
 
       <section aria-labelledby="why-heading" className="mt-14">
         <SectionHeading id="why-heading">Why land owners in {loc.city} work with us</SectionHeading>
@@ -128,6 +176,8 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
         </p>
         <CtaRow />
       </section>
+
+      <LastReviewed date={LAST_REVIEWED} />
     </>
   );
 }
