@@ -37,8 +37,8 @@ export async function generateMetadata({
 }
 
 const serviceGuideMap: Record<string, string[]> = {
-  "layout-planning": ["how-to-develop-land-into-plots-karnataka"],
-  "approvals": ["dc-conversion-karnataka", "how-to-develop-land-into-plots-karnataka"],
+  "layout-planning": ["layout-approval-process-karnataka", "how-to-develop-land-into-plots-karnataka"],
+  "approvals": ["dc-conversion-karnataka", "layout-approval-process-karnataka", "agricultural-land-conversion-karnataka"],
   "branding": ["how-to-develop-land-into-plots-karnataka"],
   "marketing": ["how-to-develop-land-into-plots-karnataka"],
   "sales-launch": ["how-to-develop-land-into-plots-karnataka"],

@@ -65,6 +65,8 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
   const guideServiceMap: Record<string, string[]> = {
     "dc-conversion-karnataka": ["approvals", "layout-planning"],
     "how-to-develop-land-into-plots-karnataka": ["layout-planning", "approvals", "branding", "marketing"],
+    "layout-approval-process-karnataka": ["layout-planning", "approvals"],
+    "agricultural-land-conversion-karnataka": ["approvals", "layout-planning"],
   };
   const relatedServices = (guideServiceMap[guide.slug] ?? [])
     .map((s) => services.find((svc) => svc.slug === s))

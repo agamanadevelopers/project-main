@@ -184,16 +184,21 @@ function buildSettings(s: any): SiteSettings {
   };
 }
 
+function clampSeo(val: string, fallback: string, max: number): string {
+  const v = val?.trim() || fallback;
+  return v.length <= max ? v : fallback;
+}
+
 function buildSeo(s: any): SeoData {
   if (!s) return DEFAULT_SEO;
   return {
     title: {
-      en: s.seoTitle?.en || DEFAULT_SEO.title.en,
-      kn: s.seoTitle?.kn || DEFAULT_SEO.title.kn,
+      en: clampSeo(s.seoTitle?.en, DEFAULT_SEO.title.en, 60),
+      kn: clampSeo(s.seoTitle?.kn, DEFAULT_SEO.title.kn, 60),
     },
     description: {
-      en: s.seoDescription?.en || DEFAULT_SEO.description.en,
-      kn: s.seoDescription?.kn || DEFAULT_SEO.description.kn,
+      en: clampSeo(s.seoDescription?.en, DEFAULT_SEO.description.en, 160),
+      kn: clampSeo(s.seoDescription?.kn, DEFAULT_SEO.description.kn, 160),
     },
     ogImage: img(s.ogImage, 1200, 630) ?? DEFAULT_SEO.ogImage,
     favicon: img(s.favicon, 180, 180) ?? DEFAULT_SEO.favicon,
