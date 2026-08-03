@@ -23,7 +23,7 @@ export const services: Service[] = [
       "Plan every aspect of your residential layout before execution: site analysis, plot planning, road network, amenities and infrastructure. Agamana Projects, Karnataka.",
     h1: "Layout Planning for Residential & Farmland Projects",
     intro:
-      "A layout that sells starts with a plan that works. We plan every aspect of your residential or farmland layout before a single road is cut, so plots are usable, infrastructure is sensible, and the project is ready to approve and launch.",
+      "A layout that sells starts with a plan that works. We plan every aspect of your residential or farmland layout before a single road is cut, so plots are usable, infrastructure is sensible, and the project is ready to approve and launch. Most layouts we plan range from 5 to 50 acres across Tier 2 and Tier 3 towns in Karnataka.",
     includes: [
       "Site Analysis",
       "Layout Design",
@@ -52,7 +52,7 @@ export const services: Service[] = [
       "Navigate layout approvals, government compliance, technical drawings and project documentation with one partner. Agamana Projects, Karnataka.",
     h1: "Approvals & Documentation",
     intro:
-      "Approvals are where projects stall. We help you navigate government approvals and project documentation so your layout is clean, compliant and on record, with the technical drawings and paperwork handled properly.",
+      "Approvals are where projects stall. In Karnataka, layout approval typically involves 8 to 12 different documents and coordination with multiple government departments. We help you navigate government approvals and project documentation so your layout is clean, compliant and on record, with the technical drawings and paperwork handled properly.",
     includes: [
       "Documentation",
       "Government Approvals",

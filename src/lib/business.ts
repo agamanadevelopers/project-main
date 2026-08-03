@@ -182,6 +182,30 @@ export function articleSchema(opts: {
   };
 }
 
+/** VideoObject schema for pages that reference walkthrough or project videos. */
+export function videoSchema(opts: {
+  name: string;
+  description: string;
+  thumbnailUrl: string;
+  uploadDate: string;
+  contentUrl?: string;
+  embedUrl?: string;
+  duration?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: opts.name,
+    description: opts.description,
+    thumbnailUrl: opts.thumbnailUrl,
+    uploadDate: opts.uploadDate,
+    ...(opts.contentUrl ? { contentUrl: opts.contentUrl } : {}),
+    ...(opts.embedUrl ? { embedUrl: opts.embedUrl } : {}),
+    ...(opts.duration ? { duration: opts.duration } : {}),
+    publisher: { "@id": `${BUSINESS.url}/#business` },
+  };
+}
+
 /** HowTo schema for genuine step-by-step content (e.g. the "how we work" process). */
 export function howToSchema(opts: {
   name: string;

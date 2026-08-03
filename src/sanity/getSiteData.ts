@@ -143,6 +143,7 @@ function buildDict(hp: any, loc: Locale): ContentDict {
       body: L(hp.whyBody, base.why.body),
       tagline: L(hp.whyTagline, base.why.tagline),
       image: img(hp.whyImage, 1200, 1500),
+      stats: base.why.stats,
       pillars: whyPillars,
     },
     process: {

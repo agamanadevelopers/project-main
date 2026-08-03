@@ -54,6 +54,18 @@ export function WhyAgamana() {
               <p className="mt-4 max-w-xl leading-relaxed text-ink-soft">{t.body}</p>
             </Reveal>
 
+            {/* Stats row */}
+            <Reveal stagger className="mt-10 flex flex-wrap gap-8 border-t border-ink/15 pt-8">
+              {t.stats.map((s) => (
+                <div key={s.label}>
+                  <span className="font-display text-3xl font-bold tracking-tight text-teal sm:text-4xl">
+                    {s.value}
+                  </span>
+                  <p className="mt-1 text-sm font-medium text-ink-soft">{s.label}</p>
+                </div>
+              ))}
+            </Reveal>
+
             {/* Pillars — classic hairline list */}
             <Reveal stagger className="mt-10 grid gap-x-10 gap-y-8 sm:grid-cols-2">
               {t.pillars.map((p, i) => (

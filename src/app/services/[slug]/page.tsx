@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { services, getService } from "@/lib/services";
 import { locations } from "@/lib/locations";
+import { guides } from "@/lib/guides";
 import { BUSINESS, faqSchema, breadcrumbSchema, serviceSchema, webPageSchema, LAST_REVIEWED } from "@/lib/business";
 import { JsonLd } from "@/lib/json-ld";
 import { Breadcrumbs, PageHero, CtaRow, FaqList, SectionHeading, KeyTakeaways, ComparisonTable, LastReviewed } from "@/app/_components/PageBlocks";
@@ -35,10 +36,21 @@ export async function generateMetadata({
   };
 }
 
+const serviceGuideMap: Record<string, string[]> = {
+  "layout-planning": ["how-to-develop-land-into-plots-karnataka"],
+  "approvals": ["dc-conversion-karnataka", "how-to-develop-land-into-plots-karnataka"],
+  "branding": ["how-to-develop-land-into-plots-karnataka"],
+  "marketing": ["how-to-develop-land-into-plots-karnataka"],
+  "sales-launch": ["how-to-develop-land-into-plots-karnataka"],
+};
+
 export default async function ServicePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const svc = getService(slug);
   if (!svc) notFound();
+  const relatedGuides = (serviceGuideMap[svc.slug] ?? [])
+    .map((s) => guides.find((g) => g.slug === s))
+    .filter(Boolean);
 
   const canonical = `${BUSINESS.url}/services/${svc.slug}`;
   const crumbs = [
@@ -163,6 +175,32 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           </li>
         </ul>
       </section>
+
+      {relatedGuides.length > 0 && (
+        <section aria-labelledby="guides-heading" className="mt-14">
+          <SectionHeading id="guides-heading">Related guides</SectionHeading>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            {relatedGuides.map((g) => (
+              <Link
+                key={g!.slug}
+                href={`/guides/${g!.slug}`}
+                className="group flex flex-col rounded-[var(--radius-card)] border border-line bg-card p-6 transition-all duration-300 ease-[var(--ease-out-soft)] hover:-translate-y-1 hover:shadow-[0_24px_44px_-28px_rgba(4,48,59,0.45)]"
+              >
+                <span className="text-xs font-semibold uppercase tracking-eyebrow text-teal">
+                  {g!.category}
+                </span>
+                <h3 className="mt-2 font-display text-lg font-bold tracking-tight text-ink">
+                  {g!.h1}
+                </h3>
+                <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-ink-soft">{g!.intro}</p>
+                <span className="mt-3 text-sm font-semibold text-teal transition-colors group-hover:text-lime-deep">
+                  Read guide &rarr;
+                </span>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       <FaqList faqs={svc.faqs} />
 

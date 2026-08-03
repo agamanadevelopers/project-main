@@ -56,6 +56,7 @@ type Dict = {
     body: string;
     tagline: string;
     image?: string;
+    stats: { value: string; label: string }[];
     pillars: { title: string; body: string }[];
   };
   process: {
@@ -258,6 +259,11 @@ const en: Dict = {
     lead: "Developing a successful project takes planning, coordination and the right team.",
     body: "We're here to help you through every stage.",
     tagline: "Trusted Partner for Every Stage",
+    stats: [
+      { value: "7+", label: "Districts Served" },
+      { value: "8", label: "Stages Covered" },
+      { value: "3", label: "Active Projects" },
+    ],
     pillars: [
       {
         title: "We Understand Land Development",
@@ -285,22 +291,22 @@ const en: Dict = {
       {
         n: "01",
         title: "Understand Your Land",
-        body: "We begin by understanding your land, location and goals.",
+        body: "We visit the site, check zoning and land records, and understand your goals. This feasibility step typically takes 1 to 2 weeks.",
       },
       {
         n: "02",
         title: "Plan the Project",
-        body: "We prepare the layout and development plan.",
+        body: "We prepare the layout design, plot plan, road network and approval strategy. You get a complete project blueprint before any work begins on-site.",
       },
       {
         n: "03",
         title: "Develop & Build",
-        body: "We coordinate the required development work.",
+        body: "We coordinate surveyors, engineers and government approvals. Infrastructure goes in: roads, drainage, electricity and water connections.",
       },
       {
         n: "04",
         title: "Brand & Launch",
-        body: "Once everything is ready, we help bring your project to the market.",
+        body: "We create the project identity, build marketing materials, launch digital campaigns and support your sales team through the first bookings.",
       },
     ],
   },
@@ -312,7 +318,7 @@ const en: Dict = {
     items: [
       {
         q: "What does Agamana Projects do?",
-        a: "We are a project partner. We help land owners and developers plan, build, brand, market and launch residential projects, all with one team.",
+        a: "Agamana Projects is a land development partner based in Sagara, Karnataka. We help land owners and developers plan, build, brand, market and launch residential layout projects. We cover all 8 stages from raw land to market launch, serving 7+ districts across Central and Coastal Karnataka.",
       },
       {
         q: "Are you a builder or a broker?",
@@ -328,7 +334,15 @@ const en: Dict = {
       },
       {
         q: "Which areas do you work in?",
-        a: "We focus on Karnataka, including Tier 2 and Tier 3 towns where good land deserves professional planning.",
+        a: "We focus on Karnataka, specifically Sagara, Shivamogga, Sirsi, Uttara Kannada, Tumakuru, Chitradurga and surrounding Tier 2 and Tier 3 towns where good land deserves professional planning.",
+      },
+      {
+        q: "How long does a typical project take from land to launch?",
+        a: "It depends on the project size and approvals involved. A straightforward residential layout of 5 to 10 acres typically takes 12 to 18 months from initial planning to market launch. Larger projects or those needing DC conversion can take 18 to 24 months.",
+      },
+      {
+        q: "What is your process for working with a new land owner?",
+        a: "We start with a site visit and feasibility check. Then we prepare a project plan covering layout design, approvals, infrastructure, branding and marketing. You get a single point of contact throughout. We handle coordination across surveyors, engineers, government offices and creative teams so you don't have to.",
       },
       {
         q: "How do I get started?",
@@ -529,6 +543,11 @@ const kn: Dict = {
     lead: "ಯಶಸ್ವಿ ಯೋಜನೆ ಅಭಿವೃದ್ಧಿಗೆ ಯೋಜನೆ, ಸಮನ್ವಯ ಮತ್ತು ಸರಿಯಾದ ತಂಡ ಬೇಕು.",
     body: "ಪ್ರತಿ ಹಂತದಲ್ಲೂ ನಿಮಗೆ ಸಹಾಯ ಮಾಡಲು ನಾವು ಇದ್ದೇವೆ.",
     tagline: "ಪ್ರತಿ ಹಂತಕ್ಕೂ ವಿಶ್ವಾಸಾರ್ಹ ಪಾಲುದಾರ",
+    stats: [
+      { value: "7+", label: "ಜಿಲ್ಲೆಗಳು" },
+      { value: "8", label: "ಹಂತಗಳು" },
+      { value: "3", label: "ಸಕ್ರಿಯ ಯೋಜನೆಗಳು" },
+    ],
     pillars: [
       {
         title: "ನಮಗೆ ಭೂ ಅಭಿವೃದ್ಧಿ ಗೊತ್ತು",
@@ -556,22 +575,22 @@ const kn: Dict = {
       {
         n: "01",
         title: "ನಿಮ್ಮ ಭೂಮಿಯನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವುದು",
-        body: "ನಿಮ್ಮ ಭೂಮಿ, ಸ್ಥಳ ಮತ್ತು ಗುರಿಗಳನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವುದರಿಂದ ನಾವು ಆರಂಭಿಸುತ್ತೇವೆ.",
+        body: "ನಾವು ಸ್ಥಳಕ್ಕೆ ಭೇಟಿ ನೀಡಿ, ಝೋನಿಂಗ್ ಮತ್ತು ಭೂ ದಾಖಲೆಗಳನ್ನು ಪರಿಶೀಲಿಸಿ, ನಿಮ್ಮ ಗುರಿಗಳನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳುತ್ತೇವೆ. ಈ ಹಂತ 1 ರಿಂದ 2 ವಾರ ತೆಗೆದುಕೊಳ್ಳುತ್ತದೆ.",
       },
       {
         n: "02",
         title: "ಯೋಜನೆಯನ್ನು ರೂಪಿಸುವುದು",
-        body: "ನಾವು ಲೇಔಟ್ ಮತ್ತು ಅಭಿವೃದ್ಧಿ ಯೋಜನೆ ಸಿದ್ಧಪಡಿಸುತ್ತೇವೆ.",
+        body: "ಲೇಔಟ್ ವಿನ್ಯಾಸ, ಪ್ಲಾಟ್ ಯೋಜನೆ, ರಸ್ತೆ ಜಾಲ ಮತ್ತು ಅನುಮೋದನೆ ಕಾರ್ಯತಂತ್ರ ಸಿದ್ಧಪಡಿಸುತ್ತೇವೆ. ಕೆಲಸ ಆರಂಭಿಸುವ ಮೊದಲು ಸಂಪೂರ್ಣ ಯೋಜನೆ ನೀಲನಕ್ಷೆ ಸಿಗುತ್ತದೆ.",
       },
       {
         n: "03",
         title: "ಅಭಿವೃದ್ಧಿ ಮತ್ತು ನಿರ್ಮಾಣ",
-        body: "ಅಗತ್ಯವಿರುವ ಅಭಿವೃದ್ಧಿ ಕೆಲಸವನ್ನು ನಾವು ಸಮನ್ವಯಗೊಳಿಸುತ್ತೇವೆ.",
+        body: "ಸರ್ವೇಯರ್, ಇಂಜಿನಿಯರ್ ಮತ್ತು ಸರ್ಕಾರಿ ಅನುಮೋದನೆಗಳನ್ನು ಸಮನ್ವಯಗೊಳಿಸುತ್ತೇವೆ. ರಸ್ತೆ, ಒಳಚರಂಡಿ, ವಿದ್ಯುತ್ ಮತ್ತು ನೀರಿನ ಸಂಪರ್ಕ ನಿರ್ಮಿಸುತ್ತೇವೆ.",
       },
       {
         n: "04",
         title: "ಬ್ರಾಂಡ್ ಮತ್ತು ಬಿಡುಗಡೆ",
-        body: "ಎಲ್ಲವೂ ಸಿದ್ಧವಾದ ಮೇಲೆ, ನಿಮ್ಮ ಯೋಜನೆಯನ್ನು ಮಾರುಕಟ್ಟೆಗೆ ತರಲು ನಾವು ಸಹಾಯ ಮಾಡುತ್ತೇವೆ.",
+        body: "ಯೋಜನೆ ಗುರುತು ರಚಿಸಿ, ಮಾರ್ಕೆಟಿಂಗ್ ಸಾಮಗ್ರಿ ತಯಾರಿಸಿ, ಡಿಜಿಟಲ್ ಪ್ರಚಾರ ಆರಂಭಿಸಿ, ಮೊದಲ ಬುಕ್ಕಿಂಗ್‌ಗಳವರೆಗೆ ಮಾರಾಟ ತಂಡಕ್ಕೆ ಬೆಂಬಲ ನೀಡುತ್ತೇವೆ.",
       },
     ],
   },
@@ -583,7 +602,7 @@ const kn: Dict = {
     items: [
       {
         q: "ಆಗಮನ ಪ್ರಾಜೆಕ್ಟ್ಸ್ ಏನು ಮಾಡುತ್ತದೆ?",
-        a: "ನಾವು ಒಬ್ಬ ಯೋಜನೆ ಪಾಲುದಾರ. ಭೂ ಮಾಲೀಕರಿಗೆ ಮತ್ತು ಡೆವಲಪರ್‌ಗಳಿಗೆ ವಸತಿ ಯೋಜನೆಗಳನ್ನು ಯೋಜಿಸಲು, ನಿರ್ಮಿಸಲು, ಬ್ರಾಂಡ್ ಮಾಡಲು, ಮಾರಾಟ ಮಾಡಲು ಮತ್ತು ಬಿಡುಗಡೆ ಮಾಡಲು ಒಂದೇ ತಂಡದೊಂದಿಗೆ ಸಹಾಯ ಮಾಡುತ್ತೇವೆ.",
+        a: "ಆಗಮನ ಪ್ರಾಜೆಕ್ಟ್ಸ್ ಸಾಗರ, ಕರ್ನಾಟಕದಲ್ಲಿ ಮುಖ್ಯ ಕಚೇರಿ ಹೊಂದಿರುವ ಭೂ ಅಭಿವೃದ್ಧಿ ಪಾಲುದಾರ. ಭೂ ಮಾಲೀಕರಿಗೆ ಮತ್ತು ಡೆವಲಪರ್‌ಗಳಿಗೆ ವಸತಿ ಲೇಔಟ್ ಯೋಜನೆಗಳನ್ನು ಯೋಜಿಸಲು, ನಿರ್ಮಿಸಲು, ಬ್ರಾಂಡ್ ಮಾಡಲು, ಮಾರಾಟ ಮಾಡಲು ಮತ್ತು ಬಿಡುಗಡೆ ಮಾಡಲು ಸಹಾಯ ಮಾಡುತ್ತೇವೆ. ಮಧ್ಯ ಮತ್ತು ಕರಾವಳಿ ಕರ್ನಾಟಕದ 7+ ಜಿಲ್ಲೆಗಳಲ್ಲಿ ಸೇವೆ.",
       },
       {
         q: "ನೀವು ಬಿಲ್ಡರ್ ಅಥವಾ ಬ್ರೋಕರ್ ಆಗಿದ್ದೀರಾ?",
@@ -600,6 +619,14 @@ const kn: Dict = {
       {
         q: "ನೀವು ಯಾವ ಪ್ರದೇಶಗಳಲ್ಲಿ ಕೆಲಸ ಮಾಡುತ್ತೀರಿ?",
         a: "ಒಳ್ಳೆಯ ಭೂಮಿಗೆ ವೃತ್ತಿಪರ ಯೋಜನೆ ಅಗತ್ಯವಿರುವ ಟಯರ್ 2 ಮತ್ತು ಟಯರ್ 3 ಪಟ್ಟಣಗಳ ಸೇರಿದಂತೆ ಕರ್ನಾಟಕದ ಮೇಲೆ ನಾವು ಗಮನ ಕೇಂದ್ರೀಕರಿಸುತ್ತೇವೆ.",
+      },
+      {
+        q: "ಭೂಮಿಯಿಂದ ಬಿಡುಗಡೆಯವರೆಗೆ ಸಾಮಾನ್ಯ ಯೋಜನೆಗೆ ಎಷ್ಟು ಸಮಯ ಬೇಕು?",
+        a: "ಯೋಜನೆಯ ಗಾತ್ರ ಮತ್ತು ಅನುಮೋದನೆಗಳನ್ನು ಅವಲಂಬಿಸಿರುತ್ತದೆ. 5 ರಿಂದ 10 ಎಕರೆಯ ವಸತಿ ಲೇಔಟ್ ಸಾಮಾನ್ಯವಾಗಿ ಯೋಜನೆಯಿಂದ ಮಾರುಕಟ್ಟೆ ಬಿಡುಗಡೆಯವರೆಗೆ 12 ರಿಂದ 18 ತಿಂಗಳು ತೆಗೆದುಕೊಳ್ಳುತ್ತದೆ. ದೊಡ್ಡ ಯೋಜನೆಗಳು 18 ರಿಂದ 24 ತಿಂಗಳು ತೆಗೆದುಕೊಳ್ಳಬಹುದು.",
+      },
+      {
+        q: "ಹೊಸ ಭೂ ಮಾಲೀಕರೊಂದಿಗೆ ನಿಮ್ಮ ಪ್ರಕ್ರಿಯೆ ಏನು?",
+        a: "ನಾವು ಸ್ಥಳ ಭೇಟಿ ಮತ್ತು ಸಾಧ್ಯತೆ ಪರಿಶೀಲನೆಯಿಂದ ಆರಂಭಿಸುತ್ತೇವೆ. ನಂತರ ಲೇಔಟ್ ವಿನ್ಯಾಸ, ಅನುಮೋದನೆ, ಮೂಲಸೌಕರ್ಯ, ಬ್ರಾಂಡಿಂಗ್ ಮತ್ತು ಮಾರ್ಕೆಟಿಂಗ್ ಒಳಗೊಂಡ ಯೋಜನೆ ಸಿದ್ಧಪಡಿಸುತ್ತೇವೆ. ಪ್ರಾರಂಭದಿಂದ ಕೊನೆಯವರೆಗೆ ಒಂದೇ ಸಂಪರ್ಕ ಕೇಂದ್ರ.",
       },
       {
         q: "ನಾನು ಹೇಗೆ ಆರಂಭಿಸಲಿ?",

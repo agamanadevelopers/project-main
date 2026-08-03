@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { guides, getGuide } from "@/lib/guides";
+import { services } from "@/lib/services";
 import { BUSINESS, faqSchema, breadcrumbSchema, articleSchema, webPageSchema, LAST_REVIEWED } from "@/lib/business";
 import { JsonLd } from "@/lib/json-ld";
 import { Breadcrumbs, CtaRow, FaqList, SectionHeading, KeyTakeaways, LastReviewed } from "@/app/_components/PageBlocks";
@@ -60,6 +61,14 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
   ];
 
   const otherGuides = guides.filter((g) => g.slug !== guide.slug);
+
+  const guideServiceMap: Record<string, string[]> = {
+    "dc-conversion-karnataka": ["approvals", "layout-planning"],
+    "how-to-develop-land-into-plots-karnataka": ["layout-planning", "approvals", "branding", "marketing"],
+  };
+  const relatedServices = (guideServiceMap[guide.slug] ?? [])
+    .map((s) => services.find((svc) => svc.slug === s))
+    .filter(Boolean);
 
   return (
     <>
@@ -173,6 +182,30 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
             </Link>
           </p>
         </aside>
+      )}
+
+      {/* Related services */}
+      {relatedServices.length > 0 && (
+        <section aria-labelledby="services-heading" className="mt-14">
+          <SectionHeading id="services-heading">Related services</SectionHeading>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            {relatedServices.map((svc) => (
+              <Link
+                key={svc!.slug}
+                href={`/services/${svc!.slug}`}
+                className="group flex flex-col rounded-[var(--radius-card)] border border-line bg-card p-6 transition-all duration-300 ease-[var(--ease-out-soft)] hover:-translate-y-1 hover:shadow-[0_24px_44px_-28px_rgba(4,48,59,0.45)]"
+              >
+                <h3 className="font-display text-lg font-bold tracking-tight text-ink">
+                  {svc!.name}
+                </h3>
+                <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-ink-soft">{svc!.intro}</p>
+                <span className="mt-3 text-sm font-semibold text-teal transition-colors group-hover:text-lime-deep">
+                  Learn more &rarr;
+                </span>
+              </Link>
+            ))}
+          </div>
+        </section>
       )}
 
       {/* Useful resources */}
