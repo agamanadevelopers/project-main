@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils";
 
 function BrandLink() {
   return (
-    <Link href="/" className="flex items-center" aria-label={`${site.name} — home`}>
+    <Link href="/" className="flex items-center" aria-label={`${site.name}, home`}>
       <Logo variant="dark" priority className="h-8 sm:h-9" />
     </Link>
   );
@@ -23,6 +23,7 @@ function BrandLink() {
 const pageLinks = [
   { href: "/services", label: "Services" },
   { href: "/locations", label: "Where We Work" },
+  { href: "/guides", label: "Guides" },
 ] as const;
 
 export function Navbar() {

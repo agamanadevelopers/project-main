@@ -71,7 +71,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         items={[
           `${svc.name} is one of the core services Agamana provides to land owners and developers.`,
           `Includes: ${svc.includes.slice(0, 4).join(", ")} and more.`,
-          "Available across Karnataka — Sagara, Shivamogga, Sirsi and surrounding areas.",
+          "Available across Karnataka: Sagara, Shivamogga, Sirsi and surrounding areas.",
         ]}
       />
 
@@ -122,7 +122,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           </p>
           <p>
             Every engagement is tailored to the project. A farmland layout in Sagara requires different
-            considerations than a residential layout near Shivamogga — and we adapt our approach to the
+            considerations than a residential layout near Shivamogga, and we adapt our approach to the
             land, the market, and the approvals process specific to each location.
           </p>
         </div>
@@ -147,19 +147,19 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             <a href="https://karunadu.karnataka.gov.in" target="_blank" rel="noopener noreferrer" className="font-medium text-teal underline decoration-lime decoration-2 underline-offset-2 transition-colors hover:text-lime-deep">
               Government of Karnataka
             </a>{" "}
-            <span className="text-ink-soft">— official state government portal</span>
+            <span className="text-ink-soft">(official state government portal)</span>
           </li>
           <li>
             <a href="https://rera.karnataka.gov.in" target="_blank" rel="noopener noreferrer" className="font-medium text-teal underline decoration-lime decoration-2 underline-offset-2 transition-colors hover:text-lime-deep">
               Karnataka RERA
             </a>{" "}
-            <span className="text-ink-soft">— Real Estate Regulatory Authority for project registrations</span>
+            <span className="text-ink-soft">(Real Estate Regulatory Authority for project registrations)</span>
           </li>
           <li>
             <a href="https://landrecords.karnataka.gov.in" target="_blank" rel="noopener noreferrer" className="font-medium text-teal underline decoration-lime decoration-2 underline-offset-2 transition-colors hover:text-lime-deep">
-              Bhoomi — Karnataka Land Records
+              Bhoomi: Karnataka Land Records
             </a>{" "}
-            <span className="text-ink-soft">— official land records and mutation tracking</span>
+            <span className="text-ink-soft">(official land records and mutation tracking)</span>
           </li>
         </ul>
       </section>

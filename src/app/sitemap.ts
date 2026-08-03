@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { site, legalLinks } from "@/lib/site";
 import { locations } from "@/lib/locations";
 import { services } from "@/lib/services";
+import { guides } from "@/lib/guides";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -27,6 +28,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  const guidesIndex: MetadataRoute.Sitemap = [
+    { url: `${base}/guides`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+  ];
+
+  const guidePages: MetadataRoute.Sitemap = guides.map((g) => ({
+    url: `${base}/guides/${g.slug}`,
+    lastModified: new Date(g.updatedDate),
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
   const legalPages: MetadataRoute.Sitemap = legalLinks.map((l) => ({
     url: `${base}${l.href}`,
     lastModified: now,
@@ -38,5 +50,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // project URL is confirmed (the site links projects via the CMS, and the
   // brief flagged agamana.com vs agamanaprojects.com). Add them here once the
   // real, resolving project routes exist.
-  return [...staticPages, ...servicePages, ...locationPages, ...legalPages];
+  return [...staticPages, ...servicePages, ...locationPages, ...guidesIndex, ...guidePages, ...legalPages];
 }

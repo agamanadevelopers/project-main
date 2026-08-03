@@ -31,8 +31,8 @@ export const DEFAULT_SETTINGS: SiteSettings = {
 
 export const DEFAULT_SEO: SeoData = {
   title: {
-    en: "Agamana Projects — Your Trusted Project Partner in Karnataka",
-    kn: "ಆಗಮನ ಪ್ರಾಜೆಕ್ಟ್ಸ್ — ಕರ್ನಾಟಕದಲ್ಲಿ ನಿಮ್ಮ ವಿಶ್ವಾಸಾರ್ಹ ಯೋಜನೆ ಪಾಲುದಾರ",
+    en: "Agamana Projects | Your Trusted Project Partner in Karnataka",
+    kn: "ಆಗಮನ ಪ್ರಾಜೆಕ್ಟ್ಸ್ | ಕರ್ನಾಟಕದಲ್ಲಿ ನಿಮ್ಮ ವಿಶ್ವಾಸಾರ್ಹ ಯೋಜನೆ ಪಾಲುದಾರ",
   },
   description: { en: site.description, kn: site.description },
   ogImage: "/og",

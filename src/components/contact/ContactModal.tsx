@@ -104,7 +104,7 @@ function ContactDialog({ onClose }: { onClose: () => void }) {
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
           access_key: accessKey,
-          subject: `New enquiry from ${form.name} — Agamana Projects`,
+          subject: `New enquiry from ${form.name} | Agamana Projects`,
           from_name: "Agamana Projects Website",
           Name: form.name,
           Phone: form.phone,

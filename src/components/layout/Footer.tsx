@@ -52,6 +52,14 @@ export function Footer() {
                   Where We Work
                 </a>
               </li>
+              <li>
+                <a
+                  href="/guides"
+                  className="text-[0.98rem] text-white/80 transition-colors hover:text-lime"
+                >
+                  Guides
+                </a>
+              </li>
             </ul>
           </nav>
 

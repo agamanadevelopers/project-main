@@ -146,6 +146,42 @@ export function webPageSchema(opts: {
   };
 }
 
+/** Article schema for guide/blog pages — improves AEO and addresses XeoRank Article schema flag. */
+export function articleSchema(opts: {
+  url: string;
+  headline: string;
+  description: string;
+  datePublished: string;
+  dateModified: string;
+  wordCount?: number;
+  speakable?: string[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": `${opts.url}#article`,
+    headline: opts.headline,
+    description: opts.description,
+    url: opts.url,
+    datePublished: opts.datePublished,
+    dateModified: opts.dateModified,
+    ...(opts.wordCount ? { wordCount: opts.wordCount } : {}),
+    author: { "@id": `${BUSINESS.url}/#business` },
+    publisher: { "@id": `${BUSINESS.url}/#business` },
+    isPartOf: { "@id": `${BUSINESS.url}/#website` },
+    inLanguage: "en-IN",
+    mainEntityOfPage: { "@type": "WebPage", "@id": `${opts.url}#webpage` },
+    ...(opts.speakable?.length
+      ? {
+          speakable: {
+            "@type": "SpeakableSpecification",
+            cssSelector: opts.speakable,
+          },
+        }
+      : {}),
+  };
+}
+
 /** HowTo schema for genuine step-by-step content (e.g. the "how we work" process). */
 export function howToSchema(opts: {
   name: string;

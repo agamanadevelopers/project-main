@@ -7,9 +7,9 @@ import { JsonLd } from "@/lib/json-ld";
 import { Breadcrumbs, PageHero, LastReviewed } from "@/app/_components/PageBlocks";
 
 export const metadata: Metadata = {
-  title: { absolute: "Where We Work — Land Development Across Karnataka | Agamana Projects" },
+  title: { absolute: "Where We Work | Land Development Across Karnataka | Agamana Projects" },
   description:
-    "Agamana Projects develops residential layouts and farmland plots across Karnataka — Sagara, Shivamogga, Sirsi and Uttara Kannada. Find your area.",
+    "Agamana Projects develops residential layouts and farmland plots across Karnataka. Sagara, Shivamogga, Sirsi and Uttara Kannada. Find your area.",
   alternates: { canonical: `${BUSINESS.url}/locations` },
 };
 
@@ -25,7 +25,7 @@ export default function LocationsIndex() {
       <JsonLd
         data={webPageSchema({
           url: `${BUSINESS.url}/locations`,
-          name: "Where We Work — Land Development Across Karnataka | Agamana Projects",
+          name: "Where We Work | Land Development Across Karnataka",
           speakable: ["h1"],
         })}
       />

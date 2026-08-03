@@ -23,7 +23,7 @@ export default function Home() {
       <JsonLd
         data={webPageSchema({
           url: BUSINESS.url,
-          name: "Agamana Projects — Land Development & Project Partner in Karnataka",
+          name: "Agamana Projects | Land Development & Project Partner in Karnataka",
           speakable: ["#top h1", "#faq"],
         })}
       />

@@ -41,10 +41,10 @@ export const locations: Location[] = [
       "Agamana Projects plans, develops and launches residential layouts and farmland plots in Sagara, Karnataka. One partner from land to launch.",
     h1: "Land Development & Farmland Projects in Sagara",
     intro:
-      "Sagara is home base for Agamana Projects. From our office on B.H. Road we help land owners across the taluk turn raw land into well-planned residential layouts and farmland plots — handling planning, approvals, infrastructure, branding and launch with one team.",
+      "Sagara is home base for Agamana Projects. From our office on B.H. Road we help land owners across the taluk turn raw land into well-planned residential layouts and farmland plots, handling planning, approvals, infrastructure, branding and launch with one team.",
     whyHere: [
       "Local knowledge of Sagara taluk land, from Lingadahalli to Ulavi, and the approval process that applies here.",
-      "On-the-ground presence — our office is on B.H. Road, opposite the court, near the old private bus stand.",
+      "On-the-ground presence: our office is on B.H. Road, opposite the court, near the old private bus stand.",
       "A track record of farmland projects launched in and around Sagara.",
       "One point of contact through every stage, from first site visit to buyer handover.",
     ],
@@ -74,11 +74,11 @@ export const locations: Location[] = [
     faqs: [
       {
         q: "Do you develop farmland plots in Sagara?",
-        a: "Yes. Sagara is our home base and most of our farmland projects — including Tapovana, Tribhuvana and Nandanavana — are in and around Sagara taluk.",
+        a: "Yes. Sagara is our home base and most of our farmland projects (including Tapovana, Tribhuvana and Nandanavana) are in and around Sagara taluk.",
       },
       {
         q: "I own land near Sagara. How do we start?",
-        a: "Tell us about your land — location, extent and your goals. We'll visit the site, prepare a clear development plan, and walk you through planning, approvals and launch.",
+        a: "Tell us about your land: location, extent and your goals. We'll visit the site, prepare a clear development plan, and walk you through planning, approvals and launch.",
       },
       {
         q: "Where is your office in Sagara?",
@@ -99,9 +99,9 @@ export const locations: Location[] = [
       "Shivamogga is a growing market for planned residential layouts and plotted development. Agamana Projects partners with land owners across the district to plan layouts, secure approvals, build real on-site infrastructure, and launch projects buyers trust.",
     whyHere: [
       "District-level experience across Shivamogga, close to our Sagara base.",
-      "End-to-end delivery — layout design, approvals, roads and infrastructure, branding and marketing under one roof.",
+      "End-to-end delivery: layout design, approvals, roads and infrastructure, branding and marketing under one roof.",
       "Focus on Tier 2 and Tier 3 towns where well-planned land stands out.",
-      "A partner model, not a broker — we stay with your project from land to launch.",
+      "A partner model, not a broker. We stay with your project from land to launch.",
     ],
     projects: [], // VERIFY — add real Shivamogga-district projects when available
     nearbyAreas: ["Bhadravati", "Thirthahalli", "Shikaripura", "Soraba", "Hosanagara"], // confirmed
@@ -112,7 +112,7 @@ export const locations: Location[] = [
       },
       {
         q: "What kinds of projects do you handle in Shivamogga?",
-        a: "Residential layouts and plotted developments — from initial layout planning and approvals through to branding, marketing and launch.",
+        a: "Residential layouts and plotted developments, from initial layout planning and approvals through to branding, marketing and launch.",
       },
     ],
   },
@@ -130,7 +130,7 @@ export const locations: Location[] = [
     whyHere: [
       "Coverage across the Malnad and coastal Uttara Kannada belt, extending from our Central Karnataka base.",
       "Suited to farmland and residential plots in green, high-rainfall terrain.",
-      "Complete project support — planning, approvals, infrastructure, branding and launch.",
+      "Complete project support: planning, approvals, infrastructure, branding and launch.",
       "One team, one process, one point of contact throughout.",
     ],
     projects: [], // VERIFY — add real Sirsi / Uttara Kannada projects when available

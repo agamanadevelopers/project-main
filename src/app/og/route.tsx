@@ -59,7 +59,7 @@ export function GET() {
         </div>
 
         <div style={{ fontSize: 26, color: "#b8c4bf", fontFamily: "sans-serif" }}>
-          One partner for every step — Karnataka
+          One partner for every step | Karnataka
         </div>
       </div>
     ),

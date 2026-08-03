@@ -20,10 +20,10 @@ export const services: Service[] = [
     name: "Layout Planning",
     title: "Residential Layout Planning in Karnataka | Agamana Projects",
     metaDescription:
-      "Plan every aspect of your residential layout before execution — site analysis, plot planning, road network, amenities and infrastructure. Agamana Projects, Karnataka.",
+      "Plan every aspect of your residential layout before execution: site analysis, plot planning, road network, amenities and infrastructure. Agamana Projects, Karnataka.",
     h1: "Layout Planning for Residential & Farmland Projects",
     intro:
-      "A layout that sells starts with a plan that works. We plan every aspect of your residential or farmland layout before a single road is cut — so plots are usable, infrastructure is sensible, and the project is ready to approve and launch.",
+      "A layout that sells starts with a plan that works. We plan every aspect of your residential or farmland layout before a single road is cut, so plots are usable, infrastructure is sensible, and the project is ready to approve and launch.",
     includes: [
       "Site Analysis",
       "Layout Design",
@@ -36,7 +36,7 @@ export const services: Service[] = [
     faqs: [
       {
         q: "What does layout planning include?",
-        a: "Site analysis, layout and plot design, road network planning, amenity planning and infrastructure planning — everything needed before execution begins.",
+        a: "Site analysis, layout and plot design, road network planning, amenity planning and infrastructure planning. Everything needed before execution begins.",
       },
       {
         q: "Do you plan farmland layouts as well as residential?",
@@ -52,7 +52,7 @@ export const services: Service[] = [
       "Navigate layout approvals, government compliance, technical drawings and project documentation with one partner. Agamana Projects, Karnataka.",
     h1: "Approvals & Documentation",
     intro:
-      "Approvals are where projects stall. We help you navigate government approvals and project documentation so your layout is clean, compliant and on record — with the technical drawings and paperwork handled properly.",
+      "Approvals are where projects stall. We help you navigate government approvals and project documentation so your layout is clean, compliant and on record, with the technical drawings and paperwork handled properly.",
     includes: [
       "Documentation",
       "Government Approvals",
@@ -73,16 +73,16 @@ export const services: Service[] = [
     name: "Project Branding",
     title: "Real Estate Project Branding in Karnataka | Agamana Projects",
     metaDescription:
-      "Build a memorable project identity that earns buyer trust — logo, brochure, flyers and site hoardings. Agamana Projects, Karnataka.",
+      "Build a memorable project identity that earns buyer trust: logo, brochure, flyers and site hoardings. Agamana Projects, Karnataka.",
     h1: "Project Branding",
     intro:
-      "Buyers trust projects that look established. We build a memorable identity for your layout — a name, a look and the materials that carry it — so your project earns attention and confidence from the first hoarding.",
+      "Buyers trust projects that look established. We build a memorable identity for your layout (a name, a look and the materials that carry it) so your project earns attention and confidence from the first hoarding.",
     includes: ["Logo", "Brochure", "Flyers", "Site Hoardings"],
     forWhom: "For developers who want their project to stand out and feel trustworthy.",
     faqs: [
       {
         q: "What branding do you create for a project?",
-        a: "A project logo, brochure, flyers and site hoardings — a consistent identity that increases trust and attracts buyers.",
+        a: "A project logo, brochure, flyers and site hoardings, a consistent identity that increases trust and attracts buyers.",
       },
     ],
   },
@@ -91,10 +91,10 @@ export const services: Service[] = [
     name: "Marketing & Digital Presence",
     title: "Real Estate Marketing & Digital Presence | Agamana Projects",
     metaDescription:
-      "Present your project professionally across digital and print — website, social media, campaigns, lead generation, photography and walkthrough videos. Agamana Projects.",
+      "Present your project professionally across digital and print: website, social media, campaigns, lead generation, photography and walkthrough videos. Agamana Projects.",
     h1: "Marketing & Digital Presence",
     intro:
-      "The right buyers need to find your project — and trust it when they do. We present your layout professionally across digital and print platforms, from a project website to social media, campaigns and walkthrough videos.",
+      "The right buyers need to find your project, and trust it when they do. We present your layout professionally across digital and print platforms, from a project website to social media, campaigns and walkthrough videos.",
     includes: [
       "Website",
       "Social Media",
@@ -116,7 +116,7 @@ export const services: Service[] = [
     name: "Sales & Launch Support",
     title: "Sales & Project Launch Support in Karnataka | Agamana Projects",
     metaDescription:
-      "Launch your project with a clear strategy and professional sales materials — launch strategy, sales collaterals, customer presentations and marketing assets. Agamana Projects.",
+      "Launch your project with a clear strategy and professional sales materials: launch strategy, sales collaterals, customer presentations and marketing assets. Agamana Projects.",
     h1: "Sales & Launch Support",
     intro:
       "A launch only works if everything's ready. We support your project launch with a clear strategy and the professional sales materials your team needs to convert interest into bookings.",

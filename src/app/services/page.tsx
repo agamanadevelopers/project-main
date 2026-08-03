@@ -7,7 +7,7 @@ import { JsonLd } from "@/lib/json-ld";
 import { Breadcrumbs, PageHero, LastReviewed } from "@/app/_components/PageBlocks";
 
 export const metadata: Metadata = {
-  title: { absolute: "Our Services — Land to Launch | Agamana Projects" },
+  title: { absolute: "Our Services | Land to Launch | Agamana Projects" },
   description:
     "Everything your project needs: layout planning, approvals, branding, marketing and sales & launch support. One partner for every stage, across Karnataka.",
   alternates: { canonical: `${BUSINESS.url}/services` },
@@ -25,7 +25,7 @@ export default function ServicesIndex() {
       <JsonLd
         data={webPageSchema({
           url: `${BUSINESS.url}/services`,
-          name: "Our Services — Land to Launch | Agamana Projects",
+          name: "Our Services | Land to Launch | Agamana Projects",
           speakable: ["h1"],
         })}
       />
@@ -34,7 +34,7 @@ export default function ServicesIndex() {
       <PageHero
         eyebrow="How we help"
         h1="Everything Your Project Needs"
-        intro="No matter where you are in your journey, we're here to help — from planning your land to launching your project."
+        intro="No matter where you are in your journey, we're here to help. From planning your land to launching your project."
       />
 
       <div className="mt-12 grid gap-4 sm:grid-cols-2">

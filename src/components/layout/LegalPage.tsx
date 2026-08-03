@@ -23,7 +23,7 @@ export function LegalPage({
     <>
       <header className="sticky top-0 z-50 border-b border-line/70 bg-paper/85 backdrop-blur-md">
         <Container className="flex h-16 items-center justify-between">
-          <Link href="/" className="flex items-center" aria-label={`${site.name} — home`}>
+          <Link href="/" className="flex items-center" aria-label={`${site.name}, home`}>
             <Logo variant="dark" className="h-9" />
           </Link>
           <Link

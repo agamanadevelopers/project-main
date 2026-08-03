@@ -58,19 +58,19 @@ export const images = {
   projects: [
     {
       src: unsplash("1441974231531-c6227db76b6e", 1200),
-      alt: "Tapovana — wooded residential plots framed by tall trees",
+      alt: "Tapovana, wooded residential plots framed by tall trees",
       w: 1200,
       h: 800,
     },
     {
       src: unsplash("1470252649378-9c29740c9fa8", 1200),
-      alt: "Tribhuvana — open plotted development at golden hour",
+      alt: "Tribhuvana, open plotted development at golden hour",
       w: 1200,
       h: 800,
     },
     {
       src: unsplash("1518495973542-4542c06a5843", 1200),
-      alt: "Nandanavana — greenery-led layout with landscaped avenues",
+      alt: "Nandanavana, greenery-led layout with landscaped avenues",
       w: 1200,
       h: 800,
     },

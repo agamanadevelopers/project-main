@@ -312,7 +312,7 @@ const en: Dict = {
     items: [
       {
         q: "What does Agamana Projects do?",
-        a: "We are a project partner. We help land owners and developers plan, build, brand, market and launch residential projects — all with one team.",
+        a: "We are a project partner. We help land owners and developers plan, build, brand, market and launch residential projects, all with one team.",
       },
       {
         q: "Are you a builder or a broker?",
@@ -332,7 +332,7 @@ const en: Dict = {
       },
       {
         q: "How do I get started?",
-        a: "Just reach out. Tell us about your land or project and we'll take it from there — one partner, every step.",
+        a: "Just reach out. Tell us about your land or project and we'll take it from there. One partner, every step.",
       },
     ],
   },
@@ -349,7 +349,7 @@ const en: Dict = {
     visitUs: "Visit us",
     callUs: "Call us",
     rights: "All rights reserved.",
-    disclaimer: "A trusted project partner — not a builder, broker or agency.",
+    disclaimer: "A trusted project partner, not a builder, broker or agency.",
   },
   contact: {
     title: "Let's Talk",
@@ -603,7 +603,7 @@ const kn: Dict = {
       },
       {
         q: "ನಾನು ಹೇಗೆ ಆರಂಭಿಸಲಿ?",
-        a: "ಸಂಪರ್ಕಿಸಿ. ನಿಮ್ಮ ಭೂಮಿ ಅಥವಾ ಯೋಜನೆಯ ಬಗ್ಗೆ ತಿಳಿಸಿ, ಮುಂದಿನದ್ದನ್ನು ನಾವು ನೋಡಿಕೊಳ್ಳುತ್ತೇವೆ — ಒಬ್ಬ ಪಾಲುದಾರ, ಪ್ರತಿ ಹಂತ.",
+        a: "ಸಂಪರ್ಕಿಸಿ. ನಿಮ್ಮ ಭೂಮಿ ಅಥವಾ ಯೋಜನೆಯ ಬಗ್ಗೆ ತಿಳಿಸಿ, ಮುಂದಿನದ್ದನ್ನು ನಾವು ನೋಡಿಕೊಳ್ಳುತ್ತೇವೆ. ಒಬ್ಬ ಪಾಲುದಾರ, ಪ್ರತಿ ಹಂತ.",
       },
     ],
   },
@@ -614,13 +614,13 @@ const kn: Dict = {
   },
   footer: {
     tagline:
-      "ಆಗಮನ ಪ್ರಾಜೆಕ್ಟ್ಸ್ ಭೂ ಅಭಿವೃದ್ಧಿಯಲ್ಲಿ ನಿಮ್ಮ ವಿಶ್ವಾಸಾರ್ಹ ಪಾಲುದಾರ. ಮಧ್ಯ ಮತ್ತು ಕರಾವಳಿ ಕರ್ನಾಟಕದಾದ್ಯಂತ — ತುಮಕೂರು ಮತ್ತು ಚಿತ್ರದುರ್ಗದಿಂದ ಶಿವಮೊಗ್ಗ, ಸಿರ್ಸಿ ಮತ್ತು ಉತ್ತರ ಕನ್ನಡ ಕರಾವಳಿಯವರೆಗೆ — ಭೂ ಮಾಲೀಕರಿಗೆ ಮತ್ತು ಡೆವಲಪರ್‌ಗಳಿಗೆ ಸಹಾಯ.",
+      "ಆಗಮನ ಪ್ರಾಜೆಕ್ಟ್ಸ್ ಭೂ ಅಭಿವೃದ್ಧಿಯಲ್ಲಿ ನಿಮ್ಮ ವಿಶ್ವಾಸಾರ್ಹ ಪಾಲುದಾರ. ಮಧ್ಯ ಮತ್ತು ಕರಾವಳಿ ಕರ್ನಾಟಕದಾದ್ಯಂತ, ತುಮಕೂರು ಮತ್ತು ಚಿತ್ರದುರ್ಗದಿಂದ ಶಿವಮೊಗ್ಗ, ಸಿರ್ಸಿ ಮತ್ತು ಉತ್ತರ ಕನ್ನಡ ಕರಾವಳಿಯವರೆಗೆ, ಭೂ ಮಾಲೀಕರಿಗೆ ಮತ್ತು ಡೆವಲಪರ್‌ಗಳಿಗೆ ಸಹಾಯ.",
     explore: "ಅನ್ವೇಷಿಸಿ",
     getInTouch: "ಸಂಪರ್ಕಿಸಿ",
     visitUs: "ನಮ್ಮ ಕಚೇರಿ",
     callUs: "ಕರೆ ಮಾಡಿ",
     rights: "ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.",
-    disclaimer: "ವಿಶ್ವಾಸಾರ್ಹ ಯೋಜನೆ ಪಾಲುದಾರ — ಬಿಲ್ಡರ್, ಬ್ರೋಕರ್ ಅಥವಾ ಏಜೆನ್ಸಿ ಅಲ್ಲ.",
+    disclaimer: "ವಿಶ್ವಾಸಾರ್ಹ ಯೋಜನೆ ಪಾಲುದಾರ, ಬಿಲ್ಡರ್, ಬ್ರೋಕರ್ ಅಥವಾ ಏಜೆನ್ಸಿ ಅಲ್ಲ.",
   },
   contact: {
     title: "ಮಾತನಾಡೋಣ",

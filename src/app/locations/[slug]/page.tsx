@@ -54,7 +54,7 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
     "@id": `${canonical}/#business`,
-    name: `${BUSINESS.name} — ${loc.city}`,
+    name: `${BUSINESS.name}, ${loc.city}`,
     url: canonical,
     parentOrganization: { "@id": `${BUSINESS.url}/#business` },
     image: BUSINESS.image,
@@ -95,15 +95,15 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
         <SectionHeading id="how-heading">How we work in {loc.city}</SectionHeading>
         <div className="mt-6 space-y-4 leading-relaxed text-ink-soft">
           <p>
-            Every project in {loc.city} begins with a site visit. We assess the land — its shape, access,
-            terrain, water sources and proximity to roads and amenities — and prepare a development plan
+            Every project in {loc.city} begins with a site visit. We assess the land, its shape, access,
+            terrain, water sources and proximity to roads and amenities, and prepare a development plan
             that fits the location. If the land is suited to farmland plots, we plan accordingly; if it is better
             for residential layouts, the design reflects that.
           </p>
           <p>
             Approvals follow a clear process: we handle documentation, liaise with local authorities in{" "}
             {loc.district} district, and prepare the technical drawings required. Once approved, we move to
-            infrastructure — internal roads, fencing, water, electricity and any amenities the layout
+            infrastructure: internal roads, fencing, water, electricity and any amenities the layout
             promises. Branding, marketing and launch support run in parallel so the project reaches
             buyers the moment plots are ready.
           </p>
@@ -116,9 +116,9 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
         rows={[
           { aspect: "Starting point", col1: "Raw land, often ancestral or agricultural", col2: "Acquired land earmarked for a project" },
           { aspect: "Primary need", col1: "Guidance on what the land can become", col2: "Execution partner to plan and launch" },
-          { aspect: "Approval knowledge", col1: "Usually limited — first-time process", col2: "Familiar with steps but wants it handled" },
+          { aspect: "Approval knowledge", col1: "Usually limited, first-time process", col2: "Familiar with steps but wants it handled" },
           { aspect: "Marketing", col1: "Rarely considered early on", col2: "Planned from the start to attract buyers" },
-          { aspect: "How Agamana helps", col1: "End-to-end from first site visit to launch", col2: "Fills gaps — branding, approvals, marketing" },
+          { aspect: "How Agamana helps", col1: "End-to-end from first site visit to launch", col2: "Fills gaps: branding, approvals, marketing" },
         ]}
       />
 
@@ -169,19 +169,19 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
             <a href="https://karunadu.karnataka.gov.in" target="_blank" rel="noopener noreferrer" className="font-medium text-teal underline decoration-lime decoration-2 underline-offset-2 transition-colors hover:text-lime-deep">
               Government of Karnataka
             </a>{" "}
-            <span className="text-ink-soft">— official state government portal</span>
+            <span className="text-ink-soft">(official state government portal)</span>
           </li>
           <li>
             <a href="https://rera.karnataka.gov.in" target="_blank" rel="noopener noreferrer" className="font-medium text-teal underline decoration-lime decoration-2 underline-offset-2 transition-colors hover:text-lime-deep">
               Karnataka RERA
             </a>{" "}
-            <span className="text-ink-soft">— Real Estate Regulatory Authority for project registrations</span>
+            <span className="text-ink-soft">(Real Estate Regulatory Authority for project registrations)</span>
           </li>
           <li>
             <a href="https://landrecords.karnataka.gov.in" target="_blank" rel="noopener noreferrer" className="font-medium text-teal underline decoration-lime decoration-2 underline-offset-2 transition-colors hover:text-lime-deep">
-              Bhoomi — Karnataka Land Records
+              Bhoomi: Karnataka Land Records
             </a>{" "}
-            <span className="text-ink-soft">— official land records and mutation tracking</span>
+            <span className="text-ink-soft">(official land records and mutation tracking)</span>
           </li>
         </ul>
       </section>
@@ -196,7 +196,7 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
           Own land in {loc.city}? Let&apos;s talk.
         </h2>
         <p className="mt-3 max-w-xl leading-relaxed text-white/75">
-          Tell us about your land or project and we&apos;ll take it from there — one partner, every step.
+          Tell us about your land or project and we&apos;ll take it from there. One partner, every step.
         </p>
         <CtaRow />
       </section>
