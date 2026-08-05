@@ -16,7 +16,9 @@ import {
   webPageSchema,
   howToSchema,
   breadcrumbSchema,
+  articleSchema,
   BUSINESS,
+  LAST_REVIEWED,
 } from "@/lib/business";
 import { content } from "@/lib/content";
 
@@ -30,6 +32,16 @@ export default function Home() {
         data={breadcrumbSchema([
           { name: "Home", url: BUSINESS.url },
         ])}
+      />
+      <JsonLd
+        data={articleSchema({
+          url: `${BUSINESS.url}/#insights`,
+          headline: content.en.insights.heading,
+          description: content.en.insights.intro,
+          datePublished: "2025-08-01",
+          dateModified: LAST_REVIEWED,
+          speakable: ["#insights h2", "#insights h4"],
+        })}
       />
       <JsonLd data={faqSchema([...content.en.faq.items, ...content.en.insights.qa])} />
       {/* WebPage: freshness (dateModified) + Speakable for voice/AI answers */}

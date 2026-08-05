@@ -195,7 +195,7 @@ const en: Dict = {
   services: {
     eyebrow: "How we help",
     heading: "Everything Your Project Needs.",
-    body: "No matter where you are in your journey, we're here to help.",
+    body: "We cover 5 service areas across all 8 stages of land development. No matter where you are in your journey, we're here to help.",
     items: [
       {
         title: "Layout Planning",
@@ -272,7 +272,7 @@ const en: Dict = {
   why: {
     eyebrow: "Why Agamana",
     heading: "Why Choose Agamana Projects?",
-    lead: "Developing a successful project takes planning, coordination and the right team.",
+    lead: "Developing a successful project takes planning, coordination and the right team. With 3 active projects and 7+ districts served, we bring real experience to every engagement.",
     body: "We're here to help you through every stage.",
     tagline: "Trusted Partner for Every Stage",
     stats: [
@@ -302,7 +302,7 @@ const en: Dict = {
   process: {
     eyebrow: "How we work",
     heading: "Our Process",
-    body: "Simple. Clear. Transparent.",
+    body: "4 clear steps. 12 to 24 months from land to launch. Simple, clear and transparent.",
     steps: [
       {
         n: "01",
@@ -546,7 +546,7 @@ const kn: Dict = {
   services: {
     eyebrow: "ನಾವು ಹೇಗೆ ಸಹಾಯ ಮಾಡುತ್ತೇವೆ",
     heading: "ನಿಮ್ಮ ಯೋಜನೆಗೆ ಬೇಕಾದ ಎಲ್ಲವೂ.",
-    body: "ನಿಮ್ಮ ಪ್ರಯಾಣದ ಯಾವುದೇ ಹಂತದಲ್ಲಿ ಇರಲಿ, ಸಹಾಯ ಮಾಡಲು ನಾವು ಇದ್ದೇವೆ.",
+    body: "ಭೂ ಅಭಿವೃದ್ಧಿಯ 8 ಹಂತಗಳಲ್ಲಿ 5 ಸೇವಾ ಕ್ಷೇತ್ರಗಳನ್ನು ಒಳಗೊಳ್ಳುತ್ತೇವೆ. ನಿಮ್ಮ ಪ್ರಯಾಣದ ಯಾವುದೇ ಹಂತದಲ್ಲಿ ಇರಲಿ, ಸಹಾಯ ಮಾಡಲು ನಾವು ಇದ್ದೇವೆ.",
     items: [
       {
         title: "ಲೇಔಟ್ ಯೋಜನೆ",
@@ -623,7 +623,7 @@ const kn: Dict = {
   why: {
     eyebrow: "ಏಕೆ ಆಗಮನ",
     heading: "ಆಗಮನ ಪ್ರಾಜೆಕ್ಟ್ಸ್ ಅನ್ನು ಏಕೆ ಆರಿಸಬೇಕು?",
-    lead: "ಯಶಸ್ವಿ ಯೋಜನೆ ಅಭಿವೃದ್ಧಿಗೆ ಯೋಜನೆ, ಸಮನ್ವಯ ಮತ್ತು ಸರಿಯಾದ ತಂಡ ಬೇಕು.",
+    lead: "ಯಶಸ್ವಿ ಯೋಜನೆ ಅಭಿವೃದ್ಧಿಗೆ ಯೋಜನೆ, ಸಮನ್ವಯ ಮತ್ತು ಸರಿಯಾದ ತಂಡ ಬೇಕು. 3 ಸಕ್ರಿಯ ಯೋಜನೆಗಳು ಮತ್ತು 7+ ಜಿಲ್ಲೆಗಳಲ್ಲಿ ಸೇವೆಯೊಂದಿಗೆ, ಪ್ರತಿ ಕೆಲಸಕ್ಕೂ ನಿಜವಾದ ಅನುಭವ ತರುತ್ತೇವೆ.",
     body: "ಪ್ರತಿ ಹಂತದಲ್ಲೂ ನಿಮಗೆ ಸಹಾಯ ಮಾಡಲು ನಾವು ಇದ್ದೇವೆ.",
     tagline: "ಪ್ರತಿ ಹಂತಕ್ಕೂ ವಿಶ್ವಾಸಾರ್ಹ ಪಾಲುದಾರ",
     stats: [
@@ -653,7 +653,7 @@ const kn: Dict = {
   process: {
     eyebrow: "ನಾವು ಹೇಗೆ ಕೆಲಸ ಮಾಡುತ್ತೇವೆ",
     heading: "ನಮ್ಮ ಪ್ರಕ್ರಿಯೆ",
-    body: "ಸರಳ. ಸ್ಪಷ್ಟ. ಪಾರದರ್ಶಕ.",
+    body: "4 ಸ್ಪಷ್ಟ ಹಂತಗಳು. ಭೂಮಿಯಿಂದ ಬಿಡುಗಡೆಯವರೆಗೆ 12 ರಿಂದ 24 ತಿಂಗಳು. ಸರಳ, ಸ್ಪಷ್ಟ ಮತ್ತು ಪಾರದರ್ಶಕ.",
     steps: [
       {
         n: "01",

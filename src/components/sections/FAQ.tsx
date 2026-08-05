@@ -56,7 +56,7 @@ function Item({
         aria-labelledby={`${id}-btn`}
         className={cn(
           "grid transition-all duration-300 ease-[var(--ease-out-soft)]",
-          open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0",
+          open ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
         )}
       >
         <div className="min-h-0">
