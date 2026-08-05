@@ -9,7 +9,7 @@ import { Breadcrumbs, PageHero, LastReviewed } from "@/app/_components/PageBlock
 export const metadata: Metadata = {
   title: { absolute: "Where We Work | Land Development Across Karnataka | Agamana Projects" },
   description:
-    "Agamana Projects develops residential layouts and farmland plots across Karnataka. Sagara, Shivamogga, Sirsi and Uttara Kannada. Find your area.",
+    "Agamana Projects develops residential layouts across Karnataka. Sagara, Shivamogga, Sirsi, Tumkur, Chitradurga, Hubli and Haveri. Find your area.",
   alternates: { canonical: `${BUSINESS.url}/locations` },
 };
 

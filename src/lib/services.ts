@@ -20,10 +20,10 @@ export const services: Service[] = [
     name: "Layout Planning",
     title: "Residential Layout Planning in Karnataka | Agamana Projects",
     metaDescription:
-      "Plan every aspect of your residential layout before execution: site analysis, plot planning, road network, amenities and infrastructure. Agamana Projects, Karnataka.",
-    h1: "Layout Planning for Residential & Farmland Projects",
+      "Layout development planning for residential plots and farmland projects in Karnataka. Site analysis, plot planning, road network and infrastructure. Agamana Projects.",
+    h1: "Layout Development Planning for Residential & Farmland Projects",
     intro:
-      "A layout that sells starts with a plan that works. We plan every aspect of your residential or farmland layout before a single road is cut, so plots are usable, infrastructure is sensible, and the project is ready to approve and launch. Most layouts we plan range from 5 to 50 acres across Tier 2 and Tier 3 towns in Karnataka.",
+      "A layout that sells starts with a plan that works. We plan every aspect of your residential or farmland layout before a single road is cut, so plots are usable, infrastructure is sensible, and the project is ready to approve and launch. Our layout development planning covers land subdivision, master planning and plotted layout design for projects ranging from 5 to 50 acres across Tier 2 and Tier 3 towns in Karnataka.",
     includes: [
       "Site Analysis",
       "Layout Design",
@@ -41,6 +41,14 @@ export const services: Service[] = [
       {
         q: "Do you plan farmland layouts as well as residential?",
         a: "Yes. We plan both residential layouts and farmland plot projects, tailoring the layout to the land and the buyer it's meant for.",
+      },
+      {
+        q: "What is land subdivision planning?",
+        a: "Land subdivision planning is the process of dividing a larger parcel of land into individual plots with roads, amenities and infrastructure. We handle the full process from survey to final plot layout.",
+      },
+      {
+        q: "Do you offer residential master planning?",
+        a: "Yes. Our master planning covers the complete layout: plot sizes, road network, open spaces, drainage, electricity and water connections. Every aspect is planned before execution begins.",
       },
     ],
   },
@@ -71,18 +79,22 @@ export const services: Service[] = [
   {
     slug: "branding",
     name: "Project Branding",
-    title: "Real Estate Project Branding in Karnataka | Agamana Projects",
+    title: "Real Estate Branding for Residential Projects | Agamana Projects",
     metaDescription:
-      "Build a memorable project identity that earns buyer trust: logo, brochure, flyers and site hoardings. Agamana Projects, Karnataka.",
-    h1: "Project Branding",
+      "Real estate branding for residential layouts and township projects in Karnataka. Logo, brochure, flyers and site hoardings. Agamana Projects.",
+    h1: "Real Estate Branding for Residential & Township Projects",
     intro:
-      "Buyers trust projects that look established. We build a memorable identity for your layout (a name, a look and the materials that carry it) so your project earns attention and confidence from the first hoarding.",
+      "Buyers trust projects that look established. We build a memorable identity for your residential layout or township project (a name, a look and the materials that carry it) so your project earns attention and confidence from the first hoarding. Professional real estate branding sets your project apart in a crowded market.",
     includes: ["Logo", "Brochure", "Flyers", "Site Hoardings"],
     forWhom: "For developers who want their project to stand out and feel trustworthy.",
     faqs: [
       {
         q: "What branding do you create for a project?",
-        a: "A project logo, brochure, flyers and site hoardings, a consistent identity that increases trust and attracts buyers.",
+        a: "A project logo, brochure, flyers and site hoardings. A consistent identity that increases trust and attracts buyers.",
+      },
+      {
+        q: "Do you offer branding for residential layouts and townships?",
+        a: "Yes. We create complete brand identities for residential layouts, plotted developments and township projects across Karnataka.",
       },
     ],
   },

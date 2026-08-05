@@ -34,6 +34,8 @@ export const BUSINESS = {
     "Uttara Kannada",
     "Tumakuru",
     "Chitradurga",
+    "Dharwad",
+    "Haveri",
     "Karnataka",
   ],
   // Social profiles (used for schema sameAs)

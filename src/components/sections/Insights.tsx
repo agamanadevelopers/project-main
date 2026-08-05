@@ -119,7 +119,7 @@ export function Insights() {
                 key={src.url}
                 href={src.url}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer nofollow"
                 className="inline-flex items-center gap-1.5 rounded-full border border-ink/10 bg-cream px-4 py-2 text-sm text-ink-soft transition-colors hover:border-teal hover:text-teal"
               >
                 <ExternalLink size={14} aria-hidden />

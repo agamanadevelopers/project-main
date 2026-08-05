@@ -84,6 +84,10 @@ export const locations: Location[] = [
         q: "Where is your office in Sagara?",
         a: "No.57, Wodeyar Building, 1st Floor, near the Old Private Bus Stand, opposite the court, on B.H. Road, Sagara – 577401.",
       },
+      {
+        q: "Do you handle township planning in Sagara?",
+        a: "Yes. We help land owners plan and develop township-scale residential layouts in and around Sagara, covering layout design, government approvals, infrastructure and project launch.",
+      },
     ],
   },
   {
@@ -91,12 +95,12 @@ export const locations: Location[] = [
     city: "Shivamogga",
     district: "Shivamogga",
     region: "Central Karnataka",
-    title: "Land Development & Residential Layouts in Shivamogga | Agamana",
+    title: "Layout Planning & Land Development in Shivamogga (Shimoga) | Agamana",
     metaDescription:
-      "Agamana Projects helps land owners in Shivamogga plan, develop, brand and launch residential layouts and plotted projects. One partner for every stage.",
-    h1: "Residential Layout & Land Development in Shivamogga",
+      "Agamana Projects helps land owners in Shivamogga (Shimoga) plan, develop and launch residential layouts and township projects. One partner for every stage.",
+    h1: "Layout Planning & Land Development in Shivamogga (Shimoga)",
     intro:
-      "Shivamogga is a growing market for planned residential layouts and plotted development. Agamana Projects partners with land owners across the district to plan layouts, secure approvals, build real on-site infrastructure, and launch projects buyers trust.",
+      "Shivamogga (also known as Shimoga) is a growing market for planned residential layouts, plotted development and township planning. Agamana Projects partners with land owners across the district to plan layouts, secure approvals, build real on-site infrastructure, and launch projects buyers trust.",
     whyHere: [
       "District-level experience across Shivamogga, close to our Sagara base.",
       "End-to-end delivery: layout design, approvals, roads and infrastructure, branding and marketing under one roof.",
@@ -112,7 +116,11 @@ export const locations: Location[] = [
       },
       {
         q: "What kinds of projects do you handle in Shivamogga?",
-        a: "Residential layouts and plotted developments, from initial layout planning and approvals through to branding, marketing and launch.",
+        a: "Residential layouts, plotted developments and township planning projects. We cover layout planning, approvals, infrastructure, branding, marketing and launch.",
+      },
+      {
+        q: "Do you handle township planning in Shimoga?",
+        a: "Yes. We help land owners plan township-scale residential layouts in Shivamogga district, covering layout design, approvals, infrastructure and project launch.",
       },
     ],
   },
@@ -143,6 +151,138 @@ export const locations: Location[] = [
       {
         q: "Is farmland development suitable in this region?",
         a: "The green, high-rainfall terrain of Uttara Kannada suits farmland and plotted residential projects well. We plan each layout to work with the land and location.",
+      },
+      {
+        q: "How do I develop land in Uttara Kannada?",
+        a: "Start by understanding your land's zoning and conversion status. We visit the site, check land records, assess feasibility and prepare a complete development plan covering layout design, approvals, infrastructure and launch.",
+      },
+      {
+        q: "What is the land conversion process in Uttara Kannada?",
+        a: "Agricultural land needs DC (District Commissioner) conversion before residential development. The process involves applying to the DC office with required documents, getting a site inspection and receiving the conversion order. We guide land owners through each step.",
+      },
+    ],
+  },
+  {
+    slug: "tumkur",
+    city: "Tumkur",
+    district: "Tumakuru",
+    region: "Central Karnataka",
+    title: "Layout Planning & Land Development in Tumkur | Agamana Projects",
+    metaDescription:
+      "Agamana Projects helps land owners in Tumkur plan, develop and launch residential layouts. Layout planning, approvals, branding and marketing with one partner.",
+    h1: "Layout Planning & Land Development in Tumkur",
+    intro:
+      "Tumkur sits at the crossroads of Bangalore and Central Karnataka, making it one of the fastest-growing corridors for residential layout development. Agamana Projects works with land owners in Tumakuru district to plan layouts, handle approvals, build infrastructure and launch projects that attract buyers from both the city and the region.",
+    whyHere: [
+      "Tumkur's proximity to Bangalore drives steady demand for planned residential layouts and plotted projects.",
+      "End-to-end support: layout design, government approvals, infrastructure, branding and launch under one roof.",
+      "Experience across Central Karnataka, with a process built for Tier 2 towns where professional planning sets projects apart.",
+      "One team, one point of contact from first site visit to market launch.",
+    ],
+    projects: [],
+    nearbyAreas: ["Kunigal", "Tiptur", "Gubbi", "Sira", "Madhugiri"],
+    faqs: [
+      {
+        q: "Do you work on residential layout projects in Tumkur?",
+        a: "Yes. We help land owners across Tumakuru district plan, develop and launch residential layouts and plotted projects.",
+      },
+      {
+        q: "What services do you offer in Tumkur?",
+        a: "Layout planning, government approvals, infrastructure coordination, project branding and marketing. One partner for every stage of your project.",
+      },
+      {
+        q: "How do I start a layout project in Tumkur with Agamana?",
+        a: "Tell us about your land: location, extent and your goals. We visit the site, assess feasibility and prepare a clear development plan.",
+      },
+    ],
+  },
+  {
+    slug: "chitradurga",
+    city: "Chitradurga",
+    district: "Chitradurga",
+    region: "Central Karnataka",
+    title: "Residential Layouts & Land Development in Chitradurga | Agamana",
+    metaDescription:
+      "Agamana Projects plans and launches residential layouts in Chitradurga. Layout planning, approvals, branding and launch support for land owners.",
+    h1: "Residential Layouts & Land Development in Chitradurga",
+    intro:
+      "Chitradurga district offers growing opportunities for well-planned residential layouts. The region's connectivity to Bangalore, Davangere and Shivamogga makes it attractive for plotted development. Agamana Projects helps land owners here plan layouts, navigate approvals and bring projects to market with professional branding and support.",
+    whyHere: [
+      "Growing demand for residential plots in Chitradurga, driven by improved road and rail connectivity.",
+      "Full project support: layout design, approvals, infrastructure, branding and launch.",
+      "Experience across Central Karnataka with a process designed for Tier 2 and Tier 3 markets.",
+      "A partner model. We stay with your project from land assessment to buyer handover.",
+    ],
+    projects: [],
+    nearbyAreas: ["Davangere", "Challakere", "Hiriyur", "Holalkere", "Hosadurga"],
+    faqs: [
+      {
+        q: "Do you develop residential layouts in Chitradurga?",
+        a: "Yes. We work with land owners across Chitradurga district to plan, develop and launch residential layout projects.",
+      },
+      {
+        q: "What does Agamana handle in Chitradurga?",
+        a: "Everything from layout planning and government approvals to infrastructure, project branding and marketing. One partner for all 8 stages.",
+      },
+    ],
+  },
+  {
+    slug: "hubli",
+    city: "Hubli",
+    district: "Dharwad",
+    region: "North Karnataka",
+    title: "Land Development & Layout Planning in Hubli | Agamana Projects",
+    metaDescription:
+      "Agamana Projects helps land owners in Hubli and Dharwad plan, develop and launch residential layouts. One partner from land to launch.",
+    h1: "Land Development & Layout Planning in Hubli-Dharwad",
+    intro:
+      "Hubli-Dharwad is North Karnataka's fastest-growing twin city and a strong market for residential plotted development. Agamana Projects brings its Central Karnataka experience to Hubli, helping land owners plan layouts, secure approvals, build infrastructure and launch projects that stand out in a competitive market.",
+    whyHere: [
+      "Hubli-Dharwad is a key growth corridor in North Karnataka with rising demand for planned residential plots.",
+      "Complete project delivery: layout design, approvals, infrastructure, branding and marketing.",
+      "Our process is built for cities where professional planning and branding give projects a clear edge.",
+      "One team, one process, one point of contact from land to launch.",
+    ],
+    projects: [],
+    nearbyAreas: ["Dharwad", "Gadag", "Navalgund", "Kundgol", "Kalghatgi"],
+    faqs: [
+      {
+        q: "Do you work in Hubli and Dharwad?",
+        a: "Yes. We help land owners across Hubli-Dharwad and surrounding areas plan, develop and launch residential layout projects.",
+      },
+      {
+        q: "What kind of projects do you handle in Hubli?",
+        a: "Residential layouts and plotted developments. We cover layout planning, government approvals, infrastructure, branding and marketing.",
+      },
+    ],
+  },
+  {
+    slug: "haveri",
+    city: "Haveri",
+    district: "Haveri",
+    region: "North Karnataka",
+    title: "Layout Planning & Residential Development in Haveri | Agamana",
+    metaDescription:
+      "Agamana Projects helps land owners in Haveri plan and launch residential layouts. Layout planning, approvals, branding and project support.",
+    h1: "Layout Planning & Residential Development in Haveri",
+    intro:
+      "Haveri district sits between Hubli and Shivamogga, with growing interest in residential plotted development as connectivity improves. Agamana Projects works with land owners here to plan layouts, handle approvals and launch projects with professional branding and marketing support.",
+    whyHere: [
+      "Haveri's position between two major growth centres creates steady demand for well-planned residential plots.",
+      "End-to-end project support: layout design, approvals, infrastructure, branding and launch.",
+      "Experience across Central and North Karnataka, with a process that works in Tier 2 and Tier 3 towns.",
+      "A partner, not a broker. We stay with your project from start to finish.",
+    ],
+    projects: [],
+    nearbyAreas: ["Ranebennur", "Byadgi", "Savanur", "Hirekerur", "Hanagal"],
+    faqs: [
+      {
+        q: "Do you handle layout projects in Haveri?",
+        a: "Yes. We help land owners in Haveri district plan, develop and launch residential layouts and plotted projects.",
+      },
+      {
+        q: "What services are available in Haveri?",
+        a: "Layout planning, government approvals, infrastructure coordination, project branding and marketing. One team for all stages.",
       },
     ],
   },
