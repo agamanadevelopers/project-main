@@ -71,6 +71,21 @@ type Dict = {
     intro: string;
     items: { q: string; a: string }[];
   };
+  insights: {
+    eyebrow: string;
+    heading: string;
+    intro: string;
+    takeaways: string[];
+    comparison: {
+      heading: string;
+      columns: [string, string];
+      rows: { aspect: string; withPartner: string; without: string }[];
+    };
+    stats: { value: string; label: string; source?: string }[];
+    methodology: string;
+    sources: { label: string; url: string }[];
+    qa: { q: string; a: string }[];
+  };
   cta: { eyebrow: string; headline: string; body: string };
   footer: {
     tagline: string;
@@ -348,6 +363,72 @@ const en: Dict = {
       {
         q: "How do I get started?",
         a: "Just reach out. Tell us about your land or project and we'll take it from there. One partner, every step.",
+      },
+    ],
+  },
+  insights: {
+    eyebrow: "Land Development Insights",
+    heading: "What You Should Know Before Developing Land in Karnataka",
+    intro:
+      "Land development in Karnataka involves planning, government approvals, infrastructure and marketing. Here is what the process looks like and how a project partner can help.",
+    takeaways: [
+      "A residential layout project in Karnataka typically takes 12 to 24 months from land to market launch.",
+      "You need approvals from the local planning authority, DC office and RERA before selling plots.",
+      "Professional layout planning, branding and marketing can significantly improve project outcomes.",
+      "Working with a single partner across all 8 stages reduces coordination overhead and delays.",
+    ],
+    comparison: {
+      heading: "Working With a Partner vs Managing It Yourself",
+      columns: ["With a Project Partner", "Managing It Yourself"],
+      rows: [
+        {
+          aspect: "Coordination",
+          withPartner: "Single point of contact for all stages",
+          without: "You coordinate surveyors, engineers, agencies separately",
+        },
+        {
+          aspect: "Approvals",
+          withPartner: "Guided documentation and filing with government offices",
+          without: "Navigate DC office, planning authority, RERA on your own",
+        },
+        {
+          aspect: "Timeline",
+          withPartner: "Structured process with clear milestones",
+          without: "Variable timelines, often delayed by coordination gaps",
+        },
+        {
+          aspect: "Branding & Marketing",
+          withPartner: "Professional project identity, website, brochures and campaigns",
+          without: "Hire separate agencies for each deliverable",
+        },
+        {
+          aspect: "Coverage",
+          withPartner: "All 8 stages from land assessment to launch",
+          without: "Different teams for planning, approvals, branding, marketing",
+        },
+      ],
+    },
+    stats: [
+      { value: "31", label: "Districts in Karnataka", source: "Government of Karnataka" },
+      { value: "7+", label: "Districts served by Agamana" },
+      { value: "8", label: "Stages of land development covered" },
+      { value: "12-24", label: "Months typical project timeline" },
+    ],
+    methodology:
+      "Every project starts with an on-site visit and feasibility check. We review land records, zoning classification, access roads and surrounding infrastructure. This assessment determines whether the land is suitable for residential development and what approvals will be required.",
+    sources: [
+      { label: "RERA Karnataka", url: "https://rera.karnataka.gov.in" },
+      { label: "Karnataka Revenue Department", url: "https://landrecords.karnataka.gov.in" },
+      { label: "Town and Country Planning, Karnataka", url: "https://dtcp.karnataka.gov.in" },
+    ],
+    qa: [
+      {
+        q: "How does Agamana Projects help land owners?",
+        a: "Agamana Projects partners with land owners to plan, develop, brand and launch residential layout projects. We handle layout design, government approvals, infrastructure coordination, project branding and marketing so the land owner does not have to manage multiple vendors.",
+      },
+      {
+        q: "What approvals are needed for a residential layout in Karnataka?",
+        a: "A residential layout in Karnataka typically requires approval from the local planning authority (DTCP or local body), a DC conversion if the land is agricultural, and RERA registration before you can advertise or sell plots. The exact requirements depend on the project size and location.",
       },
     ],
   },
@@ -633,6 +714,72 @@ const kn: Dict = {
       {
         q: "ನಾನು ಹೇಗೆ ಆರಂಭಿಸಲಿ?",
         a: "ಸಂಪರ್ಕಿಸಿ. ನಿಮ್ಮ ಭೂಮಿ ಅಥವಾ ಯೋಜನೆಯ ಬಗ್ಗೆ ತಿಳಿಸಿ, ಮುಂದಿನದ್ದನ್ನು ನಾವು ನೋಡಿಕೊಳ್ಳುತ್ತೇವೆ. ಒಬ್ಬ ಪಾಲುದಾರ, ಪ್ರತಿ ಹಂತ.",
+      },
+    ],
+  },
+  insights: {
+    eyebrow: "ಭೂ ಅಭಿವೃದ್ಧಿ ಒಳನೋಟಗಳು",
+    heading: "ಕರ್ನಾಟಕದಲ್ಲಿ ಭೂಮಿ ಅಭಿವೃದ್ಧಿ ಮಾಡುವ ಮೊದಲು ನೀವು ತಿಳಿಯಬೇಕಾದದ್ದು",
+    intro:
+      "ಕರ್ನಾಟಕದಲ್ಲಿ ಭೂ ಅಭಿವೃದ್ಧಿಗೆ ಯೋಜನೆ, ಸರ್ಕಾರಿ ಅನುಮೋದನೆಗಳು, ಮೂಲಸೌಕರ್ಯ ಮತ್ತು ಮಾರುಕಟ್ಟೆ ಬೇಕು. ಪ್ರಕ್ರಿಯೆ ಹೇಗಿರುತ್ತದೆ ಮತ್ತು ಯೋಜನೆ ಪಾಲುದಾರರು ಹೇಗೆ ಸಹಾಯ ಮಾಡಬಹುದು ಎಂಬುದು ಇಲ್ಲಿದೆ.",
+    takeaways: [
+      "ಕರ್ನಾಟಕದಲ್ಲಿ ವಸತಿ ಬಡಾವಣೆ ಯೋಜನೆಗೆ ಸಾಮಾನ್ಯವಾಗಿ 12 ರಿಂದ 24 ತಿಂಗಳು ಬೇಕಾಗುತ್ತದೆ.",
+      "ನಿವೇಶನಗಳನ್ನು ಮಾರಾಟ ಮಾಡುವ ಮೊದಲು ಯೋಜನಾ ಪ್ರಾಧಿಕಾರ, DC ಕಚೇರಿ ಮತ್ತು RERA ಅನುಮೋದನೆ ಅಗತ್ಯ.",
+      "ವೃತ್ತಿಪರ ಬಡಾವಣೆ ಯೋಜನೆ, ಬ್ರಾಂಡಿಂಗ್ ಮತ್ತು ಮಾರ್ಕೆಟಿಂಗ್ ಯೋಜನೆಯ ಫಲಿತಾಂಶಗಳನ್ನು ಸುಧಾರಿಸಬಹುದು.",
+      "ಎಲ್ಲಾ 8 ಹಂತಗಳಲ್ಲಿ ಒಬ್ಬ ಪಾಲುದಾರರೊಂದಿಗೆ ಕೆಲಸ ಮಾಡುವುದು ಸಮನ್ವಯ ಸಮಸ್ಯೆಗಳನ್ನು ಕಡಿಮೆ ಮಾಡುತ್ತದೆ.",
+    ],
+    comparison: {
+      heading: "ಪಾಲುದಾರರೊಂದಿಗೆ vs ನೀವೇ ನಿರ್ವಹಿಸುವುದು",
+      columns: ["ಯೋಜನೆ ಪಾಲುದಾರರೊಂದಿಗೆ", "ನೀವೇ ನಿರ್ವಹಿಸುವುದು"],
+      rows: [
+        {
+          aspect: "ಸಮನ್ವಯ",
+          withPartner: "ಎಲ್ಲಾ ಹಂತಗಳಿಗೆ ಒಂದೇ ಸಂಪರ್ಕ ಬಿಂದು",
+          without: "ಸರ್ವೇಯರ್, ಇಂಜಿನಿಯರ್, ಏಜೆನ್ಸಿಗಳನ್ನು ಪ್ರತ್ಯೇಕವಾಗಿ ಸಮನ್ವಯಗೊಳಿಸಿ",
+        },
+        {
+          aspect: "ಅನುಮೋದನೆಗಳು",
+          withPartner: "ಸರ್ಕಾರಿ ಕಚೇರಿಗಳೊಂದಿಗೆ ಮಾರ್ಗದರ್ಶಿತ ದಾಖಲೆ ಮತ್ತು ಸಲ್ಲಿಕೆ",
+          without: "DC ಕಚೇರಿ, ಯೋಜನಾ ಪ್ರಾಧಿಕಾರ, RERA ಅನ್ನು ನೀವೇ ನ್ಯಾವಿಗೇಟ್ ಮಾಡಿ",
+        },
+        {
+          aspect: "ಸಮಯರೇಖೆ",
+          withPartner: "ಸ್ಪಷ್ಟ ಮೈಲಿಗಲ್ಲುಗಳೊಂದಿಗೆ ರಚನಾತ್ಮಕ ಪ್ರಕ್ರಿಯೆ",
+          without: "ವ್ಯತ್ಯಾಸಗೊಳ್ಳುವ ಸಮಯರೇಖೆಗಳು, ಸಮನ್ವಯ ಅಂತರಗಳಿಂದ ವಿಳಂಬ",
+        },
+        {
+          aspect: "ಬ್ರಾಂಡಿಂಗ್ & ಮಾರ್ಕೆಟಿಂಗ್",
+          withPartner: "ವೃತ್ತಿಪರ ಯೋಜನೆ ಗುರುತು, ವೆಬ್‌ಸೈಟ್, ಕರಪತ್ರಗಳು ಮತ್ತು ಪ್ರಚಾರಗಳು",
+          without: "ಪ್ರತಿ ಡೆಲಿವರಬಲ್‌ಗೆ ಪ್ರತ್ಯೇಕ ಏಜೆನ್ಸಿಗಳನ್ನು ನೇಮಿಸಿ",
+        },
+        {
+          aspect: "ವ್ಯಾಪ್ತಿ",
+          withPartner: "ಭೂಮಿ ಮೌಲ್ಯಮಾಪನದಿಂದ ಉಡಾವಣೆವರೆಗೆ ಎಲ್ಲಾ 8 ಹಂತಗಳು",
+          without: "ಯೋಜನೆ, ಅನುಮೋದನೆ, ಬ್ರಾಂಡಿಂಗ್, ಮಾರ್ಕೆಟಿಂಗ್‌ಗೆ ಬೇರೆ ತಂಡಗಳು",
+        },
+      ],
+    },
+    stats: [
+      { value: "31", label: "ಕರ್ನಾಟಕದ ಜಿಲ್ಲೆಗಳು", source: "ಕರ್ನಾಟಕ ಸರ್ಕಾರ" },
+      { value: "7+", label: "ಆಗಮನ ಸೇವೆ ನೀಡುವ ಜಿಲ್ಲೆಗಳು" },
+      { value: "8", label: "ಭೂ ಅಭಿವೃದ್ಧಿ ಹಂತಗಳು" },
+      { value: "12-24", label: "ತಿಂಗಳು ಸಾಮಾನ್ಯ ಯೋಜನೆ ಅವಧಿ" },
+    ],
+    methodology:
+      "ಪ್ರತಿ ಯೋಜನೆ ಸೈಟ್ ಭೇಟಿ ಮತ್ತು ಕಾರ್ಯಸಾಧ್ಯತೆ ಪರಿಶೀಲನೆಯೊಂದಿಗೆ ಪ್ರಾರಂಭವಾಗುತ್ತದೆ. ನಾವು ಭೂ ದಾಖಲೆಗಳು, ವಲಯ ವರ್ಗೀಕರಣ, ಪ್ರವೇಶ ರಸ್ತೆಗಳು ಮತ್ತು ಸುತ್ತಮುತ್ತಲಿನ ಮೂಲಸೌಕರ್ಯವನ್ನು ಪರಿಶೀಲಿಸುತ್ತೇವೆ.",
+    sources: [
+      { label: "RERA ಕರ್ನಾಟಕ", url: "https://rera.karnataka.gov.in" },
+      { label: "ಕರ್ನಾಟಕ ಕಂದಾಯ ಇಲಾಖೆ", url: "https://landrecords.karnataka.gov.in" },
+      { label: "ನಗರ ಮತ್ತು ಗ್ರಾಮಾಂತರ ಯೋಜನೆ, ಕರ್ನಾಟಕ", url: "https://dtcp.karnataka.gov.in" },
+    ],
+    qa: [
+      {
+        q: "ಆಗಮನ ಪ್ರಾಜೆಕ್ಟ್ಸ್ ಭೂ ಮಾಲೀಕರಿಗೆ ಹೇಗೆ ಸಹಾಯ ಮಾಡುತ್ತದೆ?",
+        a: "ಆಗಮನ ಪ್ರಾಜೆಕ್ಟ್ಸ್ ಭೂ ಮಾಲೀಕರೊಂದಿಗೆ ಸೇರಿ ವಸತಿ ಬಡಾವಣೆ ಯೋಜನೆಗಳನ್ನು ಯೋಜಿಸಲು, ಅಭಿವೃದ್ಧಿಪಡಿಸಲು, ಬ್ರಾಂಡ್ ಮಾಡಲು ಮತ್ತು ಪ್ರಾರಂಭಿಸಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ.",
+      },
+      {
+        q: "ಕರ್ನಾಟಕದಲ್ಲಿ ವಸತಿ ಬಡಾವಣೆಗೆ ಯಾವ ಅನುಮೋದನೆಗಳು ಬೇಕು?",
+        a: "ಸ್ಥಳೀಯ ಯೋಜನಾ ಪ್ರಾಧಿಕಾರದ ಅನುಮೋದನೆ, ಕೃಷಿ ಭೂಮಿಗಾಗಿ DC ಪರಿವರ್ತನೆ, ಮತ್ತು ನಿವೇಶನ ಮಾರಾಟ ಮಾಡುವ ಮೊದಲು RERA ನೋಂದಣಿ ಅಗತ್ಯ.",
       },
     ],
   },

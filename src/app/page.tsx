@@ -8,9 +8,16 @@ import { Projects } from "@/components/sections/Projects";
 import { WhyAgamana } from "@/components/sections/WhyAgamana";
 import { Process } from "@/components/sections/Process";
 import { FAQ } from "@/components/sections/FAQ";
+import { Insights } from "@/components/sections/Insights";
 import { CTA } from "@/components/sections/CTA";
 import { JsonLd } from "@/lib/json-ld";
-import { faqSchema, webPageSchema, howToSchema, BUSINESS } from "@/lib/business";
+import {
+  faqSchema,
+  webPageSchema,
+  howToSchema,
+  breadcrumbSchema,
+  BUSINESS,
+} from "@/lib/business";
 import { content } from "@/lib/content";
 
 export default function Home() {
@@ -18,7 +25,13 @@ export default function Home() {
   return (
     <>
       {/* FAQPage schema — built from the same data the visible FAQ renders */}
-      <JsonLd data={faqSchema(content.en.faq.items)} />
+      {/* BreadcrumbList — issue #3 */}
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", url: BUSINESS.url },
+        ])}
+      />
+      <JsonLd data={faqSchema([...content.en.faq.items, ...content.en.insights.qa])} />
       {/* WebPage: freshness (dateModified) + Speakable for voice/AI answers */}
       <JsonLd
         data={webPageSchema({
@@ -45,6 +58,7 @@ export default function Home() {
         <Projects />
         <WhyAgamana />
         <Process />
+        <Insights />
         <FAQ />
         <CTA />
       </main>
