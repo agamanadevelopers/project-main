@@ -8,7 +8,7 @@ import { Projects } from "@/components/sections/Projects";
 import { WhyAgamana } from "@/components/sections/WhyAgamana";
 import { Process } from "@/components/sections/Process";
 import { FAQ } from "@/components/sections/FAQ";
-import { Insights } from "@/components/sections/Insights";
+
 import { CTA } from "@/components/sections/CTA";
 import { JsonLd } from "@/lib/json-ld";
 import {
@@ -16,7 +16,6 @@ import {
   webPageSchema,
   howToSchema,
   breadcrumbSchema,
-  articleSchema,
   siteNavigationSchema,
   BUSINESS,
   LAST_REVIEWED,
@@ -34,17 +33,7 @@ export default function Home() {
           { name: "Home", url: BUSINESS.url },
         ])}
       />
-      <JsonLd
-        data={articleSchema({
-          url: `${BUSINESS.url}/#insights`,
-          headline: content.en.insights.heading,
-          description: content.en.insights.intro,
-          datePublished: "2025-08-01",
-          dateModified: LAST_REVIEWED,
-          speakable: ["#insights h2", "#insights h4"],
-        })}
-      />
-      <JsonLd data={faqSchema([...content.en.faq.items, ...content.en.insights.qa])} />
+      <JsonLd data={faqSchema(content.en.faq.items)} />
       {/* WebPage: freshness (dateModified) + Speakable for voice/AI answers */}
       <JsonLd
         data={webPageSchema({
@@ -82,7 +71,7 @@ export default function Home() {
         <Projects />
         <WhyAgamana />
         <Process />
-        <Insights />
+
         <FAQ />
         <CTA />
       </main>
