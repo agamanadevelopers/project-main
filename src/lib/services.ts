@@ -82,6 +82,22 @@ export const services: Service[] = [
         q: "Do you handle government approvals for layouts?",
         a: "Yes. We help with layout approvals, compliance, technical drawings and the documentation required to get a project on record.",
       },
+      {
+        q: "Do you handle layout approval in Shivamogga and Shimoga?",
+        a: "Yes. We handle layout approval in Shivamogga (Shimoga) district, including DC conversion, documentation, technical drawings and follow-up with the Town Planning Authority and other departments.",
+      },
+      {
+        q: "Can you help with layout approval in Sagara?",
+        a: "Yes. Sagara is our home base. We handle the full layout approval process here: land records verification, DC conversion, layout plan preparation, NOCs and submission to the Sagara planning authority.",
+      },
+      {
+        q: "Do you assist with layout approvals in Sirsi and Uttara Kannada?",
+        a: "Yes. We assist land owners in Sirsi and across Uttara Kannada with layout approvals, including DC conversion for agricultural land, documentation and coordination with local planning authorities.",
+      },
+      {
+        q: "What is the layout approval process in Karnataka?",
+        a: "The layout approval process in Karnataka involves verifying land records, obtaining DC conversion (if agricultural), preparing a layout plan with a licensed surveyor, securing NOCs from utilities, and submitting the complete file to the Town Planning Authority or DC office. Timelines vary by district. We handle the full process as your layout approval consultant.",
+      },
     ],
   },
   {

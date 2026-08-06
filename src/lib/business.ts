@@ -213,6 +213,22 @@ export function videoSchema(opts: {
   };
 }
 
+/** SiteNavigationElement schema -- helps Google generate sitelinks for branded searches. */
+export function siteNavigationSchema(
+  items: { name: string; url: string }[],
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: items.map((item, i) => ({
+      "@type": "SiteNavigationElement",
+      position: i + 1,
+      name: item.name,
+      url: item.url,
+    })),
+  };
+}
+
 /** HowTo schema for genuine step-by-step content (e.g. the "how we work" process). */
 export function howToSchema(opts: {
   name: string;

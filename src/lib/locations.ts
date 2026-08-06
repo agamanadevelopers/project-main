@@ -96,6 +96,14 @@ export const locations: Location[] = [
         q: "Do you offer project branding and marketing in Sagara?",
         a: "Yes. We create complete project branding (logo, brochure, flyers, site hoardings) and handle project marketing (website, social media, digital campaigns, lead generation) for residential layouts launched from Sagara.",
       },
+      {
+        q: "How do I get layout approval in Sagara?",
+        a: "Layout approval in Sagara involves submitting your layout plan, land documents and technical drawings to the Sagara Town Planning Authority or the DC office. Requirements include survey sketches, encumbrance certificates, land conversion orders (if agricultural) and NOCs from relevant departments. We handle the full documentation and follow-up as your layout approval consultant in Sagara.",
+      },
+      {
+        q: "What documents are needed for layout approval in Sagara taluk?",
+        a: "You need the original sale deed, mutation extract (pahani), encumbrance certificate, survey sketch, land conversion order (for agricultural land), layout plan prepared by a licensed surveyor, and NOCs from electricity, water and road authorities. We compile and submit the complete file.",
+      },
     ],
   },
   {
@@ -137,6 +145,18 @@ export const locations: Location[] = [
       {
         q: "Is Agamana a land development company in Shimoga?",
         a: "We are a land development partner, not a builder or broker. We help land owners in Shivamogga (Shimoga) with project planning, layout design, approvals, infrastructure, branding and launch.",
+      },
+      {
+        q: "How does layout approval work in Shivamogga district?",
+        a: "Layout approval in Shivamogga district requires submitting your layout plan and land documents to the Town Planning Authority or the Deputy Commissioner's office. Key documents include the sale deed, mutation extract, encumbrance certificate, survey sketch, land conversion order and NOCs. As a layout approval consultant covering Shivamogga and Shimoga, we prepare the complete file and follow up with each department.",
+      },
+      {
+        q: "What is the layout approval process in Shimoga?",
+        a: "The layout approval process in Shimoga starts with verifying land records and zoning. You then prepare a layout plan with a licensed surveyor, apply for DC conversion if the land is agricultural, and submit the layout for approval with all supporting documents. We handle each step so your project moves forward without delays.",
+      },
+      {
+        q: "Is there a layout approval guide for Shivamogga district?",
+        a: "We have published a detailed guide on layout approvals in Karnataka that covers the process applicable to Shivamogga district. It walks through DC conversion, required documents, fees and timelines. Contact us or read our guides section for the full walkthrough.",
       },
     ],
   },
@@ -183,6 +203,14 @@ export const locations: Location[] = [
       {
         q: "Do you work on residential plot projects in the Malnad region?",
         a: "Yes. We work across the Malnad belt including Sirsi, Siddapur and surrounding areas. The green terrain here suits both farmland and residential plotted development.",
+      },
+      {
+        q: "How do I plan a residential layout in Sirsi?",
+        a: "Planning a residential layout in Sirsi starts with verifying your land records and zoning status at the Sirsi tahsildar office. If the land is agricultural, you apply for DC conversion. Then a licensed surveyor prepares the layout plan with plot sizes, road network and open spaces. We handle the complete process: land assessment, layout design, conversion, approvals and infrastructure planning for residential layouts in Sirsi and Uttara Kannada.",
+      },
+      {
+        q: "What approvals are needed for a layout in Sirsi?",
+        a: "You need DC conversion (if agricultural land), a layout plan approved by the Town Planning Authority, NOCs from electricity and water departments, and compliance with zoning regulations. The exact requirements depend on land classification and project size. We navigate all of this as your layout approval consultant in the Sirsi and Uttara Kannada region.",
       },
     ],
   },

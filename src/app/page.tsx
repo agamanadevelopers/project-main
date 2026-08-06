@@ -17,6 +17,7 @@ import {
   howToSchema,
   breadcrumbSchema,
   articleSchema,
+  siteNavigationSchema,
   BUSINESS,
   LAST_REVIEWED,
 } from "@/lib/business";
@@ -51,6 +52,17 @@ export default function Home() {
           name: "Agamana Projects | Land Development & Project Partner in Karnataka",
           speakable: ["#top h1", "#faq"],
         })}
+      />
+      {/* SiteNavigationElement — helps Google generate sitelinks for "agamana projects" */}
+      <JsonLd
+        data={siteNavigationSchema([
+          { name: "Services", url: `${BUSINESS.url}/services` },
+          { name: "Where We Work", url: `${BUSINESS.url}/locations` },
+          { name: "Guides", url: `${BUSINESS.url}/guides` },
+          { name: "Our Process", url: `${BUSINESS.url}/#process` },
+          { name: "Projects", url: `${BUSINESS.url}/#projects` },
+          { name: "FAQ", url: `${BUSINESS.url}/#faq` },
+        ])}
       />
       {/* HowTo — the real "how we work" process, marked up step-by-step */}
       <JsonLd
