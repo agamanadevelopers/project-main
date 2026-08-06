@@ -139,7 +139,9 @@ export function FaqList({ faqs }: { faqs: { q: string; a: string }[] }) {
       <dl className="mt-6 divide-y divide-line/70 border-y border-line/70">
         {faqs.map((f) => (
           <div key={f.q} className="py-5">
-            <dt className="font-display text-lg font-semibold text-ink">{f.q}</dt>
+            <dt>
+              <h3 className="font-display text-lg font-semibold text-ink">{f.q}</h3>
+            </dt>
             <dd className="mt-2 leading-relaxed text-ink-soft">{f.a}</dd>
           </div>
         ))}

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { services, getService } from "@/lib/services";
 import { locations } from "@/lib/locations";
 import { guides } from "@/lib/guides";
-import { BUSINESS, faqSchema, breadcrumbSchema, serviceSchema, webPageSchema, LAST_REVIEWED } from "@/lib/business";
+import { BUSINESS, faqSchema, breadcrumbSchema, serviceSchema, webPageSchema, articleSchema, howToSchema, LAST_REVIEWED } from "@/lib/business";
 import { JsonLd } from "@/lib/json-ld";
 import { Breadcrumbs, PageHero, CtaRow, FaqList, SectionHeading, KeyTakeaways, ComparisonTable, LastReviewed } from "@/app/_components/PageBlocks";
 
@@ -73,6 +73,30 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           speakable: ["h1", "#includes-heading", "#faq-heading"],
         })}
       />
+      <JsonLd
+        data={articleSchema({
+          url: canonical,
+          headline: svc.h1,
+          description: svc.metaDescription,
+          datePublished: "2025-08-01",
+          dateModified: LAST_REVIEWED,
+          speakable: ["h1", "#process-heading", "#faq-heading"],
+        })}
+      />
+
+      <JsonLd
+        data={howToSchema({
+          name: `How ${svc.name.toLowerCase()} works with Agamana Projects`,
+          description: `Step-by-step process for ${svc.name.toLowerCase()} for residential layouts in Karnataka.`,
+          url: `${canonical}#process-heading`,
+          steps: [
+            { name: "Initial consultation", text: "We understand your land, your goals and the scope of the project." },
+            { name: "Detailed scope and plan", text: `We prepare a detailed ${svc.name.toLowerCase()} scope tailored to your project and location.` },
+            { name: "Execution with updates", text: `We execute ${svc.name.toLowerCase()} with regular updates at every milestone.` },
+            { name: "Handover of deliverables", text: "You receive clean, usable deliverables you can act on immediately." },
+          ],
+        })}
+      />
 
       <Breadcrumbs items={crumbs.map((c) => ({ name: c.name, href: c.href }))} />
 
@@ -88,6 +112,23 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       />
 
       <CtaRow />
+
+      <section aria-labelledby="stats-heading" className="mt-14">
+        <SectionHeading id="stats-heading">At a glance</SectionHeading>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            { label: "Deliverables included", value: String(svc.includes.length) },
+            { label: "Locations served", value: String(locations.length) },
+            { label: "Districts covered", value: String(BUSINESS.areaServed.length) },
+            { label: "Stages of support", value: "8" },
+          ].map((stat) => (
+            <div key={stat.label} className="rounded-[var(--radius-card)] border border-line bg-card p-5 text-center">
+              <p className="font-display text-3xl font-bold text-teal">{stat.value}</p>
+              <p className="mt-1 text-sm text-ink-soft">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
       <section aria-labelledby="includes-heading" className="mt-14">
         <SectionHeading id="includes-heading">What&apos;s included</SectionHeading>
@@ -152,28 +193,39 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         ]}
       />
 
-      <section aria-labelledby="resources-heading" className="mt-14">
-        <SectionHeading id="resources-heading">Useful resources</SectionHeading>
-        <ul className="mt-4 space-y-2 text-[0.95rem]">
-          <li>
-            <a href="https://karunadu.karnataka.gov.in" target="_blank" rel="noopener noreferrer nofollow" className="font-medium text-teal underline decoration-lime decoration-2 underline-offset-2 transition-colors hover:text-lime-deep">
-              Government of Karnataka
-            </a>{" "}
-            <span className="text-ink-soft">(official state government portal)</span>
-          </li>
-          <li>
-            <a href="https://rera.karnataka.gov.in" target="_blank" rel="noopener noreferrer nofollow" className="font-medium text-teal underline decoration-lime decoration-2 underline-offset-2 transition-colors hover:text-lime-deep">
-              Karnataka RERA
-            </a>{" "}
-            <span className="text-ink-soft">(Real Estate Regulatory Authority for project registrations)</span>
-          </li>
-          <li>
-            <a href="https://landrecords.karnataka.gov.in" target="_blank" rel="noopener noreferrer nofollow" className="font-medium text-teal underline decoration-lime decoration-2 underline-offset-2 transition-colors hover:text-lime-deep">
-              Bhoomi: Karnataka Land Records
-            </a>{" "}
-            <span className="text-ink-soft">(official land records and mutation tracking)</span>
-          </li>
-        </ul>
+      <section aria-labelledby="definitions-heading" className="mt-14">
+        <SectionHeading id="definitions-heading">Key terms</SectionHeading>
+        <dl className="mt-6 space-y-4 leading-relaxed text-ink-soft">
+          <div>
+            <dt className="font-semibold text-ink">Layout planning</dt>
+            <dd>Layout planning is the process of dividing a larger parcel of land into individual plots with roads, open spaces, drainage and utility connections. A well-planned layout maximises usable area while meeting local authority requirements.</dd>
+          </div>
+          <div>
+            <dt className="font-semibold text-ink">Project branding</dt>
+            <dd>Project branding is the creation of a distinct identity for a residential layout or development project. It includes the project name, logo, brochure, flyers and site hoardings that give buyers confidence in the project.</dd>
+          </div>
+          <div>
+            <dt className="font-semibold text-ink">Project launch</dt>
+            <dd>A project launch is the coordinated market introduction of a residential layout, combining sales collaterals, digital campaigns, buyer presentations and on-site events to convert interest into bookings.</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section aria-labelledby="methodology-heading" className="mt-14">
+        <SectionHeading id="methodology-heading">Our approach</SectionHeading>
+        <div className="mt-6 space-y-4 leading-relaxed text-ink-soft">
+          <p>
+            Our {svc.name.toLowerCase()} process is built on direct experience across residential layout projects
+            in Karnataka. We have refined this process through projects in Sagara, Shivamogga, Sirsi and
+            other towns across the state.
+          </p>
+          <p>
+            Every engagement begins with a physical site visit and an in-person conversation with the land
+            owner or developer. We do not start work based on phone calls or satellite imagery alone. Our
+            recommendations are grounded in what we see on the ground, verified land records and
+            conversations with the relevant local authorities.
+          </p>
+        </div>
       </section>
 
       {relatedGuides.length > 0 && (

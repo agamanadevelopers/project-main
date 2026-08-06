@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { locations, getLocation } from "@/lib/locations";
-import { BUSINESS, faqSchema, breadcrumbSchema, webPageSchema, LAST_REVIEWED } from "@/lib/business";
+import { BUSINESS, faqSchema, breadcrumbSchema, webPageSchema, articleSchema, howToSchema, LAST_REVIEWED } from "@/lib/business";
 import { JsonLd } from "@/lib/json-ld";
 import { Breadcrumbs, PageHero, CtaRow, FaqList, SectionHeading, KeyTakeaways, ComparisonTable, LastReviewed } from "@/app/_components/PageBlocks";
 
@@ -76,6 +76,31 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
           speakable: ["h1", "#why-heading", "#faq-heading"],
         })}
       />
+      <JsonLd
+        data={articleSchema({
+          url: canonical,
+          headline: loc.h1,
+          description: loc.metaDescription,
+          datePublished: "2025-08-01",
+          dateModified: LAST_REVIEWED,
+          speakable: ["h1", "#how-heading", "#faq-heading"],
+        })}
+      />
+
+      <JsonLd
+        data={howToSchema({
+          name: `How to develop land in ${loc.city}`,
+          description: `Step-by-step process for developing residential layouts and farmland plots in ${loc.city}, ${loc.district} district.`,
+          url: `${canonical}#how-heading`,
+          steps: [
+            { name: "Site visit and land assessment", text: `We visit your land in ${loc.city}, assess its shape, access, terrain, water sources and proximity to roads and amenities.` },
+            { name: "Development plan", text: "We prepare a development plan: layout design, plot sizes, road network, open spaces and infrastructure." },
+            { name: "Approvals and documentation", text: `We handle documentation, liaise with local authorities in ${loc.district} district and prepare the technical drawings required.` },
+            { name: "Infrastructure and construction", text: "Internal roads, fencing, water, electricity and any amenities the layout promises are built on site." },
+            { name: "Branding, marketing and launch", text: "Project branding, a marketing plan and launch support run in parallel so your project reaches buyers the moment plots are ready." },
+          ],
+        })}
+      />
 
       <Breadcrumbs items={crumbs.map((c) => ({ name: c.name, href: c.href }))} />
 
@@ -90,6 +115,23 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
       />
 
       <CtaRow />
+
+      <section aria-labelledby="stats-heading" className="mt-14">
+        <SectionHeading id="stats-heading">At a glance</SectionHeading>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            { label: "Stages of support", value: "8" },
+            { label: "Services under one roof", value: "5" },
+            { label: "Areas served near " + loc.city, value: String(loc.nearbyAreas.length + 1) },
+            { label: "Districts covered statewide", value: String(BUSINESS.areaServed.length) },
+          ].map((stat) => (
+            <div key={stat.label} className="rounded-[var(--radius-card)] border border-line bg-card p-5 text-center">
+              <p className="font-display text-3xl font-bold text-teal">{stat.value}</p>
+              <p className="mt-1 text-sm text-ink-soft">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
       <section aria-labelledby="how-heading" className="mt-14">
         <SectionHeading id="how-heading">How we work in {loc.city}</SectionHeading>
@@ -162,28 +204,38 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
         </p>
       </section>
 
-      <section aria-labelledby="resources-heading" className="mt-14">
-        <SectionHeading id="resources-heading">Useful resources</SectionHeading>
-        <ul className="mt-4 space-y-2 text-[0.95rem]">
-          <li>
-            <a href="https://karunadu.karnataka.gov.in" target="_blank" rel="noopener noreferrer nofollow" className="font-medium text-teal underline decoration-lime decoration-2 underline-offset-2 transition-colors hover:text-lime-deep">
-              Government of Karnataka
-            </a>{" "}
-            <span className="text-ink-soft">(official state government portal)</span>
-          </li>
-          <li>
-            <a href="https://rera.karnataka.gov.in" target="_blank" rel="noopener noreferrer nofollow" className="font-medium text-teal underline decoration-lime decoration-2 underline-offset-2 transition-colors hover:text-lime-deep">
-              Karnataka RERA
-            </a>{" "}
-            <span className="text-ink-soft">(Real Estate Regulatory Authority for project registrations)</span>
-          </li>
-          <li>
-            <a href="https://landrecords.karnataka.gov.in" target="_blank" rel="noopener noreferrer nofollow" className="font-medium text-teal underline decoration-lime decoration-2 underline-offset-2 transition-colors hover:text-lime-deep">
-              Bhoomi: Karnataka Land Records
-            </a>{" "}
-            <span className="text-ink-soft">(official land records and mutation tracking)</span>
-          </li>
-        </ul>
+      <section aria-labelledby="definitions-heading" className="mt-14">
+        <SectionHeading id="definitions-heading">Key terms</SectionHeading>
+        <dl className="mt-6 space-y-4 leading-relaxed text-ink-soft">
+          <div>
+            <dt className="font-semibold text-ink">Layout planning</dt>
+            <dd>Layout planning is the process of dividing a larger parcel of land into individual plots with roads, open spaces, drainage and utility connections. A well-planned layout maximises usable area while meeting local authority requirements.</dd>
+          </div>
+          <div>
+            <dt className="font-semibold text-ink">DC conversion</dt>
+            <dd>DC conversion is the legal process of converting agricultural land to non-agricultural use through the District Commissioner&apos;s office. It is a mandatory step before developing residential layouts on farmland in Karnataka.</dd>
+          </div>
+          <div>
+            <dt className="font-semibold text-ink">Layout approval</dt>
+            <dd>Layout approval is the formal permission granted by the local planning authority (Town Planning Authority or DTCP) to develop land into a plotted layout. It requires submitting a layout plan, land documents, technical drawings and NOCs.</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section aria-labelledby="methodology-heading" className="mt-14">
+        <SectionHeading id="methodology-heading">Our approach</SectionHeading>
+        <div className="mt-6 space-y-4 leading-relaxed text-ink-soft">
+          <p>
+            We have worked with land owners across {loc.district} district and the wider {loc.region} region.
+            Our process is built on direct, on-the-ground experience with local land records offices, planning
+            authorities and infrastructure contractors in the area.
+          </p>
+          <p>
+            Every recommendation we make is based on a physical site visit, verified land records and
+            conversations with the relevant local authorities. We do not rely on satellite imagery alone or
+            make assessments without visiting your land first.
+          </p>
+        </div>
       </section>
 
       <FaqList faqs={loc.faqs} />

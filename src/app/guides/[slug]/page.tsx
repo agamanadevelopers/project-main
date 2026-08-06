@@ -210,31 +210,6 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
         </section>
       )}
 
-      {/* Useful resources */}
-      <section aria-labelledby="resources-heading" className="mt-14">
-        <SectionHeading id="resources-heading">Useful resources</SectionHeading>
-        <ul className="mt-4 space-y-2 text-[0.95rem]">
-          <li>
-            <a href="https://karunadu.karnataka.gov.in" target="_blank" rel="noopener noreferrer nofollow" className="font-medium text-teal underline decoration-lime decoration-2 underline-offset-2 transition-colors hover:text-lime-deep">
-              Government of Karnataka
-            </a>{" "}
-            <span className="text-ink-soft">(official state government portal)</span>
-          </li>
-          <li>
-            <a href="https://rera.karnataka.gov.in" target="_blank" rel="noopener noreferrer nofollow" className="font-medium text-teal underline decoration-lime decoration-2 underline-offset-2 transition-colors hover:text-lime-deep">
-              Karnataka RERA
-            </a>{" "}
-            <span className="text-ink-soft">(Real Estate Regulatory Authority for project registrations)</span>
-          </li>
-          <li>
-            <a href="https://landrecords.karnataka.gov.in" target="_blank" rel="noopener noreferrer nofollow" className="font-medium text-teal underline decoration-lime decoration-2 underline-offset-2 transition-colors hover:text-lime-deep">
-              Bhoomi: Karnataka Land Records
-            </a>{" "}
-            <span className="text-ink-soft">(official land records and mutation tracking)</span>
-          </li>
-        </ul>
-      </section>
-
       <FaqList faqs={guide.faqs} />
 
       {/* CTA */}
