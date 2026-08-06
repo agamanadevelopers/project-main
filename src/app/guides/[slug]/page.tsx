@@ -253,7 +253,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
         </section>
       )}
 
-      <LastReviewed date={LAST_REVIEWED} />
+      <LastReviewed date={LAST_REVIEWED} published={guide.publishedDate} />
     </>
   );
 }

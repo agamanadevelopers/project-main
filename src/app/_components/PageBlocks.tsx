@@ -71,10 +71,15 @@ export function SectionHeading({ id, children }: { id: string; children: React.R
   );
 }
 
-export function LastReviewed({ date }: { date: string }) {
+export function LastReviewed({ date, published }: { date: string; published?: string }) {
+  const fmt = (d: string) =>
+    new Date(d + "T00:00:00").toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" });
   return (
     <p className="mt-6 text-xs text-ink-faint">
-      Last reviewed: <time dateTime={date}>{new Date(date + "T00:00:00").toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" })}</time>
+      {published && (
+        <>Published: <time dateTime={published}>{fmt(published)}</time> · </>
+      )}
+      Updated: <time dateTime={date}>{fmt(date)}</time>
     </p>
   );
 }

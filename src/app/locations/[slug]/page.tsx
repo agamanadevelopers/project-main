@@ -238,6 +238,36 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
         </div>
       </section>
 
+      <section aria-labelledby="sources-heading" className="mt-14">
+        <SectionHeading id="sources-heading">Sources and references</SectionHeading>
+        <ul className="mt-4 space-y-2 text-[0.95rem]">
+          <li>
+            <Link href="/guides/layout-approval-process-karnataka" className="font-medium text-teal underline decoration-lime decoration-2 underline-offset-2 transition-colors hover:text-lime-deep">
+              Layout Approval Process in Karnataka
+            </Link>{" "}
+            <span className="text-ink-soft">(Agamana Projects guide)</span>
+          </li>
+          <li>
+            <Link href="/guides/dc-conversion-karnataka" className="font-medium text-teal underline decoration-lime decoration-2 underline-offset-2 transition-colors hover:text-lime-deep">
+              DC Conversion in Karnataka
+            </Link>{" "}
+            <span className="text-ink-soft">(Agamana Projects guide)</span>
+          </li>
+          <li>
+            <Link href="/guides/how-to-develop-land-into-plots-karnataka" className="font-medium text-teal underline decoration-lime decoration-2 underline-offset-2 transition-colors hover:text-lime-deep">
+              How to Develop Land into Plots
+            </Link>{" "}
+            <span className="text-ink-soft">(Agamana Projects guide)</span>
+          </li>
+          <li>
+            <Link href="/guides/agricultural-land-conversion-karnataka" className="font-medium text-teal underline decoration-lime decoration-2 underline-offset-2 transition-colors hover:text-lime-deep">
+              Agricultural Land Conversion for Beginners
+            </Link>{" "}
+            <span className="text-ink-soft">(Agamana Projects guide)</span>
+          </li>
+        </ul>
+      </section>
+
       <FaqList faqs={loc.faqs} />
 
       <section
@@ -253,7 +283,7 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
         <CtaRow />
       </section>
 
-      <LastReviewed date={LAST_REVIEWED} />
+      <LastReviewed date={LAST_REVIEWED} published="2025-08-01" />
     </>
   );
 }
