@@ -18,12 +18,12 @@ export const services: Service[] = [
   {
     slug: "layout-planning",
     name: "Layout Planning",
-    title: "Residential Layout Planning in Karnataka | Agamana Projects",
+    title: "Layout Planning Company in Karnataka | Agamana Projects",
     metaDescription:
-      "Layout development planning for residential plots and farmland projects in Karnataka. Site analysis, plot planning, road network and infrastructure. Agamana Projects.",
-    h1: "Layout Development Planning for Residential & Farmland Projects",
+      "Looking for a layout design company or plotting consultant in Karnataka? Agamana Projects offers residential layout planning, land subdivision and site planning for projects across the state.",
+    h1: "Layout Planning Company for Residential & Farmland Projects",
     intro:
-      "A layout that sells starts with a plan that works. We plan every aspect of your residential or farmland layout before a single road is cut, so plots are usable, infrastructure is sensible, and the project is ready to approve and launch. Our layout development planning covers land subdivision, master planning and plotted layout design for projects ranging from 5 to 50 acres across Tier 2 and Tier 3 towns in Karnataka.",
+      "A layout that sells starts with a plan that works. As a layout planning company in Karnataka, we plan every aspect of your residential or farmland layout before a single road is cut, so plots are usable, infrastructure is sensible, and the project is ready to approve and launch. Our layout development planning covers land subdivision, master planning, site planning and plotted layout design for projects ranging from 5 to 50 acres across Tier 2 and Tier 3 towns in Karnataka.",
     includes: [
       "Site Analysis",
       "Layout Design",
@@ -50,15 +50,23 @@ export const services: Service[] = [
         q: "Do you offer residential master planning?",
         a: "Yes. Our master planning covers the complete layout: plot sizes, road network, open spaces, drainage, electricity and water connections. Every aspect is planned before execution begins.",
       },
+      {
+        q: "Are you a layout design company or a plotting consultant?",
+        a: "We are both. Agamana Projects is a layout design company and plotting consultant that handles residential plotting services end to end: site planning, layout design, plot planning, approvals and infrastructure across Karnataka.",
+      },
+      {
+        q: "Do you offer project planning for land owners?",
+        a: "Yes. If you own land and want to develop it, we handle the complete project layout planning: from initial site analysis to a finished layout ready for approval and construction.",
+      },
     ],
   },
   {
     slug: "approvals",
     name: "Approvals & Documentation",
-    title: "Layout Approvals & Documentation in Karnataka | Agamana Projects",
+    title: "Layout Approval Consultant in Karnataka | Agamana Projects",
     metaDescription:
-      "Navigate layout approvals, government compliance, technical drawings and project documentation with one partner. Agamana Projects, Karnataka.",
-    h1: "Approvals & Documentation",
+      "Looking for a layout approval consultant in Karnataka? Agamana Projects navigates government approvals, compliance, technical drawings and documentation for residential layouts.",
+    h1: "Layout Approval Consultant & Documentation Services",
     intro:
       "Approvals are where projects stall. In Karnataka, layout approval typically involves 8 to 12 different documents and coordination with multiple government departments. We help you navigate government approvals and project documentation so your layout is clean, compliant and on record, with the technical drawings and paperwork handled properly.",
     includes: [
@@ -79,34 +87,42 @@ export const services: Service[] = [
   {
     slug: "branding",
     name: "Project Branding",
-    title: "Real Estate Branding for Residential Projects | Agamana Projects",
+    title: "Project Branding Company for Builders & Developers | Agamana",
     metaDescription:
-      "Real estate branding for residential layouts and township projects in Karnataka. Logo, brochure, flyers and site hoardings. Agamana Projects.",
-    h1: "Real Estate Branding for Residential & Township Projects",
+      "Project branding for builders and developers in Karnataka. Logo design, brochure, project naming, identity design and site hoardings. Agamana Projects.",
+    h1: "Project Branding for Builders, Developers & Land Projects",
     intro:
-      "Buyers trust projects that look established. We build a memorable identity for your residential layout or township project (a name, a look and the materials that carry it) so your project earns attention and confidence from the first hoarding. Professional real estate branding sets your project apart in a crowded market.",
+      "Buyers trust projects that look established. We build a memorable identity for your residential layout or township project (a name, a look and the materials that carry it) so your project earns attention and confidence from the first hoarding. Whether you are a builder, a developer or a land owner, professional project branding sets your project apart in a crowded market.",
     includes: ["Logo", "Brochure", "Flyers", "Site Hoardings"],
-    forWhom: "For developers who want their project to stand out and feel trustworthy.",
+    forWhom: "For builders and developers who want their project to stand out and feel trustworthy.",
     faqs: [
       {
         q: "What branding do you create for a project?",
-        a: "A project logo, brochure, flyers and site hoardings. A consistent identity that increases trust and attracts buyers.",
+        a: "A project logo, brochure, flyers and site hoardings. A consistent project identity that increases trust and attracts buyers.",
       },
       {
-        q: "Do you offer branding for residential layouts and townships?",
-        a: "Yes. We create complete brand identities for residential layouts, plotted developments and township projects across Karnataka.",
+        q: "Do you offer branding for builders and developers?",
+        a: "Yes. We create complete brand identities for builders, developers and land owners launching residential layouts, plotted developments and township projects across Karnataka.",
+      },
+      {
+        q: "Do you handle project naming and identity design?",
+        a: "Yes. Project naming and identity design are part of our branding service. We create the project name, logo, visual identity and all the materials that carry it: brochures, flyers and site hoardings.",
+      },
+      {
+        q: "Can you design a project brochure and logo?",
+        a: "Yes. Project logo design and brochure design are core to what we do. Every residential project we brand gets a logo, brochure, flyers and hoardings designed as a single, consistent identity.",
       },
     ],
   },
   {
     slug: "marketing",
     name: "Marketing & Digital Presence",
-    title: "Real Estate Marketing & Digital Presence | Agamana Projects",
+    title: "Project Marketing Partner for Residential Layouts | Agamana",
     metaDescription:
-      "Present your project professionally across digital and print: website, social media, campaigns, lead generation, photography and walkthrough videos. Agamana Projects.",
-    h1: "Marketing & Digital Presence",
+      "Project marketing for residential layouts in Karnataka. Website, social media, digital campaigns, lead generation, photography and walkthrough videos. Agamana Projects.",
+    h1: "Project Marketing Partner for Residential Layouts",
     intro:
-      "The right buyers need to find your project, and trust it when they do. We present your layout professionally across digital and print platforms, from a project website to social media, campaigns and walkthrough videos.",
+      "The right buyers need to find your project, and trust it when they do. As a project marketing partner for residential layouts across Karnataka, we present your project professionally across digital and print platforms, from a project website to social media, campaigns and walkthrough videos.",
     includes: [
       "Website",
       "Social Media",
@@ -121,17 +137,25 @@ export const services: Service[] = [
         q: "Do you build a website for the project?",
         a: "Yes. Marketing includes a project website, social media, digital campaigns, lead generation, photography and walkthrough videos.",
       },
+      {
+        q: "Can one company handle both layout planning and marketing?",
+        a: "Yes. Agamana Projects is one company for layout planning and branding. We handle the full cycle: layout design, approvals, infrastructure, project branding and marketing under one roof.",
+      },
+      {
+        q: "Do you offer branding and marketing together for residential projects?",
+        a: "Yes. We combine project branding (logo, brochure, hoardings) with project marketing (website, social media, campaigns, lead generation) so your residential layout launches with a complete, professional presence.",
+      },
     ],
   },
   {
     slug: "sales-launch",
     name: "Sales & Launch Support",
-    title: "Sales & Project Launch Support in Karnataka | Agamana Projects",
+    title: "Project Launch Partner for Layouts in Karnataka | Agamana",
     metaDescription:
-      "Launch your project with a clear strategy and professional sales materials: launch strategy, sales collaterals, customer presentations and marketing assets. Agamana Projects.",
-    h1: "Sales & Launch Support",
+      "Looking for a project launch partner? Agamana Projects supports residential layout launches with strategy, sales collaterals, presentations and marketing assets.",
+    h1: "Project Launch Partner for Residential Layouts",
     intro:
-      "A launch only works if everything's ready. We support your project launch with a clear strategy and the professional sales materials your team needs to convert interest into bookings.",
+      "A launch only works if everything is ready. As your project launch partner, we support your residential layout launch with a clear strategy and the professional sales materials your team needs to convert interest into bookings.",
     includes: [
       "Launch Strategy",
       "Sales Collaterals",
@@ -143,6 +167,14 @@ export const services: Service[] = [
       {
         q: "What does launch support include?",
         a: "A launch strategy, sales collaterals, customer presentations and the marketing assets your sales team needs on launch day.",
+      },
+      {
+        q: "What is a project launch partner?",
+        a: "A project launch partner handles everything needed to bring your residential layout to market: launch strategy, branding materials, sales collaterals, digital campaigns and buyer presentations. We stay with your project through the first bookings.",
+      },
+      {
+        q: "Can you be our project execution partner?",
+        a: "Yes. As a project execution partner, we handle planning, approvals, infrastructure, branding, marketing and launch. One team from land to first sale.",
       },
     ],
   },

@@ -36,12 +36,12 @@ export const locations: Location[] = [
     city: "Sagara",
     district: "Shivamogga",
     region: "Central Karnataka",
-    title: "Land Development & Farmland Plots in Sagara | Agamana Projects",
+    title: "Land Development & Layout Consultant in Sagara | Agamana Projects",
     metaDescription:
-      "Agamana Projects plans, develops and launches residential layouts and farmland plots in Sagara, Karnataka. One partner from land to launch.",
-    h1: "Land Development & Farmland Projects in Sagara",
+      "Looking for a plotting company or layout consultant in Sagara? Agamana Projects plans, develops, brands and launches residential layouts and farmland plots. One partner from land to launch.",
+    h1: "Land Development & Layout Planning in Sagara",
     intro:
-      "Sagara is home base for Agamana Projects. From our office on B.H. Road we help land owners across the taluk turn raw land into well-planned residential layouts and farmland plots, handling planning, approvals, infrastructure, branding and launch with one team.",
+      "Sagara is home base for Agamana Projects. From our office on B.H. Road we help land owners across the taluk turn raw land into well-planned residential layouts and farmland plots. As a layout consultant and project planning company based in Sagara, we handle planning, approvals, infrastructure, project branding, marketing and launch with one team.",
     whyHere: [
       "Local knowledge of Sagara taluk land, from Lingadahalli to Ulavi, and the approval process that applies here.",
       "On-the-ground presence: our office is on B.H. Road, opposite the court, near the old private bus stand.",
@@ -88,6 +88,14 @@ export const locations: Location[] = [
         q: "Do you handle township planning in Sagara?",
         a: "Yes. We help land owners plan and develop township-scale residential layouts in and around Sagara, covering layout design, government approvals, infrastructure and project launch.",
       },
+      {
+        q: "Is there a plotting company in Sagara?",
+        a: "Yes. Agamana Projects is a plotting company and layout consultant based in Sagara. We handle residential plotting services including layout design, plot planning, road network, approvals and infrastructure.",
+      },
+      {
+        q: "Do you offer project branding and marketing in Sagara?",
+        a: "Yes. We create complete project branding (logo, brochure, flyers, site hoardings) and handle project marketing (website, social media, digital campaigns, lead generation) for residential layouts launched from Sagara.",
+      },
     ],
   },
   {
@@ -122,6 +130,14 @@ export const locations: Location[] = [
         q: "Do you handle township planning in Shimoga?",
         a: "Yes. We help land owners plan township-scale residential layouts in Shivamogga district, covering layout design, approvals, infrastructure and project launch.",
       },
+      {
+        q: "Do you offer project branding and marketing in Shivamogga?",
+        a: "Yes. We handle project branding (logo, brochure, flyers, hoardings) and project marketing (website, social media, campaigns) for residential layouts in Shivamogga and Shimoga district.",
+      },
+      {
+        q: "Is Agamana a land development company in Shimoga?",
+        a: "We are a land development partner, not a builder or broker. We help land owners in Shivamogga (Shimoga) with project planning, layout design, approvals, infrastructure, branding and launch.",
+      },
     ],
   },
   {
@@ -129,12 +145,12 @@ export const locations: Location[] = [
     city: "Sirsi",
     district: "Uttara Kannada",
     region: "Coastal & Malnad Karnataka",
-    title: "Land Development in Sirsi & Uttara Kannada | Agamana Projects",
+    title: "Land Development in Sirsi, Uttara Kannada & Malnad | Agamana",
     metaDescription:
-      "Agamana Projects plans and launches residential layouts and farmland plots across Sirsi and Uttara Kannada. One partner from land to launch.",
-    h1: "Land Development in Sirsi & Uttara Kannada",
+      "Residential layouts and farmland plots in Sirsi, Uttara Kannada and the Malnad region. Agamana Projects is your land development partner from planning to launch.",
+    h1: "Land Development in Sirsi, Uttara Kannada & Malnad",
     intro:
-      "From Sirsi to the Uttara Kannada coast, Agamana Projects helps land owners develop residential layouts and farmland plots in the Malnad and coastal belt. We bring planning, approvals, infrastructure and launch support to a region where good land deserves professional development.",
+      "From Sirsi to the Uttara Kannada coast and across the Malnad region, Agamana Projects helps land owners develop residential layouts and farmland plots. Whether you are exploring residential plot projects in Malnad or planning a layout in Uttara Kannada, we bring planning, approvals, infrastructure and launch support to a region where good land deserves professional development.",
     whyHere: [
       "Coverage across the Malnad and coastal Uttara Kannada belt, extending from our Central Karnataka base.",
       "Suited to farmland and residential plots in green, high-rainfall terrain.",
@@ -159,6 +175,14 @@ export const locations: Location[] = [
       {
         q: "What is the land conversion process in Uttara Kannada?",
         a: "Agricultural land needs DC (District Commissioner) conversion before residential development. The process involves applying to the DC office with required documents, getting a site inspection and receiving the conversion order. We guide land owners through each step.",
+      },
+      {
+        q: "What are the best locations for residential layouts in Uttara Kannada?",
+        a: "Sirsi, Siddapur, Yellapur and the taluks along the coast (Kumta, Honnavar) offer strong potential for residential layouts. The best location depends on access roads, water availability, zoning and buyer demand. We assess each site individually.",
+      },
+      {
+        q: "Do you work on residential plot projects in the Malnad region?",
+        a: "Yes. We work across the Malnad belt including Sirsi, Siddapur and surrounding areas. The green terrain here suits both farmland and residential plotted development.",
       },
     ],
   },
@@ -193,6 +217,10 @@ export const locations: Location[] = [
       {
         q: "How do I start a layout project in Tumkur with Agamana?",
         a: "Tell us about your land: location, extent and your goals. We visit the site, assess feasibility and prepare a clear development plan.",
+      },
+      {
+        q: "Do you handle project branding and marketing in Tumkur?",
+        a: "Yes. We create project branding (logo, brochure, flyers, hoardings) and run project marketing (website, social media, campaigns, lead generation) for residential layouts in Tumkur and Tumakuru district.",
       },
     ],
   },
