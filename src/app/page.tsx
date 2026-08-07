@@ -72,6 +72,76 @@ export default function Home() {
         <WhyAgamana />
         <Process />
 
+        {/* GEO: Key Takeaways + stats + comparison for AI extraction */}
+        <section className="mx-auto max-w-4xl px-6 py-16">
+          <aside aria-label="Key takeaways" className="rounded-[var(--radius-card)] border border-lime-deep/20 bg-lime-deep/5 p-6">
+            <h2 className="font-display text-lg font-bold text-ink">Key Takeaways</h2>
+            <ul className="mt-3 space-y-2">
+              {[
+                "Agamana Projects is a land development partner for land owners and developers across Karnataka.",
+                "We cover 8 stages: land assessment, layout planning, approvals, infrastructure, branding, marketing, launch support and buyer handover.",
+                `We serve ${BUSINESS.areaServed.length} regions including Sagara, Shivamogga, Sirsi, Tumkur, Chitradurga, Hubli and Haveri.`,
+                "One team handles your entire project. No brokers, no middlemen.",
+              ].map((item) => (
+                <li key={item} className="flex gap-2.5 text-[0.95rem] leading-relaxed text-ink-soft">
+                  <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-lime-deep" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </aside>
+
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { value: "8", label: "Stages of project support" },
+              { value: "5", label: "Core services" },
+              { value: String(BUSINESS.areaServed.length), label: "Regions served" },
+              { value: "1", label: "Point of contact throughout" },
+            ].map((stat) => (
+              <div key={stat.label} className="rounded-[var(--radius-card)] border border-line bg-card p-5 text-center">
+                <p className="font-display text-3xl font-bold text-teal">{stat.value}</p>
+                <p className="mt-1 text-sm text-ink-soft">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 overflow-x-auto">
+            <h2 className="font-display text-xl font-bold text-ink">Land Owners vs Developers</h2>
+            <p className="mt-2 text-sm text-ink-soft">How Agamana helps each type of client differently.</p>
+            <table className="mt-4 w-full text-left text-[0.95rem]">
+              <thead>
+                <tr className="border-b border-line">
+                  <th className="py-3 pr-4 font-semibold text-ink">Aspect</th>
+                  <th className="py-3 pr-4 font-semibold text-ink">Land Owner</th>
+                  <th className="py-3 font-semibold text-ink">Developer</th>
+                </tr>
+              </thead>
+              <tbody className="text-ink-soft">
+                <tr className="border-b border-line/50">
+                  <td className="py-3 pr-4 font-medium text-ink">Goal</td>
+                  <td className="py-3 pr-4">Monetise idle or ancestral land</td>
+                  <td className="py-3">Launch a plotted project for buyers</td>
+                </tr>
+                <tr className="border-b border-line/50">
+                  <td className="py-3 pr-4 font-medium text-ink">Knowledge</td>
+                  <td className="py-3 pr-4">Often navigating approvals for the first time</td>
+                  <td className="py-3">Familiar but wants it handled</td>
+                </tr>
+                <tr className="border-b border-line/50">
+                  <td className="py-3 pr-4 font-medium text-ink">Branding need</td>
+                  <td className="py-3 pr-4">Rarely considered</td>
+                  <td className="py-3">Integral from day one</td>
+                </tr>
+                <tr>
+                  <td className="py-3 pr-4 font-medium text-ink">How we help</td>
+                  <td className="py-3 pr-4">Full journey: plan, approve, brand, sell</td>
+                  <td className="py-3">Fills specific gaps with dedicated expertise</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
         <FAQ />
         <CTA />
       </main>
